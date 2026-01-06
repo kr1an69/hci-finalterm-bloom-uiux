@@ -40,6 +40,10 @@ export const translations = {
     "side.myRoadmaps": "My Roadmaps",
     "side.certificates": "Certificates",
     "side.settings": "Settings",
+    "side.search": "Search",
+    "side.theme": "Theme",
+    "side.language": "Language",
+
     //Ask Bloom Modal
     "modalAskBloom.title": "Hello, I'm Bloom!",
     "modalAskBloom.subtitle":
@@ -290,6 +294,9 @@ export const translations = {
     "side.myRoadmaps": "Lộ Trình Của Tôi",
     "side.certificates": "Chứng Chỉ",
     "side.settings": "Cài Đặt",
+    "side.search": "Tìm Kiếm",
+    "side.theme": "Giao Diện",
+    "side.language": "Ngôn Ngữ",
 
     //Ask Bloom Modal
     "modalAskBloom.title": "Xin chào, mình là Bloom đây!",

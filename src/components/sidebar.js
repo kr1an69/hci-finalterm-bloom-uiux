@@ -103,7 +103,7 @@ export function sidebar() {
     return `
               <a href="${item.link}" class="relative h-14 flex items-center ${justifyClass} px-5 transition-all duration-200 group/item ${activeClass}">
                 <iconify-icon icon="${item.icon}" class="text-icon-md shrink-0 transition-transform duration-300 group-hover/item:scale-110"></iconify-icon>
-                <span data-i18n="${item.key}" class="sidebar-text ml-3 whitespace-nowrap overflow-hidden transition-opacity duration-200 ${hideTextClass}">
+                <span data-i18n="${item.key}" class="text-body-m ml-3 whitespace-nowrap overflow-hidden transition-opacity duration-200 ${hideTextClass}">
                   ${t(item.key, item.defaultText)}
                 </span>
               </a>
@@ -122,21 +122,21 @@ export function sidebar() {
              <!-- Mobile Search -->
              <button id="btn-mobile-search" class="${stringHidden} w-full h-12 flex items-center px-5 text-content-secondary hover:text-brand transition-colors text-left">
                   <iconify-icon icon="solar:magnifer-linear" class="text-icon-md shrink-0"></iconify-icon>
-                  <span class="ml-3 font-sans text-body-m">Search</span>
+                  <span class="ml-3 font-sans text-body-m" data-i18n="side.search">${t("side.search", "Search")}</span>
              </button>
              <!-- Mobile Theme -->
              <button id="btn-mobile-theme" class="w-full h-12 flex items-center px-5 text-content-secondary hover:text-brand transition-colors text-left">
                   <iconify-icon icon="solar:moon-bold" class="text-icon-md shrink-0 text-content-secondary dark:hidden"></iconify-icon>
                   <iconify-icon icon="solar:sun-2-bold" class="text-icon-md shrink-0 text-warning hidden dark:block"></iconify-icon>
-                  <span class="ml-3 font-sans text-body-m">Theme</span>
+                  <span class="ml-3 font-sans text-body-m" data-i18n="side.theme">${t("side.theme", "Theme")}</span>
              </button>
              <!-- Mobile Lang -->
              <button id="btn-mobile-lang" class="w-full h-12 flex items-center px-5 text-content-secondary hover:text-brand transition-colors text-left">
                   <iconify-icon icon="solar:global-linear" class="text-icon-md shrink-0"></iconify-icon>
-                  <span id="mobile-lang-text" class="ml-3 font-sans text-body-m">Language (${currentLang.toUpperCase()})</span>
+                  <span id="mobile-lang-text" class="ml-3 font-sans text-body-m" data-i18n="side.language">${t("side.language", "Language")} (${currentLang.toUpperCase()})</span>
              </button>
              <!-- Mobile Ask Bloom -->
-             <div class="px-5 mt-4">
+             <div class="px-5 mt-2">
                 <button id="btn-ask-bloom-mobile" class="${stringHidden} w-full flex justify-center items-center gap-2 bg-brand-harmony text-white font-sans font-semibold text-body-m py-2 rounded-full hover:opacity-90 transition-opacity shadow-sm whitespace-nowrap shrink-0">
                       <iconify-icon icon="solar:stars-minimalistic-bold" class="text-icon-md"></iconify-icon>
                       <span class="text-h6" data-i18n="nav.askBloom">${t("nav.askBloom", "Ask Bloom")}</span>
