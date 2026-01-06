@@ -2,7 +2,7 @@ import { translations } from "../langs/lang-db.js";
 
 const filterModalHTML = (t) => `
 <div id="filter-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-base-900/60 backdrop-blur-sm transition-opacity opacity-0">
-    <div class="bg-card w-full max-w-2xl tablet-down:h-[70vh] tablet-down:m-4 h-auto max-h-[85vh] rounded-3xl shadow-2xl border border-DEFAULT transform scale-95 transition-transform duration-300 relative flex flex-col">
+    <div class="bg-card w-full max-w-2xl tablet:h-[70vh] tablet:m-4 h-auto max-h-[85vh] rounded-3xl shadow-2xl border border-DEFAULT transform scale-95 transition-transform duration-300 relative flex flex-col">
         
         <!-- Header -->
         <div class="flex items-center justify-between p-6 border-b border-DEFAULT shrink-0">
@@ -116,7 +116,7 @@ const filterModalHTML = (t) => `
             <!-- 4. Language (Native Names) -->
              <div>
                 <h4 class="text-sm font-bold text-content-secondary uppercase tracking-wider mb-3" data-i18n="filter.language">${t("filter.language", "Language")}</h4>
-                <div class="grid tablet-down:grid-cols-2 grid-cols-3 gap-3">
+                <div class="grid tablet:grid-cols-2 grid-cols-3 gap-3">
                     <label class="flex items-center gap-3 cursor-pointer p-2 hover:bg-base-100 dark:hover:bg-base-700 rounded-lg transition-colors">
                         <input type="checkbox" class="w-5 h-5 rounded border-gray-300 text-brand-primary focus:ring-brand-primary">
                         <span class="text-sm text-content-primary">English</span>

@@ -1,7 +1,5 @@
 
-import { roadmapCard } from "./roadmap-card.js";
 import { updateLanguage } from "../utils/main.js";
-import { renderRoadmapModal } from "./roadmap-detail-modal.js";
 
 export class OnboardingWizard {
     constructor(containerId) {
@@ -76,7 +74,7 @@ export class OnboardingWizard {
     goBack() {
         if (this.currentStep === 'input') {
             this.currentStep = this.totalSteps;
-        } else if (this.currentStep === 'analysis' || this.currentStep === 'result') {
+        } else if (this.currentStep === 'analysis') {
             this.currentStep = 1;
             this.userAnswers = {};
         } else if (this.currentStep > 1) {
@@ -89,34 +87,6 @@ export class OnboardingWizard {
         this.currentStep = 1;
         this.userAnswers = {};
         this.render();
-    }
-
-    openRoadmapModal() {
-        // Create Modal Container
-        const modalContainer = document.createElement('div');
-        modalContainer.innerHTML = renderRoadmapModal();
-        document.body.appendChild(modalContainer);
-
-        updateLanguage();
-
-        const closeBtn = document.getElementById('close-modal-btn');
-        const overlay = document.getElementById('roadmap-modal-overlay');
-
-        const closeModal = () => {
-            overlay.classList.remove('animate-fade-in');
-            // Simple timeout to allow potential CSS transition if we added one (fade-out)
-            // For now just removing is fine as per original request to just work.
-            if (document.body.contains(modalContainer)) {
-                document.body.removeChild(modalContainer);
-            }
-        };
-
-        if (closeBtn) closeBtn.onclick = closeModal;
-        if (overlay) {
-            overlay.onclick = (e) => {
-                if (e.target === overlay) closeModal();
-            };
-        }
     }
 
     // --- Render Helpers ---
@@ -145,7 +115,7 @@ export class OnboardingWizard {
         return `
       ${this.renderProgressBar()}
       <div class="max-w-xl mx-auto animate-fade-in-up bg-white dark:bg-base-900 rounded-3xl p-8 border border-base-200 dark:border-base-800 shadow-sm">
-        <h1 class="text-4xl tablet-down:text-3xl font-bold text-center mb-10 text-content-primary" data-i18n="${stepData.questionKey}">
+        <h1 class="text-4xl tablet:text-3xl font-bold text-center mb-10 text-content-primary" data-i18n="${stepData.questionKey}">
            Question?
         </h1>
         
@@ -223,80 +193,6 @@ export class OnboardingWizard {
       `;
     }
 
-    renderResultStep() {
-        const roadmapData = {
-            title: "UX Design Mastery Path",
-            lastActive: "Just created",
-            progress: 0,
-            color: "bg-purple-500",
-            link: "javascript:void(0)",
-            icon: "solar:pen-new-square-bold-duotone",
-            iconColor: "#A855F7"
-        };
-
-        let cardHtml = roadmapCard(roadmapData);
-
-        // Inject onclick handler to open modal
-        cardHtml = cardHtml.replace(
-            `href="javascript:void(0)"`,
-            `href="javascript:void(0)" onclick="window.wizardInstance.openRoadmapModal()"`
-        );
-
-        return `
-        <div class="max-w-5xl mx-auto animate-fade-in-up mt-10">
-            <h2 class="text-3xl font-bold text-center mb-12 text-content-primary" data-i18n="onboarding.resultTitle">Here is your roadmap</h2>
-
-            <div class="flex flex-row tablet-down:flex-col gap-12 items-center justify-center">
-                
-                <!-- Left: Mascot & Bubble -->
-                <div class="w-1/3 tablet-down:w-full flex flex-col items-center">
-                    <img src="${this.mascotPath}" alt="Bloom Happy" class="w-40 h-40 object-contain mb-6 drop-shadow-xl animate-bounce-slow" />
-                    
-                    <!-- Bubble -->
-                    <div class="bg-base-800 text-white p-6 rounded-2xl border border-base-700 shadow-lg relative bubble-top max-w-xs text-center">
-                        <p class="text-base font-medium italic" data-i18n="onboarding.insight">
-                             "Based on your inputs..."
-                        </p>
-                        <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-b-[12px] border-b-base-800"></div>
-                    </div>
-                </div>
-
-                <!-- Right: Roadmap Card & Actions -->
-                <div class="w-1/3 tablet-down:w-full">
-                    <!-- The Card -->
-                    <div class="transform transition-all hover:scale-[1.02] duration-300">
-                        ${cardHtml}
-                    </div>
-
-                    <!-- Action Buttons -->
-                    <div class="mt-8 flex gap-4">
-                        <button onclick="window.wizardInstance.saveRoadmap()" class="flex-1 bg-brand-primary text-white py-3 px-4 rounded-xl font-bold hover:bg-brand-secondary transition-all shadow-lg hover:shadow-brand-primary/25 active:scale-95">
-                            <span data-i18n="onboarding.save">Save Roadmap</span>
-                        </button>
-                        
-                         <button onclick="window.wizardInstance.resetProcess()" class="flex-1 px-4 py-3 rounded-xl font-semibold border border-base-300 dark:border-base-700 hover:bg-base-200 dark:hover:bg-base-800 text-content-primary transition-all active:scale-95">
-                            <span data-i18n="onboarding.reset">Start Over</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-      `;
-    }
-
-    saveRoadmap() {
-        const toast = document.createElement('div');
-        toast.className = 'fixed bottom-8 right-8 bg-green-500 text-white px-6 py-3 rounded-xl shadow-2xl flex items-center gap-2 animate-fade-in-up z-50';
-        toast.innerHTML = `<iconify-icon icon="solar:check-circle-bold" class="text-xl"></iconify-icon> <span data-i18n="onboarding.savedMsg">Saved!</span>`;
-        document.body.appendChild(toast);
-
-        updateLanguage();
-
-        setTimeout(() => {
-            toast.remove();
-        }, 3000);
-    }
-
     render() {
         let content = "";
 
@@ -304,8 +200,6 @@ export class OnboardingWizard {
             content = this.renderInputStep();
         } else if (this.currentStep === 'analysis') {
             content = this.renderAnalysisStep();
-        } else if (this.currentStep === 'result') {
-            content = this.renderResultStep();
         } else {
             const stepData = this.stepsConfig.find(s => s.id === this.currentStep);
             if (stepData) {

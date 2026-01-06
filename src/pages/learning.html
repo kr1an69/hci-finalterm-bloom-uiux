@@ -30,13 +30,13 @@
 
                 <!-- MAIN CONTENT (Split Left/Right) -->
                 <div id="page-content-main"
-                    class="flex-1 flex flex-row tablet-down:flex-col overflow-hidden tablet-down:overflow-y-auto">
+                    class="flex-1 flex flex-row tablet:flex-col overflow-hidden tablet:overflow-y-auto">
 
                     <!-- LEFT PART (Scrollable: Video + Info + Footer) -->
                     <div id="learning-left-content"
-                        class="flex-1 overflow-y-auto tablet-down:overflow-visible scroll-smooth flex flex-col relative no-scrollbar">
+                        class="flex-1 overflow-y-auto tablet:overflow-visible scroll-smooth flex flex-col relative no-scrollbar">
 
-                        <div class="pl-8 pr-6 pt-2 pb-12">
+                        <div class="pl-8 pr-6 tablet:px-6 mobile:px-4 pt-2 pb-12">
                             <!-- Course Title Header -->
                             <a href="#"
                                 class="block w-fit text-h3 font-bold text-content-primary mb-6 mt-6 hover:text-brand-primary hover:underline transition-colors">
@@ -99,7 +99,7 @@
                                     class="flex items-center gap-8 border-b border-DEFAULT mb-8 no-scrollbar overflow-x-auto">
                                     <!-- Mobile Only: Course Content Tab -->
                                     <button id="tab-course-content"
-                                        class="hidden tablet-down:block pb-4 border-b-2 border-transparent text-content-secondary font-medium hover:text-content-primary transition-colors whitespace-nowrap"
+                                        class="hidden tablet:block pb-4 border-b-2 border-transparent text-content-secondary font-medium hover:text-content-primary transition-colors whitespace-nowrap"
                                         data-i18n="course.content">Course Content</button>
 
                                     <button id="tab-overview"
@@ -143,7 +143,7 @@
 
                     <!-- RIGHT PART (Course Menu) -->
                     <div id="course-menu"
-                        class="w-96 bg-card border-l border-DEFAULT overflow-y-auto shrink-0 z-10 flex tablet-down:hidden flex-col h-full right-sidebar-scroll tablet-down:w-full tablet-down:h-auto tablet-down:border-l-0 tablet-down:overflow-visible">
+                        class="w-96 bg-card border-l border-DEFAULT overflow-y-auto shrink-0 z-10 flex tablet:hidden flex-col h-full right-sidebar-scroll tablet:w-full tablet:h-auto tablet:border-l-0 tablet:overflow-visible">
                         <!-- Content injected below -->
                         <div class="p-6 border-b border-DEFAULT sticky top-0 bg-card z-20">
                             <h3 class="font-bold text-lg text-content-primary mb-2" data-i18n="course.content">Course
@@ -158,7 +158,7 @@
 
 
                         <!-- Content List (Accordion) -->
-                        <div class="flex-1 pb-6">
+                        <div class="flex-1 pb-6 mobile:pb-32">
                             <!-- Section 1 -->
                             <div class="border-b border-DEFAULT">
                                 <button
@@ -325,9 +325,9 @@
                     tabOverview.classList.remove('border-brand-primary', 'text-brand-primary');
                     tabOverview.classList.add('border-transparent', 'text-content-secondary');
 
-                    // Show Course Menu (remove hidden on tablet-down), Hide Overview (add hidden on tablet-down)
-                    courseMenu.classList.remove('tablet-down:hidden');
-                    overviewContent.classList.add('tablet-down:hidden');
+                    // Show Course Menu (remove hidden on tablet), Hide Overview (add hidden on tablet)
+                    courseMenu.classList.remove('tablet:hidden');
+                    overviewContent.classList.add('tablet:hidden');
                 });
 
                 tabOverview.addEventListener('click', () => {
@@ -340,8 +340,8 @@
                     tabCourseContent.classList.add('border-transparent', 'text-content-secondary');
 
                     // Show Overview, Hide Course Menu
-                    overviewContent.classList.remove('tablet-down:hidden');
-                    courseMenu.classList.add('tablet-down:hidden');
+                    overviewContent.classList.remove('tablet:hidden');
+                    courseMenu.classList.add('tablet:hidden');
                 });
             }
         });

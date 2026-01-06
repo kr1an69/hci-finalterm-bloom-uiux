@@ -10,17 +10,17 @@ export function promoBanner() {
         </div>
 
         <!-- Content -->
-        <div class="relative z-10 tablet-down:p-8 p-12 flex flex-col items-start h-full justify-center max-w-2xl">
+        <div class="relative z-10 tablet:p-8 p-12 flex flex-col items-start h-full justify-center max-w-2xl">
             <span class="px-3 py-1 bg-brand-accent text-white text-xs font-bold rounded-full mb-4 animate-pulse">
                 Editor's Pick This Month
             </span>
             
-            <h2 class="tablet-down:text-3xl text-5xl font-bold text-white mb-4 leading-tight">
+            <h2 class="tablet:text-3xl text-5xl font-bold text-white mb-4 leading-tight">
                 Generative AI: <br>
                 <span class="text-brand-primary">Unlock the Future</span>
             </h2>
             
-            <p class="text-gray-200 tablet-down:text-sm text-base mb-8 line-clamp-2">
+            <p class="text-gray-200 tablet:text-sm text-base mb-8 line-clamp-2">
                 Master the art of prompt engineering and image generation with our top-rated course. 
                 Designed for creative professionals and tech enthusiasts.
             </p>

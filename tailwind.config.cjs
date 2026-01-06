@@ -8,7 +8,7 @@ module.exports = {
       //mobile - 4 cols - pd-x-16px gap-16px
       //tablet - 8 cols - pd-x-24px gap-24px
       //desktop - 12 cols - pd-x-32px gap-24px
-      'tablet-down': { 'max': '1023px' },
+      'tablet': { 'max': '1023px' },
       'mobile': { 'max': '480px' },
     },
     // Cấu hình Container để có Margin 32px (mỗi bên)

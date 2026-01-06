@@ -28,24 +28,24 @@
             <!-- PAGE CONTENT -->
             <!-- Mobile: Add padding-bottom (pb-24) to avoid content being hidden behind sticky bottom bar -->
             <div id="page-content"
-                class="flex-1 overflow-y-auto px-8 tablet-down:p-6 mobile:p-4 pt-0 scroll-smooth tablet-down:pb-24">
+                class="flex-1 overflow-y-auto px-8 tablet:p-6 mobile:p-4 pt-0 scroll-smooth tablet:pb-24">
                 <!-- PAGE CONTENT MAIN -->
                 <div id="page-content-main">
 
                     <!-- HERO SECTION (Banner Style) -->
                     <!-- Desktop: Blue bg, White text. Mobile: Page bg, Content text. -->
                     <div
-                        class="-mx-8 bg-brand-primary text-white tablet-down:bg-page tablet-down:text-content-primary py-12 tablet-down:py-2 rounded-b-3xl tablet-down:rounded-none p-8 tablet-down:px-4 relative overflow-hidden shrink-0 mb-0">
+                        class="-mx-8 tablet:-mx-6 mobile:-mx-4 bg-brand-primary text-white tablet:bg-page tablet:text-content-primary py-12 tablet:py-2 rounded-b-3xl tablet:rounded-none p-8 tablet:px-6 mobile:px-4 relative overflow-hidden shrink-0 mb-0">
                         <div
-                            class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 tablet-down:hidden">
+                            class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 tablet:hidden">
                         </div>
 
-                        <div class="grid grid-cols-3 tablet-down:grid-cols-1 gap-8 relative z-10">
+                        <div class="grid grid-cols-3 tablet:grid-cols-1 gap-8 relative z-10">
                             <!-- Desktop: col-span-2 / Tablet: col-span-1 -->
-                            <div class="col-span-2 tablet-down:col-span-1 space-y-4">
+                            <div class="col-span-2 tablet:col-span-1 space-y-4">
                                 <!-- Breadcrumb Text Link -->
                                 <div
-                                    class="text-sm text-blue-200 tablet-down:text-content-secondary font-medium mb-2 flex items-center gap-2">
+                                    class="text-sm text-blue-200 tablet:text-content-secondary font-medium mb-2 flex items-center gap-2">
                                     <span class="opacity-70">Development</span>
                                     <iconify-icon icon="solar:alt-arrow-right-linear" class="text-xs"></iconify-icon>
                                     <span class="opacity-70">Data Science</span>
@@ -53,16 +53,16 @@
                                     <span>Python</span>
                                 </div>
 
-                                <h1 class="text-4xl tablet-down:text-2xl font-bold leading-tight">Fundamentals Of Python
+                                <h1 class="text-4xl tablet:text-2xl font-bold leading-tight">Fundamentals Of Python
                                     - DA
                                 </h1>
-                                <p class="text-lg text-blue-100 tablet-down:text-content-secondary max-w-2xl">Master
+                                <p class="text-lg text-blue-100 tablet:text-content-secondary max-w-2xl">Master
                                     Python Programming from Scratch: Build
                                     Real-World Projects and Become Job-Ready in 2026</p>
 
                                 <!-- === MOBILE VIDEO PREVIEW (Inserted Here) === -->
                                 <div
-                                    class="hidden tablet-down:block w-full aspect-video rounded-xl overflow-hidden bg-black group cursor-pointer relative my-4 shadow-lg">
+                                    class="hidden tablet:block px-6 mobile:px-4 w-full aspect-video rounded-xl overflow-hidden bg-black group cursor-pointer relative my-4 shadow-lg">
                                     <div class="absolute inset-0 bg-cover bg-center opacity-80 group-hover:opacity-60 transition"
                                         style="background-image: url('../../public/images/example2.jpg');">
                                     </div>
@@ -80,7 +80,7 @@
                                 <!-- ============================================ -->
 
                                 <!-- MOBILE INCLUDES (Added at user request) -->
-                                <div class="hidden tablet-down:flex flex-wrap gap-2 mb-4">
+                                <div class="hidden tablet:flex flex-wrap gap-2 mb-4">
                                     <div
                                         class="flex items-center gap-2 bg-base-50 dark:bg-base-900 border border-neutral-200 dark:border-neutral-800 rounded-lg px-3 py-2 text-xs text-content-secondary shadow-sm">
                                         <iconify-icon icon="solar:videocamera-record-bold"
@@ -126,22 +126,22 @@
                                             <iconify-icon icon="solar:star-bold"></iconify-icon>
                                         </div>
                                     </div>
-                                    <span class="text-blue-200 tablet-down:text-content-secondary">(600 <span
+                                    <span class="text-blue-200 tablet:text-content-secondary">(600 <span
                                             data-i18n="courseDetail.ratings">ratings</span>)</span>
                                     <!-- Desktop: Inline / Mobile: Hidden -->
                                     <span
-                                        class="inline mobile:hidden text-blue-200 tablet-down:text-content-secondary">•</span>
-                                    <span class="text-white tablet-down:text-content-primary">12,500 <span
+                                        class="inline mobile:hidden text-blue-200 tablet:text-content-secondary">•</span>
+                                    <span class="text-white tablet:text-content-primary">12,500 <span
                                             data-i18n="courseDetail.students">students</span></span>
                                 </div>
 
                                 <!-- Desktop: Flex-row / Mobile: Flex-col -->
                                 <div
-                                    class="flex flex-row mobile:flex-col gap-4 text-sm text-blue-100 tablet-down:text-content-secondary pt-4">
+                                    class="flex flex-row mobile:flex-col gap-4 text-sm text-blue-100 tablet:text-content-secondary pt-4">
                                     <div class="flex items-center gap-2">
                                         <iconify-icon icon="solar:user-bold"></iconify-icon>
                                         <span><span data-i18n="courseDetail.created">Created by</span> <a href="#"
-                                                class="text-white tablet-down:text-brand-primary underline hover:text-warning">Angela
+                                                class="text-white tablet:text-brand-primary underline hover:text-warning">Angela
                                                 Yu</a></span>
                                     </div>
                                     <div class="flex items-center gap-2">
@@ -160,13 +160,13 @@
                     <!-- CONTENT LAYOUT -->
                     <div>
                         <!-- Desktop: 3 cols / Tablet: 1 col -->
-                        <div class="grid grid-cols-3 tablet-down:grid-cols-1 gap-8 relative">
+                        <div class="grid grid-cols-3 tablet:grid-cols-1 gap-8 relative">
 
                             <!-- LEFT COLUMN: MAIN CONTENT -->
-                            <div class="col-span-2 tablet-down:col-span-1 space-y-10">
+                            <div class="col-span-2 tablet:col-span-1 space-y-10">
                                 <!-- Tabs Navigation (Hidden on Mobile) -->
                                 <div
-                                    class="sticky top-0 z-30 bg-page border-b border-neutral-200 dark:border-neutral-800 w-full py-2 px-4 tablet-down:hidden">
+                                    class="sticky top-0 z-30 bg-page border-b border-neutral-200 dark:border-neutral-800 w-full py-2 px-4 tablet:hidden">
                                     <div
                                         class="flex items-center gap-6 overflow-x-auto no-scrollbar text-sm font-semibold text-content-secondary">
                                         <a href="#what-learn"
@@ -189,7 +189,7 @@
 
                                 <!-- 1. WHAT YOU'LL LEARN -->
                                 <div id="what-learn"
-                                    class="scroll-mt-24 border border-neutral-200 dark:border-neutral-800 p-6 rounded-2xl bg-card dark:bg-base-800">
+                                    class="scroll-mt-24 border border-neutral-200 dark:border-neutral-800 p-6 mobile:p-4 rounded-2xl bg-card dark:bg-base-800">
                                     <h2 class="text-xl font-bold mb-4" data-i18n="courseDetail.whatLearn">What you'll
                                         learn</h2>
                                     <div class="grid grid-cols-2 mobile:grid-cols-1 gap-4">
@@ -347,7 +347,7 @@
 
                                     <!-- Rating Summary -->
                                     <div
-                                        class="bg-card dark:bg-base-800 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 mb-8">
+                                        class="bg-card dark:bg-base-800 p-6 mobile:p-4 rounded-2xl border border-neutral-200 dark:border-neutral-800 mb-8">
                                         <div class="flex items-center gap-4 mb-2">
                                             <h1 class="text-3xl font-bold text-content-primary">4.8</h1>
                                             <div class="flex text-brand-primary text-sm">
@@ -516,7 +516,7 @@
                             <!-- END LEFT COLUMN -->
 
                             <!-- RIGHT COLUMN: STICKY CARD (DESKTOP ONLY) -->
-                            <div class="block tablet-down:hidden relative -mt-80 z-20 px-2">
+                            <div class="block tablet:hidden relative -mt-80 z-20 px-2">
                                 <div class="sticky top-8 space-y-6">
                                     <div
                                         class="bg-card dark:bg-base-800 border border-neutral-200 dark:border-neutral-800 rounded-2xl shadow-xl overflow-hidden p-1">
@@ -602,7 +602,7 @@
 
             <!-- STICKY BOTTOM BAR (MOBILE ONLY) -->
             <div
-                class="hidden tablet-down:flex fixed bottom-0 left-0 right-0 bg-card border-t border-neutral-200 dark:border-neutral-800 p-4 z-50 items-center justify-between shadow-[0_-5px_15px_rgba(0,0,0,0.05)]">
+                class="hidden tablet:flex fixed bottom-0 left-0 right-0 bg-card border-t border-neutral-200 dark:border-neutral-800 p-4 z-30 items-center justify-between shadow-[0_-5px_15px_rgba(0,0,0,0.05)]">
                 <div class="flex flex-col">
                     <span class="text-xs text-content-secondary line-through">699,000 đ</span>
                     <span class="text-xl font-bold text-content-primary">299,000 đ</span>
@@ -616,7 +616,7 @@
 
             <!-- BACK TO TOP BUTTON (MOBILE ONLY) -->
             <button onclick="document.getElementById('page-content').scrollTo({top: 0, behavior: 'smooth'})"
-                class="hidden tablet-down:flex fixed bottom-24 right-6 w-12 h-12 bg-white dark:bg-base-900 border border-neutral-200 dark:border-neutral-800 rounded-full items-center justify-center text-content-primary shadow-lg z-40 hover:scale-110 transition">
+                class="hidden tablet:flex fixed bottom-24 right-6 w-12 h-12 bg-white dark:bg-base-900 border border-neutral-200 dark:border-neutral-800 rounded-full items-center justify-center text-content-primary shadow-lg z-40 hover:scale-110 transition">
                 <iconify-icon icon="solar:arrow-up-linear" class="text-xl"></iconify-icon>
             </button>
 

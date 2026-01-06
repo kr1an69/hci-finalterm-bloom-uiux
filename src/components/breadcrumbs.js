@@ -36,9 +36,8 @@ export function breadcrumbs() {
     // Nếu không tìm thấy parent config thì fallback về logic thường
     if (parentPage) {
       return `
-            <div class="z-10 bg-slate-50/90 backdrop-blur-sm px-6 py-4  border-b border-neutral-200 dark:border-neutral-800 dark:bg-base-900/90 transition-colors">
-              <div class="flex items-center gap-2 text-sm text-content-secondary">
-                
+            <div class="z-10 bg-slate-50 px-8 tablet:px-6 mobile:px-4 py-4 border-b border-neutral-200 dark:border-neutral-800 dark:bg-base-900 transition-colors">
+              <div class="flex items-center gap-2 text-sm text-content-secondary"
                <!-- Parent Link -->
                <a href="${currentPage.parent}.html" class="flex items-center gap-2 hover:text-brand-primary transition-colors">
                   <iconify-icon icon="${parentPage.icon}" class="text-xl text-brand-primary"></iconify-icon>
@@ -61,7 +60,7 @@ export function breadcrumbs() {
 
   // Nếu là trang Top-level khác Home: [Icon] / Tên trang
   return `
-    <div class="z-10 bg-slate-50/90 backdrop-blur-sm px-8 py-4  border-b border-neutral-200 dark:border-neutral-800 dark:bg-base-900/90 transition-colors">
+    <div class="z-10 bg-slate-50 px-8 py-4 tablet:px-6 mobile:px-4 border-b border-neutral-200 dark:border-neutral-800 dark:bg-base-900 transition-colors">
       <div class="flex items-center gap-2 text-sm text-content-secondary">
         
        <!-- Page Icon -->

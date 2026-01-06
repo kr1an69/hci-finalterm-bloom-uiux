@@ -1,10 +1,10 @@
 export function createFooter() {
    const isAtLoginPage = window.location.pathname.includes("login.html");
    const isAtLanding = window.location.pathname.includes("index.html");
-   const stringForMx = (isAtLoginPage || isAtLanding) ? "-mx-0" : "-mx-8 tablet-down:-mx-6 mobile:-mx-4";
+   const stringForMx = (isAtLoginPage || isAtLanding) ? "-mx-0" : "-mx-8 tablet:-mx-6 mobile:-mx-4";
 
    const footerHTML = `
-  <footer class="bg-card border-t pt-16 pb-8 px-12 tablet-down:px-8 relative overflow-hidden ${stringForMx} -mb-8">
+  <footer class="bg-card border-t pt-16 pb-8 px-8 tablet:px-6 mobile:px-4 relative overflow-hidden ${stringForMx} -mb-8">
     
     <!-- Decor Background Elements (Subtle/Chill) -->
     <div class="absolute top-0 right-0 p-10 opacity-10 pointer-events-none">
@@ -16,10 +16,10 @@ export function createFooter() {
 
     <div class="max-w-7xl mx-auto relative z-10">
       <!-- Changed mobile grid to 12 cols to allow side-by-side links (col-span-6) -->
-      <div class="grid grid-cols-12 gap-10 mb-16">
+      <div class="grid grid-cols-12 gap-10 tablet:gap-6 mobile:gap-4 mb-16">
         
         <!-- Brand / About Column -->
-        <div class="col-span-4 tablet-down:col-span-12 space-y-6">
+        <div class="col-span-4 tablet:col-span-12 space-y-6">
           <div class="flex items-center gap-2 mb-2">
             <span class="text-2xl font-bold tracking-tight text-content-primary">Bloom</span>
           </div>
@@ -47,7 +47,7 @@ export function createFooter() {
 
         <!-- Links Columns -->
         <!-- Desktop: start at 7 (creates gap), span 3. Mobile: span 6 (side-by-side) -->
-        <div class="col-span-3 col-start-7 tablet-down:col-span-6 tablet-down:col-start-auto">
+        <div class="col-span-3 col-start-7 tablet:col-span-6 tablet:col-start-auto tablet:w-full mobile:w-full">
           <h4 class="font-bold text-content-primary mb-6" data-i18n="footer.explore">Khám Phá</h4>
           <ul class="space-y-4 text-sm text-content-secondary">
              <li class="hover:text-brand-primary transition-colors cursor-pointer w-fit" data-i18n="footer.newCourses">Khóa học Mới</li>
@@ -57,7 +57,7 @@ export function createFooter() {
           </ul>
         </div>
 
-        <div class="col-span-3 tablet-down:col-span-6">
+        <div class="col-span-3 tablet:col-span-6 tablet:w-full mobile:w-full">
           <h4 class="font-bold text-content-primary mb-6" data-i18n="footer.resources">Tài Nguyên</h4>
           <ul class="space-y-4 text-sm text-content-secondary">
              <li class="hover:text-brand-primary transition-colors cursor-pointer w-fit" data-i18n="footer.freeDocs">Tài liệu miễn phí</li>
@@ -70,8 +70,8 @@ export function createFooter() {
       </div>
 
       <!-- Bottom Bar -->
-      <div class="border-t pt-8 flex flex-row tablet-down:flex-col items-center justify-between gap-4">
-         <p class="text-sm text-content-secondary text-left tablet-down:text-center" data-i18n="footer.copyright">
+      <div class="border-t pt-8 flex flex-row tablet:flex-col items-center justify-between gap-4">
+         <p class="text-sm text-content-secondary text-left tablet:text-center" data-i18n="footer.copyright">
             © 2025 Bloom E-Learning. Designed properly for HCI.
          </p>
          <div class="flex gap-6 text-sm text-content-secondary font-medium">

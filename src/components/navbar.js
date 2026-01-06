@@ -13,28 +13,27 @@ export function navbar() {
   const t = (key, defaultText) =>
     translations[currentLang]?.[key] || defaultText;
 
-  // Logic hiển thị Label ngôn ngữ
   const langLabel = currentLang === "en" ? "English" : "Tiếng Việt";
 
   return `
-    <header class="fixed top-0 left-0 w-full h-20 ${stringBgColor} border-b border-DEFAULT z-50 flex items-center px-8 tablet-down:px-6 mobile-down:px-4 transition-colors duration-300">
+    <header class="fixed top-0 left-0 w-full h-20 ${stringBgColor} border-b border-DEFAULT z-50 flex items-center px-8 tablet:px-6 mobile:px-4 transition-colors duration-300">
       
       <!-- 1. LEFT: BURGER (Mobile) & LOGO (Desktop) & EXPLORE (Standard) -->
-      <div class="flex items-center gap-10 tablet-down:gap-3 shrink-0">
+      <div class="flex items-center gap-10 tablet:gap-3 mobile:gap-2 shrink-0">
          
          <!-- Burger Menu (Mobile Only) -->
-         <button id="btn-sidebar-toggle" class="${stringHidden} hidden tablet-down:flex items-center justify-center w-10 h-10 rounded-xl hover:bg-base-100 dark:hover:bg-base-800 transition-colors text-content-primary">
-            <iconify-icon icon="solar:hamburger-menu-linear" class="text-4xl"></iconify-icon>
+         <button id="btn-sidebar-toggle" class="${stringHidden} hidden tablet:flex items-center justify-center rounded-xl hover:bg-base-100 dark:hover:bg-base-800 transition-colors text-content-primary">
+            <iconify-icon icon="solar:hamburger-menu-linear" class="text-icon-md"></iconify-icon>
          </button>
 
          <!-- LOGO AREA -->
          <!-- Desktop: Static. Mobile: Absolute Center -->
          <a href="${stringLinkBloom}" class="flex items-center gap-2 cursor-pointer z-10">
-             <span class="font-display font-bold text-h3 tracking-wide text-content-primary">BLOOM</span>
+             <span class="font-display font-bold text-h3 mobile:text-h4 tracking-wide text-content-primary">BLOOM</span>
          </a>
 
          <!-- EXPLORE LINK (Desktop Only) -->
-         <a href="explore.html" class="${stringHidden} flex tablet-down:hidden items-center gap-2 text-content-secondary hover:text-brand transition-colors cursor-pointer group">
+         <a href="explore.html" class="${stringHidden} flex tablet:hidden items-center gap-2 text-content-secondary hover:text-brand transition-colors cursor-pointer group">
             <iconify-icon icon="solar:compass-outline" class="text-icon-md group-hover:text-brand"></iconify-icon>
             <span class="font-sans font-medium text-body-m group-hover:text-brand" data-i18n="nav.explore">
               ${t("nav.explore", "Explore")}
@@ -43,7 +42,7 @@ export function navbar() {
       </div>
 
       <!-- 2. CENTER: SEARCH BAR (Desktop Only) -->
-      <div class="flex-1 flex items-center justify-center px-4 gap-4 tablet-down:hidden ${stringHidden}">
+      <div class="flex-1 flex items-center justify-center px-4 gap-4 tablet:hidden ${stringHidden}">
         <div class="w-full max-w-[480px] h-12 dark:bg-base-900 dark:border-base-700 bg-base-50 border border-base-200 rounded-full flex items-center px-4 gap-3 transition-all focus-within:border-brand focus-within:ring-2 focus-within:ring-brand-surface">
           <iconify-icon icon="solar:magnifer-linear" class="text-icon-md text-content-secondary"></iconify-icon>
           <input
@@ -61,15 +60,15 @@ export function navbar() {
       </div>  
 
       <!-- 3. RIGHT ACTIONS -->
-      <div class="flex items-center gap-5 tablet-down:gap-3 ml-auto shrink-0 z-20">
+      <div class="flex items-center gap-5 tablet:gap-3 ml-auto shrink-0 z-20">
         
         ${isLoggedIn
       ? `
-          <!-- KHI ĐÃ ĐĂNG NHẬP -->
-          <div class="flex items-center gap-3 tablet-down:gap-2 text-content-secondary">
+          <!-- LOGGED IN -->
+          <div class="flex items-center gap-3 tablet:gap-2 text-content-secondary">
              
              <!-- Desktop Tools: Streak, Cart, Bell, Theme (Hidden on Mobile) -->
-             <div class="flex items-center gap-2 tablet-down:hidden">
+             <div class="flex items-center gap-2 tablet:hidden">
                 <!-- Streak -->
                 <div class="flex items-center h-12 gap-1.5 px-2 rounded-lg hover:bg-base-100 dark:hover:bg-base-700 transition-colors cursor-pointer">
                   <span class="text-icon-sm">🔥</span>
@@ -106,7 +105,7 @@ export function navbar() {
                 <!-- Arrow (Desktop Only) -->
                 <iconify-icon
                   icon="solar:alt-arrow-down-linear"
-                  class="text-icon-sm text-content-secondary transition-transform duration-200 tablet-down:hidden"
+                  class="text-icon-sm text-content-secondary transition-transform duration-200 tablet:hidden"
                 ></iconify-icon>
               </button>
 
@@ -138,7 +137,7 @@ export function navbar() {
                   </a>
                   
                   <!-- LANGUAGE BUTTON (Desktop Only - Hidden Mobile) -->
-                  <button id="btn-open-lang" class="w-full flex items-center justify-between px-4 py-3 text-content-secondary hover:bg-base-50 dark:hover:bg-base-700 hover:text-brand-primary transition-colors group tablet-down:hidden">
+                  <button id="btn-open-lang" class="w-full flex items-center justify-between px-4 py-3 text-content-secondary hover:bg-base-50 dark:hover:bg-base-700 hover:text-brand-primary transition-colors group tablet:hidden">
                       <div class="flex items-center gap-3">
                          <iconify-icon icon="solar:global-linear" class="text-icon-md group-hover:rotate-12 transition-transform"></iconify-icon>
                          <span data-i18n="dropdown.language" class="font-sans font-medium text-body-m">
@@ -170,10 +169,10 @@ export function navbar() {
           </div>
           `
       : `
-          <!-- KHI CHƯA ĐĂNG NHẬP -->
-          <div class="flex items-center gap-4 tablet-down:gap-3">
+          <!-- NOT LOGGED IN -->
+          <div class="flex items-center gap-4 tablet:gap-3">
                <!-- Desktop Tools: Theme & Lang (Hidden Mobile) -->
-               <div class="flex items-center gap-2 tablet-down:hidden">
+               <div class="flex items-center gap-2 tablet:hidden">
                   <button id="theme-toggle-btn" class="w-10 h-10 rounded-lg flex items-center justify-center hover:bg-base-100 dark:hover:bg-base-700 transition-colors">
                      <iconify-icon icon="solar:moon-bold" class="text-icon-md text-content-primary dark:hidden transition-transform hover:rotate-12"></iconify-icon>
                      <iconify-icon icon="solar:sun-2-bold" class="text-icon-md text-warning hidden dark:block transition-transform hover:rotate-90"></iconify-icon>
@@ -187,7 +186,7 @@ export function navbar() {
               <a href="${stringLogin}" class="font-sans font-semibold text-body-m mobile:text-body-s mobile:font-bold text-content-primary hover:text-brand transition-colors whitespace-nowrap" data-i18n="auth.login">
                 Log In
               </a>
-              <a href="${stringLogin}" class="bg-brand-primary text-white font-sans font-bold text-body-m mobile:text-body-s px-5 py-2.5 tablet-down:px-4 tablet-down:py-2 mobile:px-3 mobile:py-1.5 rounded-lg hover:opacity-90 transition-opacity shadow-sm shadow-brand-primary/20 whitespace-nowrap" data-i18n="auth.getStarted">
+              <a href="${stringLogin}" class="bg-brand-primary text-white font-sans font-bold text-body-m mobile:text-body-s px-5 py-2.5 tablet:px-4 tablet:py-2 mobile:px-3 mobile:py-1.5 rounded-lg hover:opacity-90 transition-opacity shadow-sm shadow-brand-primary/20 whitespace-nowrap" data-i18n="auth.getStarted">
                 Get Started
               </a>
           </div>

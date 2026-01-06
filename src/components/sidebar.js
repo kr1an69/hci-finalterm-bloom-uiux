@@ -2,7 +2,7 @@ import { translations } from "../langs/lang-db.js";
 
 export function sidebar() {
   const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-  const stringBorderLoggedIn = isLoggedIn ? "border-t border-DEFAULT" : "";
+  const stringBorderLoggedIn = isLoggedIn ? "border-t border-DEFAULT mt-2 pt-4" : "";
   const isAtLanding = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
   const stringHidden = isAtLanding ? "hidden" : "";
 
@@ -14,16 +14,16 @@ export function sidebar() {
   const isCollapsed = localStorage.getItem("sidebar_collapsed") === "true";
 
   // 1. CẤU HÌNH CLASS GIAO DIỆN
-  // SỬA: Thêm prefix 'tablet-down:...' để FORCE hiển thị đầy đủ trên mobile
+  // SỬA: Thêm prefix 'tablet:...' để FORCE hiển thị đầy đủ trên mobile
   // bất kể Desktop đang collapse hay không.
 
   const widthClass = isCollapsed ? "w-20" : "w-64";
-  // (Container đã có tablet-down:w-72 đè lên w-20 rồi nên ok)
+  // (Container đã có tablet:w-72 đè lên w-20 rồi nên ok)
 
-  const hideTextClass = isCollapsed ? "hidden tablet-down:block" : "block";
-  const justifyClass = isCollapsed ? "justify-center tablet-down:justify-start" : "justify-start";
-  const footerPaddingClass = isCollapsed ? "px-2 tablet-down:px-4" : "px-4";
-  const btnWidthClass = isCollapsed ? "w-12 tablet-down:w-full" : "w-full";
+  const hideTextClass = isCollapsed ? "hidden tablet:block" : "block";
+  const justifyClass = isCollapsed ? "justify-center tablet:justify-start" : "justify-start";
+  const footerPaddingClass = isCollapsed ? "px-2 tablet:px-4" : "px-4";
+  const btnWidthClass = isCollapsed ? "w-12 tablet:w-full" : "w-full";
 
   const rotateIconClass = isCollapsed ? "rotate-180" : "";
   const toggleIcon = "solar:alt-arrow-left-linear";
@@ -63,25 +63,25 @@ export function sidebar() {
   ];
 
   const currentPath = window.location.pathname.split("/").pop() || "home.html";
-  const containerVisibility = isLoggedIn ? "flex" : "hidden tablet-down:flex";
+  const containerVisibility = isLoggedIn ? "flex" : "hidden tablet:flex";
 
   return `
     <!-- BACKDROP (Mobile Only) -->
-    <div id="sidebar-backdrop" class="fixed inset-0 bg-black/50 z-40 hidden tablet-down:block opacity-0 pointer-events-none transition-opacity duration-300"></div>
+    <div id="sidebar-backdrop" class="fixed inset-0 bg-black/50 z-40 hidden tablet:block opacity-0 pointer-events-none transition-opacity duration-300"></div>
 
     <!-- SIDEBAR WRAPPER -->
     <aside id="sidebar-wrapper" class="${containerVisibility} flex-col h-full bg-card border-r border-DEFAULT transition-all duration-300 ease-in-out relative group pb-4 ${widthClass}
-        tablet-down:fixed tablet-down:inset-y-0 tablet-down:left-0 tablet-down:z-50 tablet-down:w-72 tablet-down:-translate-x-full tablet-down:shadow-2xl">
+        tablet:fixed tablet:inset-y-0 tablet:left-0 tablet:z-50 tablet:w-72 tablet:-translate-x-full tablet:shadow-2xl">
       
       <!-- TOGGLE BTN (Desktop Only) -->
       ${isLoggedIn ? `
-      <button id="sidebar-toggle" class="absolute -right-3 top-8 bg-card border border-DEFAULT text-content-primary p-1 rounded-full shadow-sm hover:text-brand-primary transition-colors z-20 tablet-down:hidden flex items-center justify-center w-6 h-6">
+      <button id="sidebar-toggle" class="absolute -right-3 top-8 bg-card border border-DEFAULT text-content-primary p-1 rounded-full shadow-sm hover:text-brand-primary transition-colors z-20 tablet:hidden flex items-center justify-center w-6 h-6">
         <iconify-icon icon="${toggleIcon}" class="text-h6 font-bold transition-transform duration-300 ${rotateIconClass}"></iconify-icon>
       </button>
       ` : ''}
 
-      <!-- HEADER MOBILE ONLY (Text ONLY, NO Icon) -->
-      <div class="h-20 flex items-center justify-between px-6 border-b border-DEFAULT hidden tablet-down:flex shrink-0">
+      <!-- HEADER MOBILE ONLY -->
+      <div class="h-20 flex items-center justify-between px-6 border-b border-DEFAULT hidden tablet:flex shrink-0">
           <div class="flex items-center gap-3">
              <span class="font-display font-bold text-h3 tracking-tight text-content-primary">BLOOM</span>
           </div>
@@ -101,7 +101,7 @@ export function sidebar() {
       : "text-content-secondary hover:bg-base-100 dark:hover:bg-base-700 hover:text-brand";
 
     return `
-              <a href="${item.link}" class="relative h-12 flex items-center ${justifyClass} px-5 transition-all duration-200 group/item ${activeClass}">
+              <a href="${item.link}" class="relative h-14 flex items-center ${justifyClass} px-5 transition-all duration-200 group/item ${activeClass}">
                 <iconify-icon icon="${item.icon}" class="text-icon-md shrink-0 transition-transform duration-300 group-hover/item:scale-110"></iconify-icon>
                 <span data-i18n="${item.key}" class="sidebar-text ml-3 whitespace-nowrap overflow-hidden transition-opacity duration-200 ${hideTextClass}">
                   ${t(item.key, item.defaultText)}
@@ -111,8 +111,14 @@ export function sidebar() {
   }).join("") : ''}
 
         <!-- MOBILE TOOLS -->
-        <div class="mt-2 pt-4 ${stringBorderLoggedIn} tablet-down:block hidden">
-             <p class="text-h6 px-5 mb-2 font-bold text-content-primary uppercase tracking-wider">Tools</p>
+        <div class="${stringBorderLoggedIn} tablet:block hidden">
+             
+             <!-- Mobile Explore -->
+             <a href="explore.html" class="${stringHidden} w-full h-12 flex items-center px-5 text-content-secondary hover:text-brand transition-colors text-left">
+                  <iconify-icon icon="solar:compass-outline" class="text-icon-md shrink-0"></iconify-icon>
+                  <span class="ml-3 font-sans text-body-m" data-i18n="nav.explore">${t("nav.explore", "Explore")}</span>
+             </a>
+
              <!-- Mobile Search -->
              <button id="btn-mobile-search" class="${stringHidden} w-full h-12 flex items-center px-5 text-content-secondary hover:text-brand transition-colors text-left">
                   <iconify-icon icon="solar:magnifer-linear" class="text-icon-md shrink-0"></iconify-icon>
@@ -131,7 +137,7 @@ export function sidebar() {
              </button>
              <!-- Mobile Ask Bloom -->
              <div class="px-5 mt-4">
-                <button id="btn-ask-bloom-mobile" class="${stringHidden} w-full flex justify-center items-center gap-2 bg-brand-harmony text-white font-sans font-semibold text-body-m py-3 rounded-full hover:opacity-90 transition-opacity shadow-sm whitespace-nowrap shrink-0">
+                <button id="btn-ask-bloom-mobile" class="${stringHidden} w-full flex justify-center items-center gap-2 bg-brand-harmony text-white font-sans font-semibold text-body-m py-2 rounded-full hover:opacity-90 transition-opacity shadow-sm whitespace-nowrap shrink-0">
                       <iconify-icon icon="solar:stars-minimalistic-bold" class="text-icon-md"></iconify-icon>
                       <span class="text-h6" data-i18n="nav.askBloom">${t("nav.askBloom", "Ask Bloom")}</span>
                 </button>
@@ -234,10 +240,10 @@ export function initSidebarLogic() {
       texts.forEach(span => {
         if (newState) {
           span.classList.remove("block");
-          // Chú ý: Giữ tablet-down:block để mobile luôn hiện
-          span.classList.add("hidden", "tablet-down:block");
+          // Chú ý: Giữ tablet:block để mobile luôn hiện
+          span.classList.add("hidden", "tablet:block");
         } else {
-          span.classList.remove("hidden", "tablet-down:block");
+          span.classList.remove("hidden", "tablet:block");
           span.classList.add("block");
         }
       });
@@ -246,23 +252,23 @@ export function initSidebarLogic() {
       items.forEach(item => {
         if (newState) {
           item.classList.remove("justify-start");
-          // Giữ tablet-down:justify-start cho mobile
-          item.classList.add("justify-center", "tablet-down:justify-start");
+          // Giữ tablet:justify-start cho mobile
+          item.classList.add("justify-center", "tablet:justify-start");
 
           // Xử lý nút footer bị thu nhỏ
           if (item.classList.contains("footer-btn")) {
             item.classList.remove("w-full");
-            item.classList.add("w-12", "tablet-down:w-full");
+            item.classList.add("w-12", "tablet:w-full");
             item.classList.remove("px-4");
-            item.classList.add("px-2", "tablet-down:px-4");
+            item.classList.add("px-2", "tablet:px-4");
           }
         } else {
-          item.classList.remove("justify-center", "tablet-down:justify-start");
+          item.classList.remove("justify-center", "tablet:justify-start");
           item.classList.add("justify-start");
           if (item.classList.contains("footer-btn")) {
-            item.classList.remove("w-12", "tablet-down:w-full");
+            item.classList.remove("w-12", "tablet:w-full");
             item.classList.add("w-full");
-            item.classList.remove("px-2", "tablet-down:px-4");
+            item.classList.remove("px-2", "tablet:px-4");
             item.classList.add("px-4");
           }
         }
@@ -275,17 +281,17 @@ export function initSidebarLogic() {
   const mobileToggleBtn = document.getElementById("btn-sidebar-toggle");
   const closeBtn = document.getElementById("btn-close-sidebar");
 
-  // FIX: Dùng đúng class 'tablet-down:-translate-x-full' để remove/add
+  // FIX: Dùng đúng class 'tablet:-translate-x-full' để remove/add
   function openSidebar() {
     if (!sidebarContainer || !backdrop) return;
-    sidebarContainer.classList.remove("tablet-down:-translate-x-full");
+    sidebarContainer.classList.remove("tablet:-translate-x-full");
     backdrop.classList.remove("hidden", "opacity-0", "pointer-events-none");
     backdrop.classList.add("opacity-100", "pointer-events-auto");
   }
 
   function closeSidebar() {
     if (!sidebarContainer || !backdrop) return;
-    sidebarContainer.classList.add("tablet-down:-translate-x-full");
+    sidebarContainer.classList.add("tablet:-translate-x-full");
     backdrop.classList.remove("opacity-100", "pointer-events-auto");
     backdrop.classList.add("opacity-0", "pointer-events-none");
     setTimeout(() => {

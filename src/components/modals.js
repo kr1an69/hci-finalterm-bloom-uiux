@@ -43,7 +43,7 @@ const askBloomModalHTML = (t) => `
 const reBloomModalHTML = (t) => `
   <div id="re-bloom-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-base-900/60 backdrop-blur-sm transition-opacity opacity-0">
     <!-- Modal Container -->
-    <div class="bg-page w-full max-w-lg tablet-down:m-4 rounded-3xl shadow-2xl border border-DEFAULT transform scale-95 transition-transform duration-300 relative overflow-hidden flex flex-col">
+    <div class="bg-page w-full max-w-lg tablet:m-4 rounded-3xl shadow-2xl border border-DEFAULT transform scale-95 transition-transform duration-300 relative overflow-hidden flex flex-col">
       
       <!-- Header với ảnh nền hoặc Gradient -->
       <div class="h-48 w-full bg-secondary-400 dark:bg-primary-700 relative flex flex-col justify-end p-8 overflow-hidden">
