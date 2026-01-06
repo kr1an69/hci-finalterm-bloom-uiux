@@ -141,12 +141,16 @@ export function initModals() {
   const btnAskReal = document.getElementById("btn-ask-bloom");
   const btnAskMobile = document.getElementById("btn-ask-bloom-mobile");
 
+  // Determine correct login path based on current location
+  const isAtLanding = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
+  const stringLogin = isAtLanding ? "src/pages/login.html" : "login.html";
+
   if (btnAskReal) {
     btnAskReal.onclick = () => {
       if (isLoggedIn) {
         window.openModal("ask-bloom-modal");
       } else {
-        window.location.href = "login.html";
+        window.location.href = stringLogin;
       }
     };
   }
@@ -156,7 +160,7 @@ export function initModals() {
       if (isLoggedIn) {
         window.openModal("ask-bloom-modal");
       } else {
-        window.location.href = "login.html";
+        window.location.href = stringLogin;
       }
     };
   }

@@ -3,7 +3,7 @@ import { translations } from "../langs/lang-db.js";
 export function navbar() {
   const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
   const currentLang = localStorage.getItem("lang") || "en";
-  const isAtLanding = window.location.pathname.includes("index.html");
+  const isAtLanding = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
   const stringIndex = isAtLanding ? "" : "../../index.html";
   const stringLinkBloom = isLoggedIn ? "home.html" : stringIndex;
   const stringLogin = isAtLanding ? "src/pages/login.html" : "login.html";

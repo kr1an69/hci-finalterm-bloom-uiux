@@ -3,7 +3,7 @@ import { translations } from "../langs/lang-db.js";
 export function sidebar() {
   const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
   const stringBorderLoggedIn = isLoggedIn ? "border-t border-DEFAULT" : "";
-  const isAtLanding = window.location.pathname.includes("index.html");
+  const isAtLanding = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
   const stringHidden = isAtLanding ? "hidden" : "";
 
   const currentLang = localStorage.getItem("lang") || "en";
