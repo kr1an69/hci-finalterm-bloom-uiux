@@ -101,7 +101,7 @@ export function sidebar() {
       : "text-content-secondary hover:bg-base-100 dark:hover:bg-base-700 hover:text-brand";
 
     return `
-              <a href="${item.link}" class="relative h-14 flex items-center ${justifyClass} px-5 transition-all duration-200 group/item ${activeClass}">
+              <a href="${item.link}" class="relative h-12 flex items-center ${justifyClass} px-5 transition-all duration-200 shrink-0 group/item ${activeClass}">
                 <iconify-icon icon="${item.icon}" class="text-icon-md shrink-0 transition-transform duration-300 group-hover/item:scale-110"></iconify-icon>
                 <span data-i18n="${item.key}" class="text-body-m ml-3 whitespace-nowrap overflow-hidden transition-opacity duration-200 ${hideTextClass}">
                   ${t(item.key, item.defaultText)}
