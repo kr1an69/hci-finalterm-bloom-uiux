@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* --- GIỮ NGUYÊN CÁC BIẾN CŨ CỦA BRO (Page, Card...) --- */
+    --bg-page: #f8fafc;
+    --bg-card: #ffffff;
+
+    /* --- 1. THÊM BỘ BIẾN BRAND (Light Mode) --- */
+    /* Đây là màu gốc bro muốn dùng */
+    --brand-primary: #2563eb;
+    /* Primary-600 */
+    --brand-secondary: #9333ea;
+    /* Secondary-600 */
+    --brand-accent: #ea580c;
+    /* Orange-600 */
+    --brand-surface: #bfdbfe;
+    /* Primary-200 (Dùng làm nền nhẹ) */
+
+    /* Các biến Semantic cũ (Map lại cho gọn nếu muốn giữ) */
+    --text-primary: #0f172b;
+    --text-secondary: #475569;
+    --text-disabled: #94a3b8;
+    --text-quote: #7e22ce;
+
+    /* Semantic Colors */
+    --color-success: #16a34a;
+    --color-warning: #f2af24;
+    --color-error: #dc2626;
+    --color-info: #2563eb;
+
+    /* Border Default */
+    --border-default: #e2e8f0;
+  }
+
+  .dark {
+    /* --- GIỮ NGUYÊN CÁC BIẾN DARK CŨ --- */
+    --bg-page: #0f172b;
+    --bg-card: #1e293b;
+
+    /* --- 2. THÊM BỘ BIẾN BRAND (Dark Mode - Màu sáng hơn/Tối hơn tùy ngữ cảnh) --- */
+    /* Pri đổi thành tím */
+    --brand-primary: #c084fc;
+    /* Secondary-400  (Sáng hơn để nổi trên nền đen) */
+    --brand-secondary: #3b82f6;
+    /*  Primary-500*/
+    --brand-accent: #f97316;
+    /* Orange-500 */
+    --brand-surface: #1e3a8a;
+    /* Primary-900 (Nền brand tối thẫm) */
+
+    /* Các biến Semantic cũ */
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-disabled: #475569;
+    --text-quote: #d8b4fe;
+
+    /* Semantic Colors */
+    --color-success: #22c55e;
+    --color-warning: #fbbf24;
+    --color-error: #ef4444;
+    --color-info: #3b82f6;
+
+    /* Border Default */
+    --border-default: #334155;
+  }
+}
+
+/* Custom Scrollbar cho Webkit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-card);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #e2e8f0;
+  border-radius: 20px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #cbd5e1;
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-thumb {
+  background-color: #334155;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: #475569;
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.5s ease-out forwards;
+  }
+
+  .animate-bounce-slow {
+    animation: bounceSlow 2s infinite;
+  }
+
+  .bubble-triangle::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent var(--bg-card) transparent;
+  }
+
+  .dark .bubble-triangle::after {
+    border-color: transparent transparent var(--bg-card) transparent;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceSlow {
+
+  0%,
+  100% {
+    transform: translateY(-5%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}

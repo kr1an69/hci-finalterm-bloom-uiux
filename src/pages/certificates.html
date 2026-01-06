@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Courses - Bloom Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="../styles/main.css" rel="stylesheet" />
+</head>
+
+<body class="flex flex-col h-screen overflow-hidden">
+  <!-- NAVBAR -->
+  <div id="navbar-container" class="shrink-0 z-50 h-20"></div>
+
+  <div class="flex flex-1 overflow-hidden relative">
+    <!-- SIDEBAR -->
+    <div id="sidebar-container" class="h-full shrink-0"></div>
+
+    <!-- MAIN BODY -->
+    <main class="flex-1 flex flex-col bg-page relative overflow-hidden">
+      <!-- Breadcrumb -->
+      <div id="breadcrumbs-container"></div>
+
+      <!--  PAGE CONTENT-->
+      <div id="page-content" class="flex-1 overflow-y-auto p-8 tablet-down:p-6 mobile:p-4 scroll-smooth">
+        <!-- PAGE CONTENT MAIN -->
+        <div id="page-content-main" class="pb-20">
+
+          <!-- Header Section -->
+          <div class="mb-10 mt-4">
+            <h1 class="text-h2 font-bold text-content-primary mb-2" data-i18n="certificates.title">Certificates</h1>
+            <p class="text-content-secondary text-lg" data-i18n="home.subMsg">You are doing so good my friend, keep your
+              chin up!</p>
+          </div>
+
+          <!-- Stats Overview -->
+          <!-- Desktop: 3 cots / Mobile: 1 cot -->
+          <div class="grid grid-cols-3 tablet-down:grid-cols-1 gap-6 mb-12">
+            <!-- 1. Total Certs -->
+            <div
+              class="bg-card p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm flex items-center gap-4 dark:bg-base-800">
+              <div
+                class="w-12 h-12 rounded-full bg-brand-primary/10 text-brand-primary flex items-center justify-center text-2xl">
+                <iconify-icon icon="solar:diploma-verified-bold"></iconify-icon>
+              </div>
+              <div>
+                <h4 class="text-2xl font-bold text-content-primary">6</h4>
+                <p class="text-sm text-content-secondary" data-i18n="certificates.earned">Certificates</p>
+              </div>
+            </div>
+
+            <!-- 2. Skills -->
+            <div
+              class="bg-card p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm flex items-center gap-4 dark:bg-base-800">
+              <div
+                class="w-12 h-12 rounded-full bg-brand-secondary/10 text-brand-secondary flex items-center justify-center text-2xl">
+                <iconify-icon icon="solar:dumbbells-bold"></iconify-icon>
+              </div>
+              <div>
+                <h4 class="text-2xl font-bold text-content-primary">14</h4>
+                <p class="text-sm text-content-secondary" data-i18n="certificates.skills">Certified Skills</p>
+              </div>
+            </div>
+
+            <!-- 3. Completed Courses -->
+            <div
+              class="bg-card p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm flex items-center gap-4 dark:bg-base-800">
+              <div class="w-12 h-12 rounded-full bg-success/10 text-success flex items-center justify-center text-2xl">
+                <iconify-icon icon="solar:book-bookmark-bold"></iconify-icon>
+              </div>
+              <div>
+                <h4 class="text-2xl font-bold text-content-primary">12</h4>
+                <p class="text-sm text-content-secondary" data-i18n="certificates.completed">Completed</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certificates Section -->
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <h2 class="text-h4 font-bold text-content-primary" data-i18n="certificates.title">My Certificates
+              </h2>
+              <!-- Optional Filter or Sort -->
+              <div class="flex gap-2">
+                <button
+                  class="w-10 h-10 rounded-lg border border-neutral-200 dark:border-neutral-700 flex items-center justify-center text-content-secondary hover:bg-base-100 dark:hover:bg-base-800">
+                  <iconify-icon icon="solar:filter-bold"></iconify-icon>
+                </button>
+                <button
+                  class="w-10 h-10 rounded-lg border border-neutral-200 dark:border-neutral-700 flex items-center justify-center text-content-secondary hover:bg-base-100 dark:hover:bg-base-800">
+                  <iconify-icon icon="solar:sort-vertical-bold"></iconify-icon>
+                </button>
+              </div>
+            </div>
+
+            <!-- Grid -->
+            <!-- Desktop: 4 / Tablet: 2 / Mobile: 1 -->
+            <div id="certificates-grid" class="grid grid-cols-4 tablet-down:grid-cols-2 mobile:grid-cols-1 gap-6">
+              <!-- Javascript will inject cards here -->
+            </div>
+          </div>
+
+        </div>
+        <!-- END PAGE CONTENT MAIN -->
+
+
+        <!-- FOOTER CONTAINER -->
+        <div id="footer-container"></div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <script type="module">
+    import { certificateCard } from "../components/certificate-card.js";
+
+    // Mock Data (6 items)
+    const myCertificates = [
+      {
+        id: "c1",
+        title: "Python Data Fundamentals",
+        issuer: "Bloom Academy",
+        date: "Dec 20, 2024",
+        thumbnail: "../../public/images/certificate_ai_gene.png",
+        downloadLink: "#"
+      },
+      {
+        id: "c2",
+        title: "Advanced React Patterns",
+        issuer: "Fem Academy",
+        date: "Nov 15, 2025",
+        thumbnail: "../../public/images/certificate_ai_gene.png",
+        downloadLink: "#"
+      },
+      {
+        id: "c3",
+        title: "UI/UX Design Fundamentals",
+        issuer: "Google",
+        date: "Oct 02, 2025",
+        thumbnail: "../../public/images/certificate_ai_gene.png",
+        downloadLink: "#"
+      },
+      {
+        id: "c4",
+        title: "Data Science Specialization",
+        issuer: "IBM",
+        date: "Sep 10, 2025",
+        thumbnail: "../../public/images/certificate_ai_gene.png",
+        downloadLink: "#"
+      },
+      {
+        id: "c5",
+        title: "Machine Learning Ops (MLOps)",
+        issuer: "Andrew Ng",
+        date: "Aug 05, 2025",
+        thumbnail: "../../public/images/certificate_ai_gene.png",
+        downloadLink: "#"
+      },
+      {
+        id: "c6",
+        title: "Fullstack Web Development",
+        issuer: "FPT Software",
+        date: "Jul 22, 2025",
+        thumbnail: "../../public/images/certificate_ai_gene.png",
+        downloadLink: "#"
+      }
+    ];
+
+    const grid = document.getElementById('certificates-grid');
+    if (grid) {
+      grid.innerHTML = myCertificates.map(cert => certificateCard(cert)).join('');
+    }
+  </script>
+  <script type="module">
+    import { updateLanguage } from "../utils/main.js";
+
+    // Init Language
+    setTimeout(() => {
+      updateLanguage();
+    }, 0);
+
+  </script>
+</body>
+
+</html>

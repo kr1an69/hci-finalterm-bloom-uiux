@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Courses - Bloom Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="../styles/main.css" rel="stylesheet" />
+</head>
+
+<body class="flex flex-col h-screen overflow-hidden">
+  <!-- NAVBAR -->
+  <div id="navbar-container" class="shrink-0 z-50 h-20"></div>
+
+  <div class="flex flex-1 overflow-hidden relative">
+    <!-- SIDEBAR -->
+    <div id="sidebar-container" class="h-full shrink-0"></div>
+
+    <!-- MAIN BODY -->
+    <main class="flex-1 flex flex-col bg-page relative overflow-hidden">
+      <!-- Breadcrumb -->
+      <div id="breadcrumbs-container"></div>
+
+      <!--  PAGE CONTENT-->
+      <div id="page-content" class="flex-1 overflow-y-auto p-8 tablet-down:p-6 mobile:p-4 scroll-smooth">
+        <!-- PAGE CONTENT MAIN -->
+        <div id="page-content-main" class="pb-20 pt-8">
+
+          <!-- 1. GAMIFICATION HERO SECTION -->
+          <div
+            class="bg-oceanic dark:bg-deepspace rounded-3xl p-8 mb-10 text-white relative overflow-hidden shadow-2xl">
+
+            <div class="relative z-10 flex flex-row tablet-down:flex-col items-center gap-8">
+              <!-- Avatar & Level Ring -->
+              <div class="relative shrink-0">
+                <div class="w-32 h-32 tablet-down:w-24 tablet-down:h-24 rounded-full border-4 border-white/30 p-1">
+                  <img src="../../public/images/avatar.jpg" alt="User Avatar"
+                    class="w-full h-full rounded-full object-cover border-2 border-white">
+                </div>
+                <div
+                  class="absolute -bottom-2 -right-2 bg-brand-accent text-white px-3 py-1 rounded-full font-bold shadow-lg border-2 border-white text-sm">
+                  Lvl. 5
+                </div>
+              </div>
+
+              <!-- Progress & Info -->
+              <div class="flex-1 w-full text-left tablet-down:text-center">
+                <h1 class="text-h3 font-bold mb-1">Thu Hà</h1>
+                <p class="text-white/80 mb-4">Apprentice Explorer</p>
+
+                <!-- XP Bar -->
+                <div class="w-full bg-black/20 h-4 rounded-full overflow-hidden backdrop-blur-sm mb-2 relative">
+                  <div class="h-full bg-brand-accent w-[65%] shadow-[0_0_10px_rgba(234,88,12,0.5)]"></div>
+                </div>
+                <div class="flex justify-between text-xs font-medium text-white/70">
+                  <span data-i18n="achievements.xp">XP</span>
+                  <span>3,250 / 5,000</span>
+                </div>
+              </div>
+
+              <!-- Streak Counter -->
+              <div
+                class="flex flex-col items-center bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20 shrink-0 min-w-[120px]">
+                <iconify-icon icon="solar:flame-bold" class="text-4xl text-brand-accent mb-1"></iconify-icon>
+                <h2 class="text-2xl font-bold">12</h2>
+                <p class="text-xs uppercase tracking-wider font-semibold opacity-80" data-i18n="achievements.streak">
+                  Streak</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- NEW: COMPETITIONS SECTION -->
+          <div class="grid grid-cols-3 tablet-down:grid-cols-1 gap-8 mb-10">
+            <!-- Mini Competition -->
+            <div
+              class="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-3xl p-6 text-white text-center relative overflow-hidden shadow-lg group hover:scale-[1.02] transition-transform cursor-pointer">
+              <div class="absolute top-0 right-0 p-4 opacity-20">
+                <iconify-icon icon="solar:lightning-bold" class="text-8xl"></iconify-icon>
+              </div>
+              <div class="relative z-10 flex flex-col items-center gap-4">
+                <h3 class="text-xl font-bold mb-2 flex items-center justify-center gap-2">
+                  <iconify-icon icon="solar:bolt-circle-bold"></iconify-icon>
+                  <span data-i18n="achievements.miniComp">Mini Challenge</span>
+                </h3>
+                <p class="text-sm opacity-90">Daily Code Sprint: Solve 3 Algorithms</p>
+                <div
+                  class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold">
+                  <iconify-icon icon="solar:stopwatch-bold"></iconify-icon>
+                  <span data-i18n="achievements.timeLeft">Time Left</span>: 04:30:00
+                </div>
+                <button
+                  class="bg-white text-brand-primary px-6 py-2 rounded-xl font-bold hover:bg-neutral-100 transition shadow-md"
+                  data-i18n="achievements.join">Join Now</button>
+              </div>
+            </div>
+
+            <!-- Month Competition -->
+            <div
+              class="col-span-2 tablet-down:col-span-1 bg-gradient-to-r from-orange-500 to-pink-500 rounded-3xl p-6 text-white relative overflow-hidden shadow-lg flex flex-row tablet-down:flex-col items-center justify-between gap-6 group hover:scale-[1.01] transition-transform">
+              <div
+                class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10">
+              </div>
+
+              <div class="relative z-10 text-left tablet-down:text-center flex-1">
+                <div
+                  class="inline-block px-3 py-1 bg-white/20 rounded-full text-xs font-bold mb-2 uppercase tracking-wide">
+                  Jan 2026</div>
+                <h3 class="text-3xl tablet-down:text-2xl font-bold mb-2" data-i18n="achievements.monthComp">Monthly
+                  Tournament
+                </h3>
+                <p class="text-white/90 mb-4 max-w-lg">Join the "Master of Python" tournament. Top 10 learners get
+                  exclusive Golden Badge!</p>
+                <button
+                  class="bg-white text-brand-primary px-6 py-2 rounded-xl font-bold hover:bg-neutral-100 transition shadow-md"
+                  data-i18n="achievements.join">Join Now</button>
+              </div>
+
+              <div class="relative z-10 shrink-0">
+                <iconify-icon icon="solar:cup-star-bold"
+                  class="text-9xl text-white drop-shadow-md opacity-90"></iconify-icon>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="grid grid-cols-3 tablet-down:grid-cols-1 gap-8 mb-10">
+            <!-- 2. STATS & MEDALS (Left Column) -->
+            <div class="col-span-2 tablet-down:col-span-1 space-y-8">
+
+              <!-- Stats Grid -->
+              <div class="grid grid-cols-4 tablet-down:grid-cols-2 gap-4">
+                <div
+                  class="bg-card p-5 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm flex flex-col items-center justify-center text-center dark:bg-base-800">
+                  <iconify-icon icon="solar:star-circle-bold-duotone"
+                    class="text-3xl text-brand-primary mb-2"></iconify-icon>
+                  <h3 class="text-xl font-bold text-content-primary">12,450</h3>
+                  <p class="text-xs text-content-secondary uppercase font-bold tracking-wide"
+                    data-i18n="achievements.xp">Total XP</p>
+                </div>
+                <div
+                  class="bg-card p-5 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm flex flex-col items-center justify-center text-center dark:bg-base-800">
+                  <iconify-icon icon="solar:cup-star-bold-duotone" class="text-3xl text-warning mb-2"></iconify-icon>
+                  <h3 class="text-xl font-bold text-content-primary">#42</h3>
+                  <p class="text-xs text-content-secondary uppercase font-bold tracking-wide"
+                    data-i18n="achievements.leaderboard">Rank</p>
+                </div>
+                <div
+                  class="bg-card p-5 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm flex flex-col items-center justify-center text-center dark:bg-base-800">
+                  <iconify-icon icon="solar:medal-ribbon-bold-duotone"
+                    class="text-3xl text-brand-secondary mb-2"></iconify-icon>
+                  <h3 class="text-xl font-bold text-content-primary">8</h3>
+                  <p class="text-xs text-content-secondary uppercase font-bold tracking-wide"
+                    data-i18n="achievements.badges">Badges</p>
+                </div>
+                <div
+                  class="bg-card p-5 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm flex flex-col items-center justify-center text-center dark:bg-base-800">
+                  <iconify-icon icon="solar:course-up-bold-duotone" class="text-3xl text-success mb-2"></iconify-icon>
+                  <h3 class="text-xl font-bold text-content-primary">15</h3>
+                  <p class="text-xs text-content-secondary uppercase font-bold tracking-wide">Courses</p>
+                </div>
+              </div>
+
+              <!-- 3. BADGES COLLECTION -->
+              <div>
+                <div class="flex justify-between items-center mb-6">
+                  <div class="flex items-center gap-3">
+                    <iconify-icon icon="solar:shield-star-bold" class="text-2xl text-brand-primary"></iconify-icon>
+                    <h2 class="text-h4 font-bold text-content-primary" data-i18n="achievements.badges">Badges</h2>
+                  </div>
+                  <a href="#" class="text-sm font-semibold text-brand-primary hover:underline"
+                    data-i18n="home.viewAll">View All</a>
+                </div>
+
+                <!-- 
+                  Desktop: 4 cột (grid-cols-4)
+                  Tablet (cũ): 3 cột (grid-cols-3) -> nay dùng tablet-down:grid-cols-3
+                  Mobile: 2 cột (grid-cols-2) -> nay dùng mobile:grid-cols-2
+                -->
+                <div id="badges-grid" class="grid grid-cols-4 tablet-down:grid-cols-3 mobile:grid-cols-2 gap-6">
+                  <!-- JS sẽ inject vào -->
+                </div>
+              </div>
+            </div>
+
+            <!-- NEW: MEDALS & LEADERBOARD (Right Column) -->
+            <div class="space-y-8">
+
+              <!-- Medals -->
+              <div
+                class="bg-card dark:bg-base-800 border border-neutral-200 dark:border-neutral-800 rounded-3xl p-6 shadow-sm">
+                <h3 class="text-lg font-bold text-content-primary mb-4 flex items-center gap-2">
+                  <iconify-icon icon="solar:medal-star-bold-duotone" class="text-warning text-xl"></iconify-icon>
+                  <span data-i18n="achievements.medals">Medals</span>
+                </h3>
+                <div class="flex justify-around items-end gap-2">
+                  <!-- Silver -->
+                  <div class="flex flex-col items-center gap-2">
+                    <div
+                      class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center shadow-inner relative group cursor-pointer">
+                      <iconify-icon icon="solar:medal-ribbon-star-bold" class="text-gray-500 text-2xl"></iconify-icon>
+                      <div
+                        class="absolute -top-2 -right-2 w-6 h-6 bg-brand-primary text-white text-xs font-bold rounded-full flex items-center justify-center border-2 border-white dark:border-base-800">
+                        2</div>
+                    </div>
+                    <span class="text-xs font-bold text-gray-500">Silver</span>
+                  </div>
+                  <!-- Gold -->
+                  <div class="flex flex-col items-center gap-2">
+                    <div
+                      class="w-16 h-16 bg-yellow-300 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(253,224,71,0.5)] relative group cursor-pointer border-4 border-yellow-100 dark:border-yellow-900">
+                      <iconify-icon icon="solar:cup-first-bold" class="text-yellow-600 text-3xl"></iconify-icon>
+                      <div
+                        class="absolute -top-1 -right-1 w-7 h-7 bg-brand-accent text-white text-sm font-bold rounded-full flex items-center justify-center border-2 border-white dark:border-base-800">
+                        1</div>
+                    </div>
+                    <span class="text-sm font-bold text-yellow-500">Gold</span>
+                  </div>
+                  <!-- Bronze -->
+                  <div class="flex flex-col items-center gap-2">
+                    <div
+                      class="w-12 h-12 bg-orange-200 rounded-full flex items-center justify-center shadow-inner relative group cursor-pointer">
+                      <iconify-icon icon="solar:medal-ribbon-bold" class="text-orange-600 text-2xl"></iconify-icon>
+                      <div
+                        class="absolute -top-2 -right-2 w-6 h-6 bg-brand-primary text-white text-xs font-bold rounded-full flex items-center justify-center border-2 border-white dark:border-base-800">
+                        5</div>
+                    </div>
+                    <span class="text-xs font-bold text-orange-400">Bronze</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Leaderboard -->
+              <div
+                class="bg-card dark:bg-base-800 border border-neutral-200 dark:border-neutral-800 rounded-3xl p-6 shadow-sm">
+                <div class="flex items-center justify-between mb-4">
+                  <h3 class="text-lg font-bold text-content-primary flex items-center gap-2">
+                    <iconify-icon icon="solar:ranking-bold-duotone" class="text-brand-secondary text-xl"></iconify-icon>
+                    <span data-i18n="achievements.leaderboardTitle">Top Learners</span>
+                  </h3>
+                  <a href="#" class="text-xs font-bold text-brand-primary hover:underline" data-i18n="home.viewAll">View
+                    All</a>
+                </div>
+
+                <div class="space-y-4">
+                  <!-- Top 1 -->
+                  <div
+                    class="flex items-center gap-3 p-2 hover:bg-neutral-50 dark:hover:bg-base-900 rounded-xl transition cursor-pointer">
+                    <div class="font-bold text-lg text-yellow-500 w-4 text-center">1</div>
+                    <img src="../../public/images/avatar.jpg"
+                      class="w-10 h-10 rounded-full object-cover border border-neutral-200">
+                    <div class="flex-1">
+                      <h4 class="text-sm font-bold text-content-primary">Alex Chen</h4>
+                      <p class="text-xs text-content-secondary">15,200 XP</p>
+                    </div>
+                    <iconify-icon icon="solar:cup-bold" class="text-yellow-400"></iconify-icon>
+                  </div>
+                  <!-- Top 2 -->
+                  <div
+                    class="flex items-center gap-3 p-2 hover:bg-neutral-50 dark:hover:bg-base-900 rounded-xl transition cursor-pointer">
+                    <div class="font-bold text-lg text-gray-400 w-4 text-center">2</div>
+                    <img src="../../public/images/avatar.jpg"
+                      class="w-10 h-10 rounded-full object-cover border border-neutral-200 grayscale">
+                    <div class="flex-1">
+                      <h4 class="text-sm font-bold text-content-primary">Sarah J.</h4>
+                      <p class="text-xs text-content-secondary">14,850 XP</p>
+                    </div>
+                  </div>
+                  <!-- Top 3 -->
+                  <div
+                    class="flex items-center gap-3 p-2 hover:bg-neutral-50 dark:hover:bg-base-900 rounded-xl transition cursor-pointer">
+                    <div class="font-bold text-lg text-orange-400 w-4 text-center">3</div>
+                    <img src="../../public/images/avatar.jpg"
+                      class="w-10 h-10 rounded-full object-cover border border-neutral-200 grayscale">
+                    <div class="flex-1">
+                      <h4 class="text-sm font-bold text-content-primary">Mike Ross</h4>
+                      <p class="text-xs text-content-secondary">13,200 XP</p>
+                    </div>
+                  </div>
+
+                  <!-- Me -->
+                  <div
+                    class="flex items-center gap-3 p-3 bg-brand-primary/10 border border-brand-primary/20 rounded-xl mt-2 relative">
+                    <div class="absolute -left-1 top-1/2 -translate-y-1/2 w-1 h-8 bg-brand-primary rounded-r-full">
+                    </div>
+                    <div class="font-bold text-lg text-brand-primary w-4 text-center">42</div>
+                    <img src="../../public/images/avatar.jpg"
+                      class="w-10 h-10 rounded-full object-cover border-2 border-brand-primary">
+                    <div class="flex-1">
+                      <h4 class="text-sm font-bold text-content-primary">Thu Hà (Me)</h4>
+                      <p class="text-xs text-content-secondary">12,450 XP</p>
+                    </div>
+                    <iconify-icon icon="solar:star-bold" class="text-brand-primary"></iconify-icon>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- END PAGE CONTENT MAIN -->
+        <div id="footer-container"></div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <script type="module">
+    import { updateLanguage } from "../utils/main.js";
+
+    // Mock Data
+    const badges = [
+      { id: 1, name: "First Step", icon: "solar:walking-round-bold", color: "text-blue-500", bg: "bg-blue-500/10", locked: false, desc: "Completed your first lesson" },
+      { id: 2, name: "Fire Keeper", icon: "solar:flame-bold", color: "text-orange-500", bg: "bg-orange-500/10", locked: false, desc: "Reached 7 days streak" },
+      { id: 3, name: "Bookworm", icon: "solar:book-2-bold", color: "text-purple-500", bg: "bg-purple-500/10", locked: false, desc: "Spent 10 hours learning" },
+      { id: 4, name: "Sharp Shooter", icon: "solar:target-bold", color: "text-red-500", bg: "bg-red-500/10", locked: false, desc: "100% on a quiz" },
+      { id: 5, name: "Night Owl", icon: "solar:moon-bold", color: "text-indigo-500", bg: "bg-indigo-500/10", locked: true, desc: "Study after 10 PM" },
+      { id: 6, name: "Social Butterfly", icon: "solar:chat-round-dots-bold", color: "text-green-500", bg: "bg-green-500/10", locked: true, desc: "Post 5 discussions" },
+      { id: 7, name: "Mastermind", icon: "solar:brain-bold", color: "text-pink-500", bg: "bg-pink-500/10", locked: true, desc: "Complete 5 courses" },
+      { id: 8, name: "Early Bird", icon: "solar:sunrise-bold", color: "text-yellow-500", bg: "bg-yellow-500/10", locked: true, desc: "Study before 7 AM" },
+    ];
+
+    const grid = document.getElementById('badges-grid');
+    if (grid) {
+      grid.innerHTML = badges.map(badge => `
+                    <div class="group relative flex flex-col items-center justify-center p-6 rounded-2xl border ${badge.locked ? 'border-neutral-200 dark:border-neutral-800 bg-base-50 dark:bg-base-900/50' : 'border-dashed border-neutral-300 dark:border-neutral-700 bg-card dark:bg-base-800'} transition-all hover:scale-105 cursor-pointer">
+                        
+                        <!-- Icon -->
+                        <div class="w-16 h-16 rounded-full flex items-center justify-center text-3xl mb-3 ${badge.locked ? 'bg-neutral-200 dark:bg-neutral-800 text-neutral-400 grayscale' : `${badge.bg} ${badge.color}`}">
+                            <iconify-icon icon="${badge.locked ? 'solar:lock-bold' : badge.icon}"></iconify-icon>
+                        </div>
+                        
+                        <!-- Name -->
+                        <h4 class="font-bold text-sm text-center ${badge.locked ? 'text-content-secondary' : 'text-content-primary group-hover:text-brand-primary'} transition-colors">${badge.name}</h4>
+                        
+                        <!-- Tooltip (Simple) -->
+                        <div class="absolute inset-0 bg-black/80 rounded-2xl flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 backdrop-blur-sm">
+                            <p class="text-white text-xs text-center font-medium">
+                                ${badge.locked ? 'locked: ' : ''}${badge.desc}
+                            </p>
+                        </div>
+                    </div>
+                `).join('');
+    }
+
+    // Init Language
+    setTimeout(() => {
+      updateLanguage();
+    }, 0);
+
+  </script>
+</body>
+
+</html>

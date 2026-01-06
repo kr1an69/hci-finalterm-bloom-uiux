@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course Detail - Bloom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="../styles/main.css" rel="stylesheet" />
+</head>
+
+<body class="flex flex-col h-screen overflow-hidden text-content-primary">
+    <!-- NAVBAR -->
+    <div id="navbar-container" class="shrink-0 z-50 h-20"></div>
+
+    <div class="flex flex-1 overflow-hidden relative">
+        <!-- SIDEBAR -->
+        <div id="sidebar-container" class="h-full shrink-0"></div>
+
+        <!-- MAIN BODY -->
+        <main class="flex-1 flex flex-col bg-page relative overflow-y-auto scroll-smooth" id="main-scroll">
+
+            <!-- Breadcrumb-->
+            <div id="breadcrumbs-container"></div>
+            <!-- PAGE CONTENT -->
+            <!-- Mobile: Add padding-bottom (pb-24) to avoid content being hidden behind sticky bottom bar -->
+            <div id="page-content"
+                class="flex-1 overflow-y-auto px-8 tablet-down:p-6 mobile:p-4 pt-0 scroll-smooth tablet-down:pb-24">
+                <!-- PAGE CONTENT MAIN -->
+                <div id="page-content-main">
+
+                    <!-- HERO SECTION (Banner Style) -->
+                    <!-- Desktop: Blue bg, White text. Mobile: Page bg, Content text. -->
+                    <div
+                        class="-mx-8 bg-brand-primary text-white tablet-down:bg-page tablet-down:text-content-primary py-12 tablet-down:py-2 rounded-b-3xl tablet-down:rounded-none p-8 tablet-down:px-4 relative overflow-hidden shrink-0 mb-0">
+                        <div
+                            class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 tablet-down:hidden">
+                        </div>
+
+                        <div class="grid grid-cols-3 tablet-down:grid-cols-1 gap-8 relative z-10">
+                            <!-- Desktop: col-span-2 / Tablet: col-span-1 -->
+                            <div class="col-span-2 tablet-down:col-span-1 space-y-4">
+                                <!-- Breadcrumb Text Link -->
+                                <div
+                                    class="text-sm text-blue-200 tablet-down:text-content-secondary font-medium mb-2 flex items-center gap-2">
+                                    <span class="opacity-70">Development</span>
+                                    <iconify-icon icon="solar:alt-arrow-right-linear" class="text-xs"></iconify-icon>
+                                    <span class="opacity-70">Data Science</span>
+                                    <iconify-icon icon="solar:alt-arrow-right-linear" class="text-xs"></iconify-icon>
+                                    <span>Python</span>
+                                </div>
+
+                                <h1 class="text-4xl tablet-down:text-2xl font-bold leading-tight">Fundamentals Of Python
+                                    - DA
+                                </h1>
+                                <p class="text-lg text-blue-100 tablet-down:text-content-secondary max-w-2xl">Master
+                                    Python Programming from Scratch: Build
+                                    Real-World Projects and Become Job-Ready in 2026</p>
+
+                                <!-- === MOBILE VIDEO PREVIEW (Inserted Here) === -->
+                                <div
+                                    class="hidden tablet-down:block w-full aspect-video rounded-xl overflow-hidden bg-black group cursor-pointer relative my-4 shadow-lg">
+                                    <div class="absolute inset-0 bg-cover bg-center opacity-80 group-hover:opacity-60 transition"
+                                        style="background-image: url('../../public/images/example2.jpg');">
+                                    </div>
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <div
+                                            class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition">
+                                            <iconify-icon icon="solar:play-bold"
+                                                class="text-brand-primary text-2xl"></iconify-icon>
+                                        </div>
+                                    </div>
+                                    <div class="absolute bottom-3 left-0 right-0 text-center text-white font-bold text-xs"
+                                        data-i18n="courseDetail.preview">
+                                        Preview this course</div>
+                                </div>
+                                <!-- ============================================ -->
+
+                                <!-- MOBILE INCLUDES (Added at user request) -->
+                                <div class="hidden tablet-down:flex flex-wrap gap-2 mb-4">
+                                    <div
+                                        class="flex items-center gap-2 bg-base-50 dark:bg-base-900 border border-neutral-200 dark:border-neutral-800 rounded-lg px-3 py-2 text-xs text-content-secondary shadow-sm">
+                                        <iconify-icon icon="solar:videocamera-record-bold"
+                                            class="text-content-primary"></iconify-icon>
+                                        <span>24<span data-i18n="courseDetail.hoursVideo">hours video</span></span>
+                                    </div>
+                                    <div
+                                        class="flex items-center gap-2 bg-base-50 dark:bg-base-900 border border-neutral-200 dark:border-neutral-800 rounded-lg px-3 py-2 text-xs text-content-secondary shadow-sm">
+                                        <iconify-icon icon="solar:document-text-bold"
+                                            class="text-content-primary"></iconify-icon>
+                                        <span>18 <span data-i18n="courseDetail.articles">articles</span></span>
+                                    </div>
+                                    <div
+                                        class="flex items-center gap-2 bg-base-50 dark:bg-base-900 border border-neutral-200 dark:border-neutral-800 rounded-lg px-3 py-2 text-xs text-content-secondary shadow-sm">
+                                        <iconify-icon icon="solar:download-square-bold"
+                                            class="text-content-primary"></iconify-icon>
+                                        <span>12 <span data-i18n="courseDetail.resourcesShort">resources</span></span>
+                                    </div>
+                                    <div
+                                        class="flex items-center gap-2 bg-base-50 dark:bg-base-900 border border-neutral-200 dark:border-neutral-800 rounded-lg px-3 py-2 text-xs text-content-secondary shadow-sm">
+                                        <iconify-icon icon="solar:smartphone-bold"
+                                            class="text-content-primary"></iconify-icon>
+                                        <span data-i18n="courseDetail.mobile">Mobile & TV</span>
+                                    </div>
+                                    <div
+                                        class="flex items-center gap-2 bg-base-50 dark:bg-base-900 border border-neutral-200 dark:border-neutral-800 rounded-lg px-3 py-2 text-xs text-content-secondary shadow-sm">
+                                        <iconify-icon icon="solar:cup-bold" class="text-content-primary"></iconify-icon>
+                                        <span data-i18n="courseDetail.cert">Certificate</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-wrap items-center gap-4 text-sm pt-2">
+                                    <span
+                                        class="bg-warning text-yellow-900 px-3 py-1 rounded-full font-bold text-xs uppercase"
+                                        data-i18n="courseDetail.bestseller">Bestseller</span>
+                                    <div class="flex items-center gap-1 text-warning font-bold">
+                                        <span>5.0</span>
+                                        <div class="flex text-warning">
+                                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                                        </div>
+                                    </div>
+                                    <span class="text-blue-200 tablet-down:text-content-secondary">(600 <span
+                                            data-i18n="courseDetail.ratings">ratings</span>)</span>
+                                    <!-- Desktop: Inline / Mobile: Hidden -->
+                                    <span
+                                        class="inline mobile:hidden text-blue-200 tablet-down:text-content-secondary">•</span>
+                                    <span class="text-white tablet-down:text-content-primary">12,500 <span
+                                            data-i18n="courseDetail.students">students</span></span>
+                                </div>
+
+                                <!-- Desktop: Flex-row / Mobile: Flex-col -->
+                                <div
+                                    class="flex flex-row mobile:flex-col gap-4 text-sm text-blue-100 tablet-down:text-content-secondary pt-4">
+                                    <div class="flex items-center gap-2">
+                                        <iconify-icon icon="solar:user-bold"></iconify-icon>
+                                        <span><span data-i18n="courseDetail.created">Created by</span> <a href="#"
+                                                class="text-white tablet-down:text-brand-primary underline hover:text-warning">Angela
+                                                Yu</a></span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <iconify-icon icon="solar:calendar-bold"></iconify-icon>
+                                        <span><span data-i18n="courseDetail.updated">Last updated</span> 11/2025</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <iconify-icon icon="solar:globe-bold"></iconify-icon>
+                                        <span data-i18n="courseDetail.lang">English</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CONTENT LAYOUT -->
+                    <div>
+                        <!-- Desktop: 3 cols / Tablet: 1 col -->
+                        <div class="grid grid-cols-3 tablet-down:grid-cols-1 gap-8 relative">
+
+                            <!-- LEFT COLUMN: MAIN CONTENT -->
+                            <div class="col-span-2 tablet-down:col-span-1 space-y-10">
+                                <!-- Tabs Navigation (Hidden on Mobile) -->
+                                <div
+                                    class="sticky top-0 z-30 bg-page border-b border-neutral-200 dark:border-neutral-800 w-full py-2 px-4 tablet-down:hidden">
+                                    <div
+                                        class="flex items-center gap-6 overflow-x-auto no-scrollbar text-sm font-semibold text-content-secondary">
+                                        <a href="#what-learn"
+                                            class="whitespace-nowrap hover:text-brand-primary active:text-brand-primary transition-colors py-2 border-b-2 border-transparent hover:border-brand-primary"
+                                            data-i18n="courseDetail.whatLearn">What you'll learn</a>
+                                        <a href="#curriculum"
+                                            class="whitespace-nowrap hover:text-brand-primary transition-colors py-2 border-b-2 border-transparent hover:border-brand-primary"
+                                            data-i18n="home.lessons">Lessons</a>
+                                        <a href="#about"
+                                            class="whitespace-nowrap hover:text-brand-primary transition-colors py-2 border-b-2 border-transparent hover:border-brand-primary"
+                                            data-i18n="courseDetail.desc">About</a>
+                                        <a href="#mentors"
+                                            class="whitespace-nowrap hover:text-brand-primary transition-colors py-2 border-b-2 border-transparent hover:border-brand-primary"
+                                            data-i18n="courseDetail.mentors">Mentors</a>
+                                        <a href="#reviews"
+                                            class="whitespace-nowrap hover:text-brand-primary transition-colors py-2 border-b-2 border-transparent hover:border-brand-primary"
+                                            data-i18n="courseDetail.reviews">Reviews</a>
+                                    </div>
+                                </div>
+
+                                <!-- 1. WHAT YOU'LL LEARN -->
+                                <div id="what-learn"
+                                    class="scroll-mt-24 border border-neutral-200 dark:border-neutral-800 p-6 rounded-2xl bg-card dark:bg-base-800">
+                                    <h2 class="text-xl font-bold mb-4" data-i18n="courseDetail.whatLearn">What you'll
+                                        learn</h2>
+                                    <div class="grid grid-cols-2 mobile:grid-cols-1 gap-4">
+                                        <div class="flex gap-3 text-sm text-content-secondary">
+                                            <iconify-icon icon="solar:check-circle-bold"
+                                                class="text-brand-primary shrink-0 text-lg"></iconify-icon>
+                                            <span>Master Python from basic to advanced concepts</span>
+                                        </div>
+                                        <div class="flex gap-3 text-sm text-content-secondary">
+                                            <iconify-icon icon="solar:check-circle-bold"
+                                                class="text-brand-primary shrink-0 text-lg"></iconify-icon>
+                                            <span>Build 5 real-world projects for portfolio</span>
+                                        </div>
+                                        <div class="flex gap-3 text-sm text-content-secondary">
+                                            <iconify-icon icon="solar:check-circle-bold"
+                                                class="text-brand-primary shrink-0 text-lg"></iconify-icon>
+                                            <span>Understand Data Analysis with Pandas & NumPy</span>
+                                        </div>
+                                        <div class="flex gap-3 text-sm text-content-secondary">
+                                            <iconify-icon icon="solar:check-circle-bold"
+                                                class="text-brand-primary shrink-0 text-lg"></iconify-icon>
+                                            <span>Learn automation & scripting</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 2. REQUIREMENTS -->
+                                <div class="scroll-mt-24">
+                                    <h2 class="text-xl font-bold mb-4" data-i18n="courseDetail.requirements">
+                                        Requirements</h2>
+                                    <ul class="list-disc pl-5 space-y-2 text-content-secondary text-sm">
+                                        <li>No programming experience needed. You will learn everything you need to
+                                            know.</li>
+                                        <li>A computer with access to the internet.</li>
+                                    </ul>
+                                </div>
+
+                                <!-- 3. CURRICULUM -->
+                                <div id="curriculum" class="scroll-mt-24">
+                                    <div class="flex justify-between items-end mb-4">
+                                        <h2 class="text-2xl font-bold" data-i18n="home.lessons">Lessons in this course
+                                        </h2>
+                                        <span class="text-sm text-content-secondary">4 sections • 34 lectures • 12h
+                                            15m</span>
+                                    </div>
+
+                                    <!-- Accordion Component -->
+                                    <div class="space-y-3">
+                                        <!-- S1 -->
+                                        <div
+                                            class="border border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden">
+                                            <button
+                                                class="w-full flex items-center justify-between p-4 bg-base-50 dark:bg-base-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition">
+                                                <div class="flex items-center gap-3 font-bold text-content-primary">
+                                                    <iconify-icon icon="solar:alt-arrow-down-bold"
+                                                        class="text-content-secondary"></iconify-icon>
+                                                    <span>Section 1: Introduction to Python</span>
+                                                </div>
+                                                <span class="text-sm text-content-secondary">5 lectures • 45m</span>
+                                            </button>
+                                            <div class="p-4 bg-card dark:bg-base-800 space-y-3">
+                                                <div class="flex justify-between text-sm text-content-secondary">
+                                                    <div class="flex gap-3 items-center">
+                                                        <iconify-icon icon="solar:play-circle-linear"
+                                                            class="text-lg"></iconify-icon>
+                                                        <a href="#"
+                                                            class="hover:underline text-content-primary">Installing
+                                                            Python & IDLE</a>
+                                                    </div>
+                                                    <span>05:20</span>
+                                                </div>
+                                                <div class="flex justify-between text-sm text-content-secondary">
+                                                    <div class="flex gap-3 items-center">
+                                                        <iconify-icon icon="solar:play-circle-linear"
+                                                            class="text-lg"></iconify-icon>
+                                                        <a href="#" class="hover:underline text-content-primary">Hello
+                                                            World:
+                                                            Your First Program</a>
+                                                    </div>
+                                                    <span>10:15</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- S2 -->
+                                        <div
+                                            class="border border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden">
+                                            <button
+                                                class="w-full flex items-center justify-between p-4 bg-base-50 dark:bg-base-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition">
+                                                <div class="flex items-center gap-3 font-bold text-content-primary">
+                                                    <iconify-icon icon="solar:alt-arrow-right-bold"
+                                                        class="text-content-secondary"></iconify-icon>
+                                                    <span>Section 2: Data Types & Variables</span>
+                                                </div>
+                                                <span class="text-sm text-content-secondary">8 lectures • 1h 20m</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 4. ABOUT -->
+                                <div id="about" class="scroll-mt-24">
+                                    <h2 class="text-2xl font-bold mb-4" data-i18n="courseDetail.desc">About this course
+                                    </h2>
+                                    <div class="text-sm text-content-secondary space-y-4 leading-relaxed">
+                                        <p>The Fundamental of Python course is designed to provide a solid foundation in
+                                            one of the world’s most popular and versatile programming languages. Whether
+                                            you are completely new to coding or looking to strengthen your basics, this
+                                            course will guide you step by step through Python’s core concepts and
+                                            practical applications. By combining theory with hands-on exercises, you
+                                            will not only understand how Python works but also gain the confidence to
+                                            write your own programs and solve real-world problems.
+                                        </p>
+                                    </div>
+                                    <button class="text-brand-primary text-sm font-bold mt-2 hover:underline">Show
+                                        more</button>
+                                </div>
+
+                                <!-- 5. MENTORS -->
+                                <div id="mentors" class="scroll-mt-24">
+                                    <h2 class="text-2xl font-bold mb-6" data-i18n="courseDetail.mentors">Mentors</h2>
+                                    <div
+                                        class="flex gap-4 items-start p-4 border border-neutral-200 dark:border-neutral-800 rounded-2xl bg-card dark:bg-base-800">
+                                        <img src="https://pbs.twimg.com/profile_images/1523987597751726081/XuQeo7gC_400x400.jpg"
+                                            alt="Angela Yu" class="w-20 h-20 rounded-full object-cover">
+                                        <div>
+                                            <h3
+                                                class="text-lg font-bold text-content-primary hover:underline cursor-pointer">
+                                                Angela Yu</h3>
+                                            <p class="text-sm text-brand-primary mb-2">Developer and Lead Instructor</p>
+
+                                            <div class="flex gap-4 text-xs text-content-secondary mb-3">
+                                                <span class="flex items-center gap-1"><iconify-icon
+                                                        icon="solar:star-bold" class="text-warning"></iconify-icon> 4.7
+                                                    Rating</span>
+                                                <span class="flex items-center gap-1"><iconify-icon
+                                                        icon="solar:user-bold"></iconify-icon> 500K+ Students</span>
+                                                <span class="flex items-center gap-1"><iconify-icon
+                                                        icon="solar:play-circle-bold"></iconify-icon> 7 Courses</span>
+                                            </div>
+                                            <p class="text-sm text-content-secondary line-clamp-2">I'm Angela, I'm a
+                                                developer
+                                                with a passion for teaching. I'm the lead instructor at the London App
+                                                Brewery,
+                                                London's leading Programming Bootcamp.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 6. RATINGS -->
+                                <div id="reviews" class="scroll-mt-24">
+                                    <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                                        <iconify-icon icon="solar:star-bold" class="text-brand-primary"></iconify-icon>
+                                        <span data-i18n="courseDetail.reviews">Ratings</span>
+                                    </h2>
+
+                                    <!-- Rating Summary -->
+                                    <div
+                                        class="bg-card dark:bg-base-800 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 mb-8">
+                                        <div class="flex items-center gap-4 mb-2">
+                                            <h1 class="text-3xl font-bold text-content-primary">4.8</h1>
+                                            <div class="flex text-brand-primary text-sm">
+                                                <iconify-icon icon="solar:star-bold"></iconify-icon>
+                                                <iconify-icon icon="solar:star-bold"></iconify-icon>
+                                                <iconify-icon icon="solar:star-bold"></iconify-icon>
+                                                <iconify-icon icon="solar:star-bold"></iconify-icon>
+                                                <iconify-icon icon="solar:star-bold"></iconify-icon>
+                                            </div>
+                                            <span class="text-sm font-bold text-content-primary"
+                                                data-i18n="courseDetail.reviewsCount">366,000 Ratings</span>
+                                        </div>
+
+                                        <div class="space-y-2">
+                                            <!-- Stats Bars (Keep Original) -->
+                                            <div class="flex items-center gap-4 text-sm">
+                                                <span class="w-12 font-medium">5 stars</span>
+                                                <div
+                                                    class="flex-1 bg-neutral-200 dark:bg-base-700 h-3 rounded-full overflow-hidden">
+                                                    <div class="bg-brand-primary h-full w-[80%]"></div>
+                                                </div>
+                                                <span class="w-10 text-right font-bold">100%</span>
+                                            </div>
+                                            <!-- ... (Other bars omitted for brevity, keeping existing structure) ... -->
+                                            <!-- 4 stars -->
+                                            <div class="flex items-center gap-4 text-sm">
+                                                <span class="w-12 font-medium">4 stars</span>
+                                                <div
+                                                    class="flex-1 bg-neutral-200 dark:bg-base-700 h-3 rounded-full overflow-hidden">
+                                                    <div class="bg-brand-primary h-full w-[20%]">
+                                                    </div>
+                                                </div>
+                                                <span class="w-10 text-right font-bold">0%</span>
+                                            </div>
+                                            <!-- 3 stars -->
+                                            <div class="flex items-center gap-4 text-sm">
+                                                <span class="w-12 font-medium">3 stars</span>
+                                                <div
+                                                    class="flex-1 bg-neutral-200 dark:bg-base-700 h-3 rounded-full overflow-hidden">
+                                                    <div class="bg-brand-primary h-full w-[0%]"></div>
+                                                </div>
+                                                <span class="w-10 text-right font-bold">0%</span>
+                                            </div>
+                                            <!-- 2 stars -->
+                                            <div class="flex items-center gap-4 text-sm">
+                                                <span class="w-12 font-medium">2 stars</span>
+                                                <div
+                                                    class="flex-1 bg-neutral-200 dark:bg-base-700 h-3 rounded-full overflow-hidden">
+                                                    <div class="bg-brand-primary h-full w-[0%]"></div>
+                                                </div>
+                                                <span class="w-10 text-right font-bold">0%</span>
+                                            </div>
+                                            <!-- 1 star -->
+                                            <div class="flex items-center gap-4 text-sm">
+                                                <span class="w-12 font-medium">1 star</span>
+                                                <div
+                                                    class="flex-1 bg-neutral-200 dark:bg-base-700 h-3 rounded-full overflow-hidden">
+                                                    <div class="bg-brand-primary h-full w-[0%]"></div>
+                                                </div>
+                                                <span class="w-10 text-right font-bold">0%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Reviews List -->
+                                    <div>
+                                        <div class="flex justify-between items-center mb-4">
+                                            <h3 class="font-bold text-content-primary"
+                                                data-i18n="courseDetail.reviewsCount">123,000 Reviews</h3>
+                                            <button class="text-sm font-bold text-content-primary hover:underline"
+                                                data-i18n="courseDetail.showAllReviews">Show all reviews</button>
+                                        </div>
+
+                                        <div class="space-y-4">
+                                            <!-- Review 1 -->
+                                            <div class="bg-card border p-4 rounded-2xl flex gap-4">
+                                                <div
+                                                    class="w-12 h-12 rounded-full bg-neutral-200 dark:bg-neutral-700 flex-shrink-0">
+                                                </div>
+                                                <div>
+                                                    <h4 class="font-bold text-sm text-content-primary">Name</h4>
+                                                    <div class="flex text-brand-primary text-xs my-1">
+                                                        <iconify-icon icon="solar:star-bold"></iconify-icon>
+                                                    </div>
+                                                    <p class="text-sm font-bold text-content-primary mb-1">thanks
+                                                        for....</p>
+                                                    <span class="text-xs text-content-secondary">1 month ago</span>
+                                                </div>
+                                            </div>
+                                            <div class="bg-card border p-4 rounded-2xl flex gap-4">
+                                                <div
+                                                    class="w-12 h-12 rounded-full bg-neutral-200 dark:bg-neutral-700 flex-shrink-0">
+                                                </div>
+                                                <div>
+                                                    <h4 class="font-bold text-sm text-content-primary">Name</h4>
+                                                    <div class="flex text-brand-primary text-xs my-1">
+                                                        <iconify-icon icon="solar:star-bold"></iconify-icon>
+                                                        <iconify-icon icon="solar:star-bold"></iconify-icon>
+                                                        <iconify-icon icon="solar:star-bold"></iconify-icon>
+                                                        <iconify-icon icon="solar:star-bold"></iconify-icon>
+                                                        <iconify-icon icon="solar:star-bold"></iconify-icon>
+                                                    </div>
+                                                    <p class="text-sm font-bold text-content-primary mb-1">thanks
+                                                        for....</p>
+                                                    <span class="text-xs text-content-secondary">1 month ago</span>
+                                                </div>
+                                            </div>
+                                            <!-- Review 3 -->
+                                            <div class="bg-card border p-4 rounded-2xl flex gap-4">
+                                                <div
+                                                    class="w-12 h-12 rounded-full bg-neutral-200 dark:bg-neutral-700 flex-shrink-0">
+                                                </div>
+                                                <div>
+                                                    <h4 class="font-bold text-sm text-content-primary">Name</h4>
+                                                    <div class="flex text-brand-primary text-xs my-1">
+                                                        <iconify-icon icon="solar:star-bold"></iconify-icon>
+                                                        <iconify-icon icon="solar:star-bold"></iconify-icon>
+                                                        <iconify-icon icon="solar:star-bold"></iconify-icon>
+                                                        <iconify-icon icon="solar:star-bold"></iconify-icon>
+                                                        <iconify-icon icon="solar:star-bold"></iconify-icon>
+                                                    </div>
+                                                    <p class="text-sm font-bold text-content-primary mb-1">thanks
+                                                        for....</p>
+                                                    <span class="text-xs text-content-secondary">1 month ago</span>
+                                                </div>
+                                            </div>
+                                            <!-- Review 4 -->
+                                            <div class="bg-card border p-4 rounded-2xl flex gap-4">
+                                                <div
+                                                    class="w-12 h-12 rounded-full bg-neutral-200 dark:bg-neutral-700 flex-shrink-0">
+                                                </div>
+                                                <div>
+                                                    <h4 class="font-bold text-sm text-content-primary">Name</h4>
+                                                    <div class="flex text-brand-primary text-xs my-1">
+                                                        <iconify-icon icon="solar:star-bold"></iconify-icon>
+                                                        <iconify-icon icon="solar:star-bold"></iconify-icon>
+                                                        <iconify-icon icon="solar:star-bold"></iconify-icon>
+                                                        <iconify-icon icon="solar:star-bold"></iconify-icon>
+                                                        <iconify-icon icon="solar:star-bold"></iconify-icon>
+                                                    </div>
+                                                    <p class="text-sm font-bold text-content-primary mb-1">thanks
+                                                        for....</p>
+                                                    <span class="text-xs text-content-secondary">1 month ago</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 7. RELATED -->
+                                <div>
+                                    <h2 class="text-2xl font-bold mb-4" data-i18n="courseDetail.related">Related topics
+                                    </h2>
+                                    <div class="flex flex-wrap gap-3">
+                                        <a href="#"
+                                            class="px-5 py-3 border border-neutral-300 dark:border-neutral-700 rounded-xl font-bold text-sm hover:bg-neutral-100 dark:hover:bg-neutral-800 transition text-content-primary">Programming</a>
+                                        <a href="#"
+                                            class="px-5 py-3 border border-neutral-300 dark:border-neutral-700 rounded-xl font-bold text-sm hover:bg-neutral-100 dark:hover:bg-neutral-800 transition text-content-primary">Development</a>
+                                        <a href="#"
+                                            class="px-5 py-3 border border-neutral-300 dark:border-neutral-700 rounded-xl font-bold text-sm hover:bg-neutral-100 dark:hover:bg-neutral-800 transition text-content-primary">Programming
+                                            Languages</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- END LEFT COLUMN -->
+
+                            <!-- RIGHT COLUMN: STICKY CARD (DESKTOP ONLY) -->
+                            <div class="block tablet-down:hidden relative -mt-80 z-20 px-2">
+                                <div class="sticky top-8 space-y-6">
+                                    <div
+                                        class="bg-card dark:bg-base-800 border border-neutral-200 dark:border-neutral-800 rounded-2xl shadow-xl overflow-hidden p-1">
+                                        <!-- Video Preview (Desktop) -->
+                                        <div
+                                            class="relative w-full aspect-video rounded-xl overflow-hidden bg-black group cursor-pointer">
+                                            <div class="absolute inset-0 bg-cover bg-center opacity-80 group-hover:opacity-60 transition"
+                                                style="background-image: url('../../public/images/example2.jpg');">
+                                            </div>
+                                            <div class="absolute inset-0 flex items-center justify-center">
+                                                <div
+                                                    class="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition">
+                                                    <iconify-icon icon="solar:play-bold"
+                                                        class="text-brand-primary text-2xl"></iconify-icon>
+                                                </div>
+                                            </div>
+                                            <div class="absolute bottom-4 left-0 right-0 text-center text-white font-bold text-sm"
+                                                data-i18n="courseDetail.preview">
+                                                Preview this course</div>
+                                        </div>
+
+                                        <div class="p-5">
+                                            <div class="flex items-end gap-3 mb-4">
+                                                <h2 class="text-3xl font-bold text-content-primary">299,000 đ</h2>
+                                                <span class="text-sm text-content-secondary line-through mb-1.5">699,000
+                                                    đ</span>
+                                                <span class="text-xs font-bold text-success mb-1.5 ">50% OFF</span>
+                                            </div>
+                                            <div class="space-y-3 mb-6">
+                                                <a href="#"
+                                                    class="block w-full bg-brand-primary hover:bg-brand-secondary text-white font-bold text-center py-3 rounded-xl transition shadow-md shadow-brand-primary/20"
+                                                    data-i18n="courseDetail.addToCart">Add to Cart</a>
+                                                <a href="#"
+                                                    class="block w-full bg-base-100 dark:bg-base-900 hover:bg-neutral-200 dark:hover:bg-neutral-800 text-content-primary font-bold text-center py-3 rounded-xl transition border border-neutral-200 dark:border-neutral-700"
+                                                    data-i18n="courseDetail.buyNow">Buy Now</a>
+                                            </div>
+                                            <!-- Includes list... -->
+                                            <h4 class="font-bold text-sm text-content-primary mb-3"
+                                                data-i18n="courseDetail.includes">This course includes:</h4>
+                                            <ul class="space-y-2 text-sm text-content-secondary">
+                                                <li class="flex items-center gap-3">
+                                                    <iconify-icon icon="solar:videocamera-record-bold"></iconify-icon>
+                                                    <span>24 <span data-i18n="courseDetail.hoursVideo">hours
+                                                            video</span>
+                                                    </span>
+                                                </li>
+                                                <li class="flex items-center gap-3">
+                                                    <iconify-icon icon="solar:document-text-bold"
+                                                        class="text-content-primary"></iconify-icon>
+                                                    <span>18 <span
+                                                            data-i18n="courseDetail.articles">articles</span></span>
+                                                </li>
+                                                <li class="flex items-center gap-3">
+                                                    <iconify-icon icon="solar:download-square-bold"
+                                                        class="text-content-primary"></iconify-icon>
+                                                    <span>12 <span data-i18n="courseDetail.resources">downloadable
+                                                            resources</span></span>
+                                                </li>
+                                                <li class="flex items-center gap-3">
+                                                    <iconify-icon icon="solar:smartphone-bold"
+                                                        class="text-content-primary"></iconify-icon>
+                                                    <span data-i18n="courseDetail.mobile">Access on mobile and TV</span>
+                                                </li>
+                                                <li class="flex items-center gap-3">
+                                                    <iconify-icon icon="solar:cup-bold"
+                                                        class="text-content-primary"></iconify-icon>
+                                                    <span data-i18n="courseDetail.cert">Certificate of completion</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END RIGHT COLUMN -->
+
+                        </div>
+                    </div>
+                </div>
+                <!-- END PAGE CONTENT MAIN -->
+                <!-- FOOTER CONTAINER -->
+                <div id="footer-container" class="mt-20"></div>
+            </div>
+
+            <!-- STICKY BOTTOM BAR (MOBILE ONLY) -->
+            <div
+                class="hidden tablet-down:flex fixed bottom-0 left-0 right-0 bg-card border-t border-neutral-200 dark:border-neutral-800 p-4 z-50 items-center justify-between shadow-[0_-5px_15px_rgba(0,0,0,0.05)]">
+                <div class="flex flex-col">
+                    <span class="text-xs text-content-secondary line-through">699,000 đ</span>
+                    <span class="text-xl font-bold text-content-primary">299,000 đ</span>
+                </div>
+                <button
+                    class="bg-brand-primary text-white font-bold px-8 py-3 rounded-xl hover:bg-brand-secondary transition shadow-lg shadow-brand-primary/30"
+                    data-i18n="courseDetail.addToCart">
+                    Add to Cart
+                </button>
+            </div>
+
+            <!-- BACK TO TOP BUTTON (MOBILE ONLY) -->
+            <button onclick="document.getElementById('page-content').scrollTo({top: 0, behavior: 'smooth'})"
+                class="hidden tablet-down:flex fixed bottom-24 right-6 w-12 h-12 bg-white dark:bg-base-900 border border-neutral-200 dark:border-neutral-800 rounded-full items-center justify-center text-content-primary shadow-lg z-40 hover:scale-110 transition">
+                <iconify-icon icon="solar:arrow-up-linear" class="text-xl"></iconify-icon>
+            </button>
+
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script type="module" src="../components/sidebar.js"></script> <!-- Ensure sidebar is loaded -->
+    <script type="module" src="../utils/main.js"></script>
+    <script type="module">
+        import { updateLanguage } from "../utils/main.js";
+        setTimeout(() => { updateLanguage(); }, 0);
+    </script>
+</body>
+
+</html>

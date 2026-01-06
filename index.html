@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bloom - Nền tảng học tập thông minh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lexend:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link href="./src/styles/main.css" rel="stylesheet" />
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <script>
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+    if (isLoggedIn) {
+      window.location.replace("./src/pages/home.html");
+    }
+  </script>
+</head>
+
+<body
+  class="bg-page text-content-primary font-sans antialiased selection:bg-brand-primary selection:text-white transition-colors duration-300">
+
+  <!-- HEADER -->
+  <div id="navbar-container"></div>
+  <div id="sidebar-container" class="h-full shrink-0"></div>
+  <main class="pt-20">
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden tablet-down:flex-col">
+      <!-- Background Elements -->
+      <div class="absolute top-0 inset-x-0 h-[500px] bg-brand-harmony opacity-10 blur-[100px] -z-10"></div>
+
+      <div
+        class="container mx-8 tablet-down:mx-6 mobile:mx-4 px-4 gap-8 flex justify-between items-center tablet-down:flex-wrap tablet-down:justify-center">
+        <!-- Left Content -->
+        <div class="flex flex-col justify-center text-left tablet-down:text-center animate-fade-in-up">
+          <span
+            class="flex items-center px-4 py-1.5 rounded-full bg-brand-surface text-brand-primary text-sm font-bold w-fit mb-6 tablet-down:mx-auto tablet-down:mt-6 font-sans">
+            🚀 Nền tảng học tập AI thế hệ mới
+          </span>
+          <h1 class="text-h1 tablet-down:text-4xl mobile:text-3xl font-bold mb-6 leading-tight font-sans">
+            Khơi dậy tiềm năng <br />
+            <span class="text-transparent bg-clip-text bg-brand-harmony font-serif italic">vô hạn</span> của
+            bạn.
+          </h1>
+          <p class="text-body-l text-content-secondary mb-8 max-w-lg tablet-down:mx-auto font-sans">
+            Hệ thống học tập cá nhân hóa giúp bạn chinh phục kiến thức nhanh hơn 30% so với phương pháp
+            truyền thống nhờ trợ lý ảo AI thông minh.
+          </p>
+
+          <div class="flex flex-wrap items-center justify-start tablet-down:justify-center gap-4">
+            <a href="./src/pages/login.html"
+              class="px-8 py-4 tablet-down:px-6 tablet-down:py-3 bg-brand-primary text-white rounded-full font-bold text-lg hover:bg-brand-secondary transition shadow-xl shadow-brand-primary/20 hover:-translate-y-1 transform font-sans">
+              Bắt đầu miễn phí
+              <iconify-icon icon="solar:arrow-right-linear"
+                class="inline-block ml-2 text-xl align-middle"></iconify-icon>
+            </a>
+            <a href="#demo"
+              class="px-8 py-4 tablet-down:px-6 tablet-down:py-3 border border-border-default text-content-primary rounded-full font-bold text-lg hover:bg-base-100 dark:hover:bg-base-800 transition flex items-center gap-2 font-sans">
+              <iconify-icon icon="solar:play-circle-bold" class="text-brand-primary text-2xl"></iconify-icon>
+              Xem Demo
+            </a>
+          </div>
+
+          <div
+            class="mt-12 flex items-center gap-4 text-content-secondary text-sm font-medium tablet-down:justify-center font-sans">
+            <div class="flex -space-x-3">
+              <img src="./public/images/avatar.jpg" class="w-10 h-10 rounded-full border-2 border-bg-page" alt="User" />
+              <img src="https://randomuser.me/api/portraits/women/44.jpg"
+                class="w-10 h-10 rounded-full border-2 border-bg-page" alt="User" />
+              <img src="https://randomuser.me/api/portraits/men/32.jpg"
+                class="w-10 h-10 rounded-full border-2 border-bg-page" alt="User" />
+              <div
+                class="w-10 h-10 rounded-full border-2 border-bg-page bg-base-200 flex items-center justify-center text-xs">
+                2k+</div>
+            </div>
+            <p>Đã được tin dùng bởi 2,000+ học viên</p>
+          </div>
+        </div>
+
+        <!-- Right Visual -->
+        <div class="relative tablet-down:mt-12 mb-12">
+          <div class="relative z-10 animate-bounce-slow">
+            <!-- Glassmorphism Card Simulation -->
+            <div
+              class="w-[400px] tablet-down:w-full bg-card/80 backdrop-blur-xl border border-white/20 dark:border-white/10 p-6 rounded-3xl shadow-2xl transform rotate-[-5deg] hover:rotate-0 transition duration-500">
+              <div class="flex items-center gap-4 mb-6">
+                <div
+                  class="w-12 h-12 rounded-full bg-brand-primary/20 flex items-center justify-center text-brand-primary">
+                  <iconify-icon icon="solar:crown-star-bold" class="text-2xl"></iconify-icon>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold font-sans">Thành tích xuất sắc</h4>
+                  <p class="text-sm text-content-secondary font-sans">Bạn đã lọt top 1% tuần này!</p>
+                </div>
+              </div>
+              <div class="space-y-4">
+                <div class="h-2 bg-base-200 dark:bg-base-700 rounded-full overflow-hidden">
+                  <div class="h-full bg-brand-harmony w-[85%] rounded-full"></div>
+                </div>
+                <div class="flex justify-between text-sm font-medium font-sans">
+                  <span>Tiến độ khóa học</span>
+                  <span class="text-brand-primary">85%</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Second Card -->
+            <div
+              class="absolute -bottom-12 -right-6 tablet-down:right-0 bg-card p-6 rounded-3xl shadow-xl border border-border-default w-64 animate-fade-in"
+              style="animation-delay: 0.5s;">
+              <div class="flex items-center justify-start gap-4">
+                <div
+                  class="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 flex items-center justify-center">
+                  <iconify-icon icon="solar:check-circle-bold" class="text-xl"></iconify-icon>
+                </div>
+                <div>
+                  <div class="text-sm font-bold font-sans">Đã hoàn thành</div>
+                  <div class="text-xs text-content-secondary font-sans">Python Core</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Abstract blobs -->
+          <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-secondary/20 rounded-full blur-[100px] -z-10">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section id="features" class="py-24 bg-base-50 dark:bg-base-900/50">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-h2 font-bold mb-4 font-sans">Tại sao chọn Bloom?</h2>
+          <p class="text-body-l text-content-secondary font-sans">Chúng tôi không chỉ cung cấp khóa học, chúng tôi cung
+            cấp một trải nghiệm học tập được thiết kế riêng cho não bộ của bạn.</p>
+        </div>
+
+        <div class="grid grid-cols-3 tablet-down:grid-cols-2 mobile:grid-cols-1 gap-8">
+          <!-- Feature 1 -->
+          <div
+            class="bg-card p-8 rounded-3xl border border-border-default shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300 group">
+            <div
+              class="w-14 h-14 rounded-2xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition">
+              <iconify-icon icon="solar:graph-new-up-bold-duotone"></iconify-icon>
+            </div>
+            <h3 class="text-h4 font-bold mb-3 font-sans">Lộ trình AI cá nhân</h3>
+            <p class="text-content-secondary font-sans">AI phân tích điểm mạnh yếu để xây dựng lộ trình học tập tối ưu
+              nhất cho riêng bạn.</p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div
+            class="bg-card p-8 rounded-3xl border border-border-default shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300 group">
+            <div
+              class="w-14 h-14 rounded-2xl bg-purple-50 dark:bg-purple-900/20 text-purple-600 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition">
+              <iconify-icon icon="solar:users-group-rounded-bold-duotone"></iconify-icon>
+            </div>
+            <h3 class="text-h4 font-bold mb-3 font-sans">Cộng đồng sôi nổi</h3>
+            <p class="text-content-secondary font-sans">Kết nối với hàng triệu học viên khác. Học thầy không tày học
+              bạn.</p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div
+            class="bg-card p-8 rounded-3xl border border-border-default shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300 group">
+            <div
+              class="w-14 h-14 rounded-2xl bg-orange-50 dark:bg-orange-900/20 text-orange-600 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition">
+              <iconify-icon icon="solar:diploma-verified-bold-duotone"></iconify-icon>
+            </div>
+            <h3 class="text-h4 font-bold mb-3 font-sans">Chứng chỉ uy tín</h3>
+            <p class="text-content-secondary font-sans">Nhận chứng chỉ có giá trị toàn cầu sau khi hoàn thành khóa học
+              và dự án.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="py-24 relative overflow-hidden">
+      <div class="absolute inset-0 bg-brand-primary -z-20"></div>
+      <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 -z-10">
+      </div>
+
+      <div class="container mx-auto px-4 text-center text-white">
+        <h2 class="text-h2 font-bold mb-6 font-sans">Sẵn sàng để bứt phá?</h2>
+        <p class="text-xl text-blue-100 max-w-2xl mx-auto mb-10 font-sans">Tham gia cùng 20,000+ người học đang thay đổi
+          sự nghiệp của họ mỗi ngày cùng Bloom.</p>
+        <a href="./src/pages/login.html"
+          class="inline-flex items-center gap-3 px-10 py-5 bg-white text-brand-primary rounded-full font-bold text-lg hover:bg-blue-50 transition shadow-2xl font-sans">
+          Tạo tài khoản miễn phí
+          <iconify-icon icon="solar:user-plus-bold" class="text-xl"></iconify-icon>
+        </a>
+        <p class="mt-6 text-sm text-blue-200 opacity-80 font-sans">Không cần thẻ tín dụng. Hủy bất kỳ lúc nào.</p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div id="footer-container"></div>
+  </main>
+
+  <script type="module" src="./src/utils/main.js"></script>
+  <script>
+    // Simple Dark Mode Toggle Logic
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const htmlElement = document.documentElement;
+
+    // Check local storage or system preference
+    const savedTheme = localStorage.getItem('theme');
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (savedTheme === 'dark' || (!savedTheme && systemTheme)) {
+      htmlElement.classList.add('dark');
+    } else {
+      htmlElement.classList.remove('dark');
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+      if (htmlElement.classList.contains('dark')) {
+        htmlElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        htmlElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  </script>
+
+</body>
+
+</html>

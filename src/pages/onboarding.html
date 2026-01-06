@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course Detail - Bloom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="../styles/main.css" rel="stylesheet" />
+</head>
+
+<body class="flex flex-col h-screen overflow-hidden text-content-primary">
+    <!-- NAVBAR -->
+    <div id="navbar-container" class="shrink-0 z-50 h-20"></div>
+
+    <div class="flex flex-1 overflow-hidden relative">
+        <!-- SIDEBAR -->
+        <div id="sidebar-container" class="h-full shrink-0"></div>
+
+        <!-- MAIN BODY -->
+        <main class="flex-1 flex flex-col bg-page relative overflow-y-auto scroll-smooth" id="main-scroll">
+
+            <!-- Breadcrumb-->
+            <div id="breadcrumbs-container"></div>
+            <!-- PAGE CONTENT -->
+            <div id="page-content" class="flex-1 overflow-y-auto px-8 tablet-down:px-6 mobile:px-4 pt-0 scroll-smooth">
+                <!-- PAGE CONTENT MAIN -->
+                <div id="page-content-main">
+
+                </div>
+                <!-- END PAGE CONTENT MAIN -->
+                <!-- FOOTER CONTAINER -->
+                <div id="footer-container" class="mt-20 tablet-down:mt-16 mobile:mt-12"></div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script type="module" src="../components/sidebar.js"></script> <!-- Ensure sidebar is loaded -->
+    <script type="module" src="../utils/main.js"></script>
+    <script type="module">
+        import { updateLanguage } from "../utils/main.js";
+        import { OnboardingWizard } from "../components/onboarding-wizard.js";
+
+        // Init Language
+        setTimeout(() => {
+            updateLanguage();
+        }, 0);
+
+        // Init Wizard
+        document.addEventListener('DOMContentLoaded', () => {
+            const wizard = new OnboardingWizard('page-content-main');
+            // Expose to window for inline onclick handlers in template strings
+            window.wizardInstance = wizard;
+        });
+    </script>
+</body>
+
+</html>

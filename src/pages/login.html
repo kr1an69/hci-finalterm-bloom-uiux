@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="auth.login">Log in | Bloom</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <!-- Icons -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="stylesheet" href="../styles/main.css" />
+</head>
+
+<body
+    class="bg-base-100 font-sans text-content-primary antialiased h-screen flex flex-col overflow-hidden selection:bg-brand-primary selection:text-white">
+
+    <!-- 1. Navbar Container -->
+    <div id="navbar-container"></div>
+
+    <!-- 2. Main Layout (Sidebar + Content) -->
+    <div class="flex h-screen pt-20 overflow-hidden bg-base-100 dark:bg-base-900">
+
+        <!-- Sidebar Container (Login Mockup: Sidebar will be hidden via JS if not logged in) -->
+        <div id="sidebar-container" class="h-full shrink-0"></div>
+
+        <!-- Main Content Wrapper -->
+        <main class="flex-1 flex flex-col bg-page relative overflow-hidden transition-all duration-300">
+
+            <!-- Page Content (FULL SCREEN - NO PADDING CONTAINER) -->
+            <!-- flex-1 to take remaining height, pushing footer down -->
+            <div id="page-content" class="flex-1 flex flex-col h-full overflow-y-auto scroll-smooth">
+
+                <!-- LOGIN UI Main Container (EDGE-TO-EDGE) -->
+                <!-- Desktop: Row (Split), Mobile/Tablet: Col (Stack) -->
+                <div id="page-content-main"
+                    class="bg-gradient-to-br from-[#8B5CF6] to-[#4C1D95] w-full flex-1 flex flex-row tablet-down:flex-col tablet-down:justify-center tablet-down:items-center min-h-full py-10 tablet-down:py-0">
+
+                    <!-- LEFT SIDE: Hero/Banner -->
+                    <!-- Desktop: 50% width, Mobile/Tablet: Hidden -->
+                    <div
+                        class="flex w-2/3 tablet-down:hidden relative overflow-hidden justify-center items-center p-12">
+                        <!-- Background Shapes -->
+                        <div class="absolute top-10 left-10 w-32 h-32 border border-white/20 rounded-full"></div>
+                        <div class="absolute bottom-20 right-20 w-48 h-48 border border-white/20 rounded-full"></div>
+                        <div
+                            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-white/10 rotate-12">
+                        </div>
+                        <div
+                            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[380px] h-[380px] border border-white/10 -rotate-6">
+                        </div>
+
+                        <h1 class="font-sans font-bold text-[48px] leading-tight text-white text-center z-10 drop-shadow-lg"
+                            data-i18n="auth.slogan">
+                            Login to explore new<br>horizons of knowledge
+                        </h1>
+                    </div>
+
+                    <!-- RIGHT SIDE: Login Form -->
+                    <!-- Desktop: 50% width, Mobile/Tablet: Centered Card -->
+                    <div
+                        class="rounded-l-3xl tablet-down:rounded-3xl w-1/2 tablet-down:w-[90%] tablet-down:max-w-md tablet-down:h-auto bg-card flex items-center justify-center p-8 tablet-down:p-6 shadow-2xl">
+                        <!-- Inner Container focused centrally -->
+                        <div class="w-full max-w-md">
+                            <h2 class="font-sans font-bold text-h2 text-content-primary mb-8"
+                                data-i18n="auth.loginTitle">Log in</h2>
+
+                            <form id="login-form" class="flex flex-col gap-5">
+
+                                <!-- Email -->
+                                <div class="flex flex-col gap-2">
+                                    <label for="email" class="font-sans font-bold text-body-m text-content-primary"
+                                        data-i18n="auth.emailLabel">Email</label>
+                                    <input type="email" id="email" data-i18n="auth.emailPlaceholder"
+                                        placeholder="Input your email *"
+                                        class="h-12 px-4 rounded-lg bg-base-50 border border-base-200 focus:border-brand focus:ring-1 focus:ring-brand outline-none text-content-primary dark:bg-base-900 dark:border-base-700" />
+                                </div>
+
+                                <!-- Password -->
+                                <div class="flex flex-col gap-2">
+                                    <label for="password" class="font-sans font-bold text-body-m text-content-primary"
+                                        data-i18n="auth.passwordLabel">Password</label>
+                                    <input type="password" id="password" data-i18n="auth.passwordPlaceholder"
+                                        placeholder="Input your password *"
+                                        class="h-12 px-4 rounded-lg bg-base-50 border border-base-200 focus:border-brand focus:ring-1 focus:ring-brand outline-none text-content-primary dark:bg-base-900 dark:border-base-700" />
+                                </div>
+
+                                <!-- Remember & Forgot -->
+                                <div class="flex items-center justify-between mt-1">
+                                    <label class="flex items-center gap-2 cursor-pointer group">
+                                        <input type="checkbox" class="appearance-none w-6 h-6 rounded-md border-2 bg-card checked:bg-brand 
+                                            checked:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxLjJlbSIgaGVpZ2h0PSIxLjJlbSIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyLjUiIGQ9Ik0yMCA3TDEwIDE3bC01LTUiLz48L3N2Zz4=')]
+                                            checked:bg-center checked:bg-contain cursor-pointer" />
+                                        <span
+                                            class="font-sans font-medium text-body-m text-content-primary group-hover:text-brand transition-colors"
+                                            data-i18n="auth.rememberMe">Remember me</span>
+                                    </label>
+                                    <a href="#"
+                                        class="font-sans font-bold text-body-m text-content-primary hover:text-brand transition-colors"
+                                        data-i18n="auth.forgotPassword">Forgot password</a>
+                                </div>
+
+                                <!-- Submit Button -->
+                                <button type="button" id="btn-login-submit"
+                                    class="h-12 w-full bg-gradient-to-r from-[#8B5CF6] to-[#4C1D95] text-white font-sans font-bold text-body-l rounded-lg shadow-lg shadow-brand/20 hover:opacity-90 active:scale-95 transition-all mt-2"
+                                    data-i18n="auth.loginBtn">
+                                    Log in
+                                </button>
+                            </form>
+
+                            <!-- Divider -->
+                            <div class="relative flex items-center justify-center my-8">
+                                <div class="h-px bg-base-200 w-full absolute top-1/2 left-0 -z-10 dark:bg-base-700">
+                                </div>
+                                <span class="bg-card px-4 text-body-s font-medium text-content-secondary"
+                                    data-i18n="auth.continueWith">Or continue with</span>
+                            </div>
+
+                            <!-- Social Login -->
+                            <div class="flex gap-4">
+                                <button
+                                    class="flex-1 h-12 rounded-lg border border-base-200 flex items-center justify-center hover:bg-base-50 dark:hover:bg-base-800 transition-colors">
+                                    <iconify-icon icon="logos:google-icon" class="text-icon-md"></iconify-icon>
+                                </button>
+                                <button
+                                    class="flex-1 h-12 rounded-lg border border-base-200 flex items-center justify-center hover:bg-base-50 dark:hover:bg-base-800 transition-colors">
+                                    <iconify-icon icon="logos:facebook" class="text-icon-md"></iconify-icon>
+                                </button>
+                                <button
+                                    class="flex-1 h-12 rounded-lg border border-base-200 flex items-center justify-center hover:bg-base-50 dark:hover:bg-base-800 transition-colors">
+                                    <iconify-icon icon="akar-icons:github-fill"
+                                        class="text-icon-md text-content-primary"></iconify-icon>
+                                </button>
+                            </div>
+
+                            <!-- Footer Sign up -->
+                            <p class="text-center mt-8 font-sans text-body-m text-content-secondary">
+                                <span data-i18n="auth.noAccount">Don’t have an account?</span>
+                                <a href="login.html" class="font-bold text-brand hover:underline"
+                                    data-i18n="auth.signUpLink">Sign up now</a>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer (No margin top) -->
+                <div id="footer-container"></div>
+            </div>
+        </main>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script type="module">
+        import { updateLanguage } from "../utils/main.js";
+
+        // Logic Login Mockup
+        const btnLogin = document.getElementById('btn-login-submit');
+        if (btnLogin) {
+            btnLogin.addEventListener('click', () => {
+                // Set trạng thái đã đăng nhập
+                localStorage.setItem('isLoggedIn', 'true');
+
+                // Chuyển hướng
+                window.location.href = 'explore.html';
+            });
+        }
+    </script>
+</body>
+
+</html>

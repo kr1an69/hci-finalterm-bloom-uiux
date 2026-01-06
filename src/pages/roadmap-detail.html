@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bloom Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="../styles/main.css" rel="stylesheet" />
+</head>
+
+<body class="flex flex-col h-screen overflow-hidden">
+    <!-- NAVBAR -->
+    <div id="navbar-container" class="shrink-0 z-50 h-20"></div>
+    <div class="flex flex-1 overflow-hidden relative">
+        <!-- SIDEBAR -->
+        <div id="sidebar-container" class="h-full shrink-0"></div>
+
+        <!-- MAIN BODY -->
+        <main class="flex-1 flex flex-col bg-page relative overflow-hidden">
+            <!-- Breadcrumb -->
+            <div id="breadcrumbs-container"></div>
+            <!--  PAGE CONTENT-->
+            <div id="page-content" class="flex-1 overflow-y-auto p-8 tablet-down:p-6 mobile:p-4 scroll-smooth">
+                <!-- PAGE CONTENT MAIN -->
+                <div id="page-content-main">
+
+                    <!-- HEADER SECTION -->
+                    <div
+                        class="flex flex-row tablet-down:flex-col justify-between items-center tablet-down:items-start gap-4 mb-8">
+                        <div>
+                            <h1 class="text-3xl font-bold text-content-primary mb-2">Roadmap: Data Analyst Fullstack
+                            </h1>
+                            <div class="flex flex-col gap-1 text-sm text-content-secondary">
+                                <p>
+                                    <span class="font-medium" data-i18n="roadmap.designedFor">Designed for:</span> Thu
+                                    Hà
+                                </p>
+                                <p class="opacity-80">
+                                    <span class="font-medium" data-i18n="roadmap.goal">Goal:</span> Master data analysis
+                                    from fundamentals to real-world applications
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="flex items-center gap-3">
+                            <button
+                                class="bg-base-100 dark:bg-base-800 hover:bg-base-200 dark:hover:bg-base-700 text-brand-primary px-4 py-2 rounded-lg font-medium transition flex items-center gap-2">
+                                <iconify-icon icon="solar:share-bold"></iconify-icon>
+                                <span data-i18n="roadmap.share">Share</span>
+                            </button>
+                            <button
+                                class="bg-brand-primary hover:bg-brand-secondary text-white px-4 py-2 rounded-lg font-medium transition flex items-center gap-2">
+                                <iconify-icon icon="solar:export-bold"></iconify-icon>
+                                <span data-i18n="roadmap.export">Export as image</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- STATS BOXES -->
+                    <div class="grid grid-cols-3 gap-4 mb-12 max-w-3xl mx-auto">
+                        <div class="bg-card border shadow-sm p-4 rounded-xl text-center">
+                            <h3 class="text-2xl font-bold text-content-primary mb-1">6</h3>
+                            <p class="text-xs text-content-secondary uppercase tracking-wider"
+                                data-i18n="roadmap.months">Months</p>
+                        </div>
+                        <div class="bg-card border shadow-sm p-4 rounded-xl text-center">
+                            <h3 class="text-2xl font-bold text-content-primary mb-1">HARD</h3>
+                            <p class="text-xs text-content-secondary uppercase tracking-wider"
+                                data-i18n="roadmap.difficulty">Difficulty</p>
+                        </div>
+                        <div class="bg-card border shadow-sm p-4 rounded-xl text-center">
+                            <h3 class="text-2xl font-bold text-content-primary mb-1">5</h3>
+                            <p class="text-xs text-content-secondary uppercase tracking-wider"
+                                data-i18n="roadmap.skills">Skills</p>
+                        </div>
+                    </div>
+                    <div class="h-fit bg-card border rounded-lg">
+                        <!-- TIMELINE SECTION -->
+                        <div class="relative max-w-5xl mx-auto px-4 py-12">
+                            <!-- Vertical Line (Continuous) -->
+                            <div
+                                class="absolute left-9 mobile:left-8 top-12 bottom-12 w-2 rounded-full bg-neutral-300 dark:bg-neutral-600">
+                            </div>
+
+                            <!-- Timeline Items Container -->
+                            <div id="timeline-container" class="space-y-10 pb-12">
+                                <!-- Rendered by JS -->
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!-- END PAGE CONTENT MAIN -->
+                <!-- FOOTER CONTAINER -->
+                <div id="footer-container"></div>
+            </div>
+        </main>
+    </div>
+    <!-- Code Here -->
+    <!-- Source -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script type="module">
+        import { updateLanguage } from "../utils/main.js";
+
+        // MOCK DATA: Step for Data Analyst Roadmap
+        const steps = [
+            {
+                status: "done", // done, studying, not-started
+                title: "Python Programming Fundamentals",
+                desc: "Master syntax, data types, loops, functions, and error handling to work with data effectively.",
+            },
+            {
+                status: "studying",
+                title: "Data Manipulation with Pandas",
+                desc: "Learn to clean, filter, group, and aggregate data from CSV, Excel, and SQL using Pandas.",
+            },
+            {
+                status: "not-started",
+                title: "Data Visualization with Matplotlib & Seaborn",
+                desc: "Create visualizations like line charts, bar charts, heatmaps, and scatter plots to explore data.",
+            },
+            {
+                status: "not-started",
+                title: "Statistics & Mathematics for Data Science",
+                desc: "Understand core concepts: Probability, Distributions, Hypothesis Testing, and Regression.",
+            },
+            {
+                status: "not-started",
+                title: "SQL & Database Management",
+                desc: "Master SQL queries, Joins, subqueries and database design basics.",
+            }
+        ];
+
+        const timelineContainer = document.getElementById("timeline-container");
+
+        const renderTimeline = () => {
+            if (!timelineContainer) return;
+
+            timelineContainer.innerHTML = steps.map((step) => {
+                // Config based on status
+                let icon = '';
+                let statusColor = '';
+                let cardBorder = '';
+                let badgeClass = '';
+                let badgeText = '';
+
+                if (step.status === 'done') {
+                    icon = 'solar:check-circle-bold';
+                    statusColor = 'text-green-500';
+                    cardBorder = 'border-green-500';
+                    badgeClass = 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-400';
+                    badgeText = 'status.done';
+                } else if (step.status === 'studying') {
+                    icon = 'solar:play-circle-bold';
+                    statusColor = 'text-brand-primary';
+                    cardBorder = 'border-brand-primary';
+                    badgeClass = 'bg-primary-100 text-primary-600 dark:text-primary-400 dark:bg-primary-500 dark:bg-opacity-30';
+                    badgeText = 'status.studying';
+                } else {
+                    icon = 'solar:circle-bold';
+                    statusColor = 'text-neutral-300 dark:text-neutral-700';
+                    cardBorder = 'border-neutral-200 dark:border-neutral-700';
+                    badgeClass = 'bg-neutral-100 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400';
+                    badgeText = 'status.notStarted';
+                }
+
+                return `
+                 <div class="relative flex items-start group">
+                      
+                      <!-- Icon Node (Centered on Left Line - Vertically Centered) -->
+                      <div class="absolute left-6 mobile:left-5 -translate-x-1/2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-base-page border-4 border-base-page z-10 flex items-center justify-center bg-white dark:bg-base-950">
+                          <iconify-icon icon="${icon}" class="text-3xl ${statusColor}"></iconify-icon>
+                      </div>
+
+                      <!-- Content Card (Pushed Right) -->
+                      <div class="ml-32 mobile:ml-24 w-full">
+                           ${createCardHTML(step, cardBorder, badgeClass, badgeText)}
+                      </div>
+                 </div>
+                 `;
+            }).join("");
+        };
+
+        const createCardHTML = (step, borderColor, badgeClass, badgeTextKey) => {
+            return `
+               <div class="bg-card p-6 rounded-2xl border ${borderColor} shadow-sm bg-white dark:bg-base-900 transition-all hover:shadow-md hover:-translate-y-1 duration-300">
+                   <div class="flex justify-between items-start mb-3">
+                       <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-md ${badgeClass}" data-i18n="${badgeTextKey}">
+                          Status
+                       </span>
+                   </div>
+                   <h4 class="text-xl font-bold text-content-primary mb-2">${step.title}</h4>
+                   <p class="text-sm text-content-secondary mb-4 leading-relaxed">
+                       ${step.desc}
+                   </p>
+                   
+                   <button class="flex items-center gap-2 text-xs font-semibold text-content-secondary hover:text-brand-primary transition-colors">
+                       <iconify-icon icon="solar:book-bookmark-bold"></iconify-icon>
+                       <span data-i18n="roadmap.recCourses">Recommended Courses</span>
+                   </button>
+               </div>
+             `;
+        };
+
+        renderTimeline();
+
+        // Initial language update
+        setTimeout(() => {
+            updateLanguage();
+        }, 0);
+
+    </script>
+</body>
+
+</html>

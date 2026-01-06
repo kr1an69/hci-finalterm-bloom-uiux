@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bloom Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="../styles/main.css" rel="stylesheet" />
+</head>
+
+<body class="flex flex-col h-screen overflow-hidden">
+  <!-- NAVBAR -->
+  <div id="navbar-container" class="shrink-0 z-50 h-20"></div>
+  <div class="flex flex-1 overflow-hidden relative">
+    <!-- SIDEBAR -->
+    <div id="sidebar-container" class="h-full shrink-0"></div>
+
+    <!-- MAIN BODY -->
+    <main class="flex-1 flex flex-col bg-page relative overflow-hidden">
+      <!-- Breadcrumb -->
+      <div id="breadcrumbs-container"></div>
+      <!--  PAGE CONTENT-->
+      <div id="page-content" class="flex-1 overflow-y-auto p-8 tablet-down:p-6 mobile:p-4 scroll-smooth">
+        <!-- PAGE CONTENT MAIN -->
+        <div id="page-content-main">
+
+          <!-- HEADER -->
+          <div class="flex flex-row items-center mobile:flex-col mobile:items-start justify-between mb-10 gap-4">
+            <h1 class="text-3xl font-bold text-content-primary" data-i18n="roadmap.title">Roadmaps</h1>
+
+            <button
+              class="bg-brand-primary hover:bg-brand-secondary text-white px-5 py-2.5 rounded-xl font-medium transition-colors flex items-center gap-2 shadow-sm hover:shadow-md">
+              <iconify-icon icon="solar:add-circle-bold" class="text-xl"></iconify-icon>
+              <span data-i18n="roadmap.create">Create new roadmap</span>
+            </button>
+          </div>
+
+          <!-- ROADMAP GRID -->
+          <div id="roadmap-grid" class="grid grid-cols-3 tablet-down:grid-cols-2 mobile:grid-cols-1 gap-6">
+            <!-- Content will be rendered by JS -->
+          </div>
+
+
+
+        </div>
+
+        <!-- END PAGE CONTENT MAIN -->
+        <!-- FOOTER CONTAINER -->
+        <div id="footer-container" class="mt-20"></div>
+      </div>
+    </main>
+  </div>
+  <!-- Code Here -->
+  <!-- Source -->
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <script type="module">
+    import { updateLanguage } from "../utils/main.js";
+    import { roadmapCard } from "../components/roadmap-card.js";
+
+    // MOCK DATA: Theo ảnh Figma
+    // Card đầu tiên có link trỏ sang detail
+    const roadmapsData = [
+      {
+        id: "1",
+        title: "Data Analyst",
+        lastActive: "2 hours ago",
+        progress: 52,
+        color: "bg-blue-600", // Màu xanh dương
+        icon: "solar:graph-new-bold-duotone",
+        iconColor: "#2563EB", // Blue 600
+        link: "roadmap-detail.html" // Link demo
+      },
+      {
+        id: "2",
+        title: "2D Animator",
+        lastActive: "2 days ago",
+        progress: 44,
+        color: "bg-purple-600", // Màu tím
+        icon: "solar:palette-bold-duotone",
+        iconColor: "#9333EA", // Purple 600
+        link: "#"
+      },
+      {
+        id: "3",
+        title: "3D Animator",
+        lastActive: "6 days ago",
+        progress: 75,
+        color: "bg-indigo-600", // Màu chàm
+        icon: "solar:box-minimalistic-bold-duotone",
+        iconColor: "#4F46E5", // Indigo 600
+        link: "#"
+      },
+      {
+        id: "4",
+        title: "Game Development",
+        lastActive: "1 week ago",
+        progress: 20,
+        color: "bg-emerald-600", // Màu xanh ngọc
+        icon: "solar:gamepad-bold-duotone",
+        iconColor: "#059669", // Emerald 600
+        link: "#"
+      },
+      {
+        id: "5",
+        title: "Backend Development",
+        lastActive: "3 days ago",
+        progress: 90,
+        color: "bg-rose-600", // Màu hồng đỏ
+        icon: "solar:server-bold-duotone",
+        iconColor: "#E11D48", // Rose 600
+        link: "#"
+      },
+      {
+        id: "6",
+        title: "Communication",
+        lastActive: "Just now",
+        progress: 10,
+        color: "bg-amber-500", // Màu vàng cam
+        icon: "solar:users-group-rounded-bold-duotone",
+        iconColor: "#F59E0B", // Amber 500
+        link: "#"
+      }
+    ];
+
+    const roadmapGrid = document.getElementById("roadmap-grid");
+    if (roadmapGrid) {
+      roadmapGrid.innerHTML = roadmapsData.map(item => roadmapCard(item)).join("");
+    }
+
+    // Initial language update
+    // setTimeout to ensure DOM is ready and rendered
+    setTimeout(() => {
+      updateLanguage();
+    }, 0);
+
+  </script>
+</body>
+
+</html>

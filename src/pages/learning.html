@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning Space - Bloom Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="../styles/main.css" rel="stylesheet" />
+</head>
+
+<body class="flex flex-col h-screen overflow-hidden">
+    <!-- NAVBAR -->
+    <div id="navbar-container" class="shrink-0 z-50 h-20"></div>
+
+    <div class="flex flex-1 overflow-hidden relative">
+        <!-- SIDEBAR -->
+        <div id="sidebar-container" class="h-full shrink-0"></div>
+
+        <!-- MAIN BODY -->
+        <main class="flex-1 flex flex-col bg-page relative overflow-hidden">
+            <!-- Breadcrumb -->
+            <div id="breadcrumbs-container"></div>
+
+            <!--  PAGE CONTENT (Flex Container for Full Height) -->
+            <div id="page-content" class="flex-1 flex flex-col overflow-hidden relative">
+
+                <!-- MAIN CONTENT (Split Left/Right) -->
+                <div id="page-content-main"
+                    class="flex-1 flex flex-row tablet-down:flex-col overflow-hidden tablet-down:overflow-y-auto">
+
+                    <!-- LEFT PART (Scrollable: Video + Info + Footer) -->
+                    <div id="learning-left-content"
+                        class="flex-1 overflow-y-auto tablet-down:overflow-visible scroll-smooth flex flex-col relative no-scrollbar">
+
+                        <div class="pl-8 pr-6 pt-2 pb-12">
+                            <!-- Course Title Header -->
+                            <a href="#"
+                                class="block w-fit text-h3 font-bold text-content-primary mb-6 mt-6 hover:text-brand-primary hover:underline transition-colors">
+                                Python Data Fundamentals
+                            </a>
+
+                            <!-- VIDEO PLAYER CONTAINER -->
+                            <div
+                                class="w-full aspect-video bg-black rounded-2xl shadow-xl overflow-hidden relative group mb-8">
+                                <!-- Video Placeholder or Embed -->
+                                <img src="../../public/images/example2.jpg"
+                                    class="w-full h-full object-cover opacity-60" alt="Video Content">
+
+                                <!-- Play Button (Centered) -->
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <button
+                                        class="w-20 h-20 bg-brand-primary/90 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform">
+                                        <iconify-icon icon="solar:play-bold" class="text-4xl ml-2"></iconify-icon>
+                                    </button>
+                                </div>
+
+                                <!-- Custom Controls (Mockup) -->
+                                <div
+                                    class="absolute bottom-0 left-0 right-0 px-4 py-2 mobile:px-2 bg-base-700 opacity-0 bg-opacity-20 flex items-center justify-between group-hover:opacity-100 transition-opacity">
+                                    <!-- left part -->
+                                    <div
+                                        class="h-10 mobile:h-8 flex items-center gap-4 text-white bg-base-800 rounded-md py-2 px-4 mobile:px-2 mobile:gap-2">
+                                        <iconify-icon icon="solar:pause-bold"
+                                            class="text-xl mobile:text-icon-xs cursor-pointer hover:text-brand-primary"></iconify-icon>
+                                        <iconify-icon icon="solar:rewind-10-seconds-back-bold"
+                                            class="text-xl mobile:text-icon-xs cursor-pointer"></iconify-icon>
+                                        <iconify-icon icon="solar:rewind-10-seconds-forward-bold"
+                                            class="text-xl mobile:text-icon-xs cursor-pointer"></iconify-icon>
+                                        <span class="text-xs font-medium bg-base-900 rounded-full px-2 py-1">12:45 /
+                                            36:36</span>
+                                        <iconify-icon icon="solar:volume-loud-bold"
+                                            class="text-xl mobile:text-icon-xs cursor-pointer"></iconify-icon>
+                                    </div>
+                                    <!-- right part -->
+                                    <div
+                                        class="h-10 mobile:h-8 flex items-center gap-4 text-white bg-base-800 rounded-md py-2 px-4  mobile:px-2 mobile:gap-2">
+                                        <iconify-icon icon="solar:subtitles-bold"
+                                            class="text-xl mobile:text-icon-xs cursor-pointer"></iconify-icon>
+                                        <iconify-icon icon="solar:settings-bold"
+                                            class="text-xl mobile:text-icon-xs cursor-pointer"></iconify-icon>
+                                        <iconify-icon icon="solar:paragraph-spacing-bold"
+                                            class="mobile:hidden text-xl mobile:text-icon-xs cursor-pointer rotate-90"></iconify-icon>
+                                        <iconify-icon icon="solar:full-screen-bold"
+                                            class="text-xl mobile:text-icon-xs cursor-pointer"></iconify-icon>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- LESSON INFO & TABS -->
+                            <div class="w-full">
+                                <h1 class="text-h4 font-bold text-content-primary mb-6">Arithmetic Operators</h1>
+
+                                <!-- Tabs -->
+                                <div
+                                    class="flex items-center gap-8 border-b border-DEFAULT mb-8 no-scrollbar overflow-x-auto">
+                                    <!-- Mobile Only: Course Content Tab -->
+                                    <button id="tab-course-content"
+                                        class="hidden tablet-down:block pb-4 border-b-2 border-transparent text-content-secondary font-medium hover:text-content-primary transition-colors whitespace-nowrap"
+                                        data-i18n="course.content">Course Content</button>
+
+                                    <button id="tab-overview"
+                                        class="pb-4 border-b-2 border-brand-primary text-brand-primary font-bold whitespace-nowrap"
+                                        data-i18n="course.overview">Overview</button>
+                                    <button
+                                        class="pb-4 border-b-2 border-transparent text-content-secondary font-medium hover:text-content-primary transition-colors whitespace-nowrap"
+                                        data-i18n="course.resources">Resources</button>
+                                    <button
+                                        class="pb-4 border-b-2 border-transparent text-content-secondary font-medium hover:text-content-primary transition-colors whitespace-nowrap">
+                                        <span data-i18n="course.discussion">Discussion</span> <span
+                                            class="text-xs bg-base-200 dark:bg-base-700 px-2 py-0.5 rounded-full ml-1 text-content-primary">24</span>
+                                    </button>
+                                </div>
+
+                                <!-- Description Content -->
+                                <div id="course-overview-content"
+                                    class="space-y-4 text-content-secondary leading-relaxed bg-card p-6 rounded-md">
+                                    <h5 class="text-h5 font-bold text-content-primary">Lesson Description:</h5>
+                                    <p>
+                                        A short paragraph explaining the importance of arithmetic operators in
+                                        programming, how they are used to perform calculations, and why mastering them
+                                        is essential for data analysis tasks.
+                                    </p>
+                                    <p>
+                                        Arithmetic operators are fundamental in programming, enabling basic calculations
+                                        such as addition (+), subtraction (-), multiplication (*), division (/), and
+                                        modulus (%). In this lesson, you'll learn how to use these operators to
+                                        manipulate numerical data—from simple expressions to more complex calculations.
+                                        Understanding how arithmetic operators work not only helps you write more
+                                        efficient code but also lays the groundwork for solving real-world problems in
+                                        data processing, algorithm design, and analytical tasks.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FOOTER CONTAINER (Inside Left Part) -->
+                        <!-- <div id="footer-container"></div> -->
+                    </div>
+
+                    <!-- RIGHT PART (Course Menu) -->
+                    <div id="course-menu"
+                        class="w-96 bg-card border-l border-DEFAULT overflow-y-auto shrink-0 z-10 flex tablet-down:hidden flex-col h-full right-sidebar-scroll tablet-down:w-full tablet-down:h-auto tablet-down:border-l-0 tablet-down:overflow-visible">
+                        <!-- Content injected below -->
+                        <div class="p-6 border-b border-DEFAULT sticky top-0 bg-card z-20">
+                            <h3 class="font-bold text-lg text-content-primary mb-2" data-i18n="course.content">Course
+                                Content</h3>
+                            <div class="flex items-center gap-2 text-sm text-content-secondary">
+                                <span class="font-bold text-brand-primary">36%</span>
+                                <div class="flex-1 h-1.5 bg-base-200 dark:bg-base-700 rounded-full overflow-hidden">
+                                    <div class="h-full bg-brand-primary w-[36%]"></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Content List (Accordion) -->
+                        <div class="flex-1 pb-6">
+                            <!-- Section 1 -->
+                            <div class="border-b border-DEFAULT">
+                                <button
+                                    class="w-full flex items-center justify-between p-4 bg-base-50 dark:bg-base-900/50 hover:bg-base-100 dark:hover:bg-base-800 transition-colors text-left group">
+                                    <div>
+                                        <h4 class="font-bold text-content-primary text-sm" data-i18n="course.section1">
+                                            Section
+                                            1: Introduction to Python</h4>
+                                        <p class="text-xs text-content-secondary mt-1">2/2 | 8 mins</p>
+                                    </div>
+                                    <iconify-icon icon="solar:alt-arrow-up-linear"
+                                        class="text-content-secondary group-hover:text-content-primary transition-transform"></iconify-icon>
+                                </button>
+                                <!-- Lessons -->
+                                <div class="bg-card">
+                                    <div
+                                        class="flex items-start gap-3 p-4 hover:bg-base-50 dark:hover:bg-base-900/50 cursor-pointer transition-colors">
+                                        <iconify-icon icon="solar:check-circle-bold"
+                                            class="text-success text-xl shrink-0 mt-0.5"></iconify-icon>
+                                        <div>
+                                            <p class="text-sm font-medium text-content-primary">1. Introduction</p>
+                                            <span class="text-xs text-content-secondary">4 mins</span>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="flex items-start gap-3 p-4 hover:bg-base-50 dark:hover:bg-base-900/50 cursor-pointer transition-colors">
+                                        <iconify-icon icon="solar:check-circle-bold"
+                                            class="text-success text-xl shrink-0 mt-0.5"></iconify-icon>
+                                        <div>
+                                            <p class="text-sm font-medium text-content-primary">2. Environment Setup</p>
+                                            <span class="text-xs text-content-secondary">4 mins</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section 2 -->
+                            <div class="border-b border-DEFAULT">
+                                <button
+                                    class="w-full flex items-center justify-between p-4 bg-base-50 dark:bg-base-900/50 hover:bg-base-100 dark:hover:bg-base-800 transition-colors text-left group">
+                                    <div>
+                                        <h4 class="font-bold text-content-primary text-sm" data-i18n="course.section2">
+                                            Section
+                                            2: Basic Syntax</h4>
+                                        <p class="text-xs text-content-secondary mt-1">4/4 | 1 hour 22 mins</p>
+                                    </div>
+                                    <iconify-icon icon="solar:alt-arrow-up-linear"
+                                        class="text-content-secondary group-hover:text-content-primary transition-transform"></iconify-icon>
+                                </button>
+                                <!-- Lessons (Hidden logic would go here, but displayed for UI demo) -->
+                            </div>
+
+                            <!-- Section 3 (Active) -->
+                            <div class="border-b border-DEFAULT">
+                                <button
+                                    class="w-full flex items-center justify-between p-4 bg-base-50 dark:bg-base-900/50 hover:bg-base-100 dark:hover:bg-base-800 transition-colors text-left group">
+                                    <div>
+                                        <h4 class="font-bold text-content-primary text-sm" data-i18n="course.section3">
+                                            Section
+                                            3: Operators</h4>
+                                        <p class="text-xs text-content-secondary mt-1">0/4 | 1 hour 15 mins</p>
+                                    </div>
+                                    <iconify-icon icon="solar:alt-arrow-up-linear"
+                                        class="text-content-secondary group-hover:text-content-primary transition-transform"></iconify-icon>
+                                </button>
+                                <div class="bg-card">
+                                    <!-- Active Lesson -->
+                                    <div
+                                        class="flex items-start gap-3 p-4 bg-base-200 dark:bg-base-700 cursor-pointer transition-colors">
+                                        <iconify-icon icon="solar:play-circle-bold"
+                                            class="text-brand-primary text-xl shrink-0 mt-0.5"></iconify-icon>
+                                        <div>
+                                            <p class="text-sm font-bold text-content-primary">1. Arithmetic Operators
+                                            </p>
+                                            <span class="text-xs text-content-secondary">15 mins</span>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="flex items-start gap-3 p-4 hover:bg-base-50 dark:hover:bg-base-900/50 cursor-pointer transition-colors">
+                                        <iconify-icon icon="ic:outline-circle"
+                                            class="text-content-disabled text-xl shrink-0 mt-0.5"></iconify-icon>
+                                        <div>
+                                            <p class="text-sm font-medium text-content-primary">2. Comparison Operators
+                                            </p>
+                                            <span class="text-xs text-content-secondary">20 mins</span>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="flex items-start gap-3 p-4 hover:bg-base-50 dark:hover:bg-base-900/50 cursor-pointer transition-colors">
+                                        <iconify-icon icon="ic:outline-circle"
+                                            class="text-content-disabled text-xl shrink-0 mt-0.5"></iconify-icon>
+                                        <div>
+                                            <p class="text-sm font-medium text-content-primary">3. Logical Operators</p>
+                                            <span class="text-xs text-content-secondary">20 mins</span>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="flex items-start gap-3 p-4 hover:bg-base-50 dark:hover:bg-base-900/50 cursor-pointer transition-colors">
+                                        <iconify-icon icon="ic:outline-circle"
+                                            class="text-content-disabled text-xl shrink-0 mt-0.5"></iconify-icon>
+                                        <div>
+                                            <p class="text-sm font-medium text-content-primary">4. Operator Precedence
+                                            </p>
+                                            <span class="text-xs text-content-secondary">20 mins</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Section 4 -->
+                            <div class="border-b border-DEFAULT">
+                                <button
+                                    class="w-full flex items-center justify-between p-4 bg-base-50 dark:bg-base-900/50 hover:bg-base-100 dark:hover:bg-base-800 transition-colors text-left group">
+                                    <div>
+                                        <h4 class="font-bold text-content-primary text-sm" data-i18n="course.section4">
+                                            Section
+                                            4: Control Flow</h4>
+                                        <p class="text-xs text-content-secondary mt-1">0/5</p>
+                                    </div>
+                                    <iconify-icon icon="solar:alt-arrow-down-linear"
+                                        class="text-content-secondary group-hover:text-content-primary transition-transform"></iconify-icon>
+                                </button>
+                            </div>
+                            <!-- Section 5 -->
+                            <div class="border-b border-DEFAULT">
+                                <button
+                                    class="w-full flex items-center justify-between p-4 bg-base-50 dark:bg-base-900/50 hover:bg-base-100 dark:hover:bg-base-800 transition-colors text-left group">
+                                    <div>
+                                        <h4 class="font-bold text-content-primary text-sm" data-i18n="course.section5">
+                                            Section
+                                            5: Functions</h4>
+                                        <p class="text-xs text-content-secondary mt-1">0/3</p>
+                                    </div>
+                                    <iconify-icon icon="solar:alt-arrow-down-linear"
+                                        class="text-content-secondary group-hover:text-content-primary transition-transform"></iconify-icon>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script type="module" src="../utils/main.js"></script>
+    <script>
+        // Tab Logic for Mobile
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabCourseContent = document.getElementById('tab-course-content');
+            const tabOverview = document.getElementById('tab-overview');
+            const overviewContent = document.getElementById('course-overview-content');
+            const courseMenu = document.getElementById('course-menu');
+
+            if (tabCourseContent && tabOverview && overviewContent && courseMenu) {
+                tabCourseContent.addEventListener('click', () => {
+                    // Active Course Content
+                    tabCourseContent.classList.remove('border-transparent', 'text-content-secondary');
+                    tabCourseContent.classList.add('border-brand-primary', 'text-brand-primary');
+
+                    // Inactive Overview
+                    tabOverview.classList.remove('border-brand-primary', 'text-brand-primary');
+                    tabOverview.classList.add('border-transparent', 'text-content-secondary');
+
+                    // Show Course Menu (remove hidden on tablet-down), Hide Overview (add hidden on tablet-down)
+                    courseMenu.classList.remove('tablet-down:hidden');
+                    overviewContent.classList.add('tablet-down:hidden');
+                });
+
+                tabOverview.addEventListener('click', () => {
+                    // Active Overview
+                    tabOverview.classList.remove('border-transparent', 'text-content-secondary');
+                    tabOverview.classList.add('border-brand-primary', 'text-brand-primary');
+
+                    // Inactive Course Content
+                    tabCourseContent.classList.remove('border-brand-primary', 'text-brand-primary');
+                    tabCourseContent.classList.add('border-transparent', 'text-content-secondary');
+
+                    // Show Overview, Hide Course Menu
+                    overviewContent.classList.remove('tablet-down:hidden');
+                    courseMenu.classList.add('tablet-down:hidden');
+                });
+            }
+        });
+
+        // Simple Accordion Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const accordionButtons = document.querySelectorAll('#course-menu button');
+            accordionButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const content = btn.nextElementSibling;
+                    if (content && content.classList.contains('bg-card')) {
+                        // Toggle hidden
+                        if (content.style.display === 'none') {
+                            content.style.display = 'block';
+                            // Rotate icon
+                            const icon = btn.querySelector('iconify-icon');
+                            if (icon) icon.setAttribute('icon', 'solar:alt-arrow-up-linear');
+                        } else {
+                            content.style.display = 'none';
+                            const icon = btn.querySelector('iconify-icon');
+                            if (icon) icon.setAttribute('icon', 'solar:alt-arrow-down-linear');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
