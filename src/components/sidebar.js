@@ -103,7 +103,7 @@ export function sidebar() {
     return `
               <a href="${item.link}" class="relative h-12 flex items-center ${justifyClass} px-5 transition-all duration-200 shrink-0 group/item ${activeClass}">
                 <iconify-icon icon="${item.icon}" class="text-icon-md shrink-0 transition-transform duration-300 group-hover/item:scale-110"></iconify-icon>
-                <span data-i18n="${item.key}" class="text-body-m ml-3 whitespace-nowrap overflow-hidden transition-opacity duration-200 ${hideTextClass}">
+                <span data-i18n="${item.key}" class="sidebar-text text-body-m ml-3 whitespace-nowrap overflow-hidden transition-opacity duration-200 ${hideTextClass}">
                   ${t(item.key, item.defaultText)}
                 </span>
               </a>
