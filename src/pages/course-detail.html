@@ -166,7 +166,7 @@
                             <div class="col-span-2 tablet:col-span-1 space-y-10">
                                 <!-- Tabs Navigation (Hidden on Mobile) -->
                                 <div
-                                    class="sticky top-0 z-30 bg-page border-b border-neutral-200 dark:border-neutral-800 w-full py-2 px-4 tablet:hidden">
+                                    class="sticky top-0 z-30 bg-page border-b border-neutral-200 dark:border-neutral-800 w-full py-2 tablet:hidden">
                                     <div
                                         class="flex items-center gap-6 overflow-x-auto no-scrollbar text-sm font-semibold text-content-secondary">
                                         <a href="#what-learn"
@@ -241,7 +241,7 @@
                                     <div class="space-y-3">
                                         <!-- S1 -->
                                         <div
-                                            class="border border-neutral-200 dark:border-neutral-700 rounded-xl overflow-hidden">
+                                            class="border border-neutral-200 dark:border-neutral-700 shadow-base-300 dark:shadow-none shadow-sm rounded-xl overflow-hidden">
                                             <button
                                                 class="w-full flex items-center justify-between p-4 bg-card border-b hover:bg-neutral-100 dark:hover:bg-neutral-800 transition">
                                                 <div class="flex items-center gap-3 font-bold text-content-primary">
@@ -253,8 +253,9 @@
                                                     lectures •
                                                     45m</span>
                                             </button>
-                                            <div class="p-4 bg-page space-y-3">
-                                                <div class="flex justify-between text-sm text-content-secondary">
+                                            <div class="flex flex-col gap-4 p-4 bg-page">
+                                                <div
+                                                    class="flex justify-between text-sm text-content-secondary py-2 border-b">
                                                     <div class="flex gap-3 items-center">
                                                         <iconify-icon icon="solar:play-circle-linear"
                                                             class="text-lg"></iconify-icon>
@@ -264,7 +265,8 @@
                                                     </div>
                                                     <span>05:20</span>
                                                 </div>
-                                                <div class="flex justify-between text-sm text-content-secondary">
+                                                <div
+                                                    class="flex justify-between text-sm text-content-secondary py-2 border-b">
                                                     <div class="flex gap-3 items-center">
                                                         <iconify-icon icon="solar:play-circle-linear"
                                                             class="text-lg"></iconify-icon>
@@ -316,30 +318,41 @@
                                 <div id="mentors" class="scroll-mt-24">
                                     <h2 class="text-2xl font-bold mb-6" data-i18n="courseDetail.mentors">Mentors</h2>
                                     <div
-                                        class="flex gap-4 items-start p-4 border border-neutral-200 dark:border-neutral-800 rounded-2xl bg-card dark:bg-base-800">
-                                        <img src="https://pbs.twimg.com/profile_images/1523987597751726081/XuQeo7gC_400x400.jpg"
-                                            alt="Angela Yu" class="w-20 h-20 rounded-full object-cover">
-                                        <div>
-                                            <h3
-                                                class="text-lg font-bold text-content-primary hover:underline cursor-pointer">
-                                                Angela Yu</h3>
-                                            <p class="text-sm text-brand-primary mb-2">Developer and Lead Instructor</p>
-
-                                            <div class="flex gap-4 text-xs text-content-secondary mb-3">
-                                                <span class="flex items-center gap-1"><iconify-icon
-                                                        icon="solar:star-bold" class="text-warning"></iconify-icon> 4.7
-                                                    Rating</span>
-                                                <span class="flex items-center gap-1"><iconify-icon
-                                                        icon="solar:user-bold"></iconify-icon> 500K+ Students</span>
-                                                <span class="flex items-center gap-1"><iconify-icon
-                                                        icon="solar:play-circle-bold"></iconify-icon> 7 Courses</span>
+                                        class="flex gap-4 flex-col items-start p-4 border border-neutral-200 dark:border-neutral-800 rounded-2xl bg-card dark:bg-base-800">
+                                        <div class="flex flex-col w-full items-end mobile:items-start gap-4">
+                                            <div class="flex items-center justify-start gap-4 w-full">
+                                                <img src="https://pbs.twimg.com/profile_images/1523987597751726081/XuQeo7gC_400x400.jpg"
+                                                    alt="Angela Yu"
+                                                    class="w-20 h-20 tablet:w-16 tablet:h-16 mobile:w-14 mobile:h-14 rounded-full object-cover">
+                                                <div>
+                                                    <h3
+                                                        class="text-lg font-bold text-content-primary hover:underline cursor-pointer">
+                                                        Angela Yu</h3>
+                                                    <p class="text-sm text-brand-primary mb-2">Developer and Lead
+                                                        Instructor
+                                                    </p>
+                                                </div>
                                             </div>
-                                            <p class="text-sm text-content-secondary line-clamp-2">I'm Angela, I'm a
-                                                developer
-                                                with a passion for teaching. I'm the lead instructor at the London App
-                                                Brewery,
-                                                London's leading Programming Bootcamp.</p>
+                                            <div class="flex items-center justify-start gap-4 w-full">
+                                                <div
+                                                    class="flex gap-4 mobile:gap-2 text-xs text-content-secondary mb-3">
+                                                    <span class="flex items-center gap-1"><iconify-icon
+                                                            icon="solar:star-bold" class="text-warning"></iconify-icon>
+                                                        4.7
+                                                        Rating</span>
+                                                    <span class="flex items-center gap-1"><iconify-icon
+                                                            icon="solar:user-bold"></iconify-icon> 500K+ Students</span>
+                                                    <span class="flex items-center gap-1"><iconify-icon
+                                                            icon="solar:play-circle-bold"></iconify-icon> 7
+                                                        Courses</span>
+                                                </div>
+                                            </div>
                                         </div>
+                                        <p class="text-sm text-content-secondary line-clamp-2">I'm Angela, I'm a
+                                            developer
+                                            with a passion for teaching. I'm the lead instructor at the London App
+                                            Brewery,
+                                            London's leading Programming Bootcamp.</p>
                                     </div>
                                 </div>
 

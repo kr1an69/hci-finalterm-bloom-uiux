@@ -1936,6 +1936,11 @@ video {
   border-color: rgb(254 249 195 / var(--tw-border-opacity, 1));
 }
 
+.border-neutral-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(163 163 163 / var(--tw-border-opacity, 1));
+}
+
 .border-b-transparent {
   border-bottom-color: transparent;
 }
@@ -3118,6 +3123,26 @@ video {
   --tw-shadow: var(--tw-shadow-colored);
 }
 
+.shadow-slate-950 {
+  --tw-shadow-color: #020617;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.shadow-base-700 {
+  --tw-shadow-color: #334155;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.shadow-base-400 {
+  --tw-shadow-color: #94A3B8;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.shadow-base-300 {
+  --tw-shadow-color: #CBD5E1;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
 .outline-none {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -3942,6 +3967,26 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.dark\:shadow-base-800:is(.dark *) {
+  --tw-shadow-color: #1E293B;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.dark\:shadow-base-900:is(.dark *) {
+  --tw-shadow-color: #0F172B;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.dark\:shadow-base-700:is(.dark *) {
+  --tw-shadow-color: #334155;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.dark\:shadow-base-200:is(.dark *) {
+  --tw-shadow-color: #E2E8F0;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
 .dark\:hover\:border-brand-primary:hover:is(.dark *) {
   border-color: var(--brand-primary);
 }
@@ -4079,6 +4124,10 @@ video {
     height: auto;
   }
 
+  .tablet\:h-16 {
+    height: 4rem;
+  }
+
   .tablet\:w-24 {
     width: 6rem;
   }
@@ -4093,6 +4142,10 @@ video {
 
   .tablet\:w-full {
     width: 100%;
+  }
+
+  .tablet\:w-16 {
+    width: 4rem;
   }
 
   .tablet\:max-w-md {
@@ -4316,12 +4369,28 @@ video {
     height: 2rem;
   }
 
+  .mobile\:h-12 {
+    height: 3rem;
+  }
+
+  .mobile\:h-14 {
+    height: 3.5rem;
+  }
+
   .mobile\:w-5 {
     width: 1.25rem;
   }
 
   .mobile\:w-full {
     width: 100%;
+  }
+
+  .mobile\:w-12 {
+    width: 3rem;
+  }
+
+  .mobile\:w-14 {
+    width: 3.5rem;
   }
 
   .mobile\:grid-cols-1 {
@@ -4360,6 +4429,10 @@ video {
 
   .mobile\:p-4 {
     padding: 1rem;
+  }
+
+  .mobile\:p-2 {
+    padding: 0.5rem;
   }
 
   .mobile\:px-2 {

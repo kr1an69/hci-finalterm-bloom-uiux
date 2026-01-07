@@ -93,11 +93,12 @@ export function courseCard(data) {
       <!-- HOVER POPUP CARD -->
       <div class="absolute top-0 left-0 w-full min-h-[110%] bg-card border border-brand-primary rounded-2xl p-3 shadow-xl 
                   opacity-0 invisible group-hover:opacity-100 group-hover:visible 
-                  transition-all duration-300 z-50 scale-95 group-hover:scale-105 origin-center">
+                  transition-all duration-300 z-50 scale-95 group-hover:scale-105 origin-center cursor-pointer"
+           onclick="window.location.href='course-detail.html'">
          <!-- Thumbnail -->
         <div class="relative h-40 bg-base-200 rounded-xl overflow-hidden mb-3">
           ${data.thumbnail
-      ? `<a href="course-detail.html"><img src="${data.thumbnail}" class="w-full h-full object-cover" alt="${data.title}" /></a>`
+      ? `<img src="${data.thumbnail}" class="w-full h-full object-cover" alt="${data.title}" />`
       : `<div class="w-full h-full bg-base-300"></div>`
     } 
           <div class="absolute bottom-2 right-2 bg-black/60 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-lg flex items-center justify-center gap-1">
@@ -108,7 +109,7 @@ export function courseCard(data) {
 
          <!-- Content -->
         <div class="px-1 flex flex-col h-full">
-          <a href="course-detail.html" class="font-sans font-bold text-lg mb-1 line-clamp-2 text-brand-primary">${data.title}</a>
+          <div class="font-sans font-bold text-lg mb-1 line-clamp-2 text-brand-primary">${data.title}</div>
           <p class="text-xs text-content-secondary mb-3">${data.author}</p>
           
 
@@ -137,7 +138,7 @@ export function courseCard(data) {
             </div>
             
             <!-- Add to Cart Button -->
-            <button class="w-full py-2.5 rounded-xl bg-brand-surface hover:bg-brand-primary hover:text-white text-brand-primary font-semibold text-sm transition-colors flex items-center justify-center gap-2">
+            <button onclick="event.stopPropagation()" class="w-full py-2.5 rounded-xl bg-brand-surface hover:bg-brand-primary hover:text-white text-brand-primary font-semibold text-sm transition-colors flex items-center justify-center gap-2">
                 <iconify-icon icon="solar:cart-large-2-linear" class="text-lg"></iconify-icon>
                 <span data-i18n="course.addToCart">Add to Cart</span>
             </button>
