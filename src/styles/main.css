@@ -2394,11 +2394,6 @@ video {
   padding-right: 2.5rem;
 }
 
-.px-12 {
-  padding-left: 3rem;
-  padding-right: 3rem;
-}
-
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -2567,6 +2562,14 @@ video {
 
 .text-right {
   text-align: right;
+}
+
+.text-start {
+  text-align: start;
+}
+
+.text-end {
+  text-align: end;
 }
 
 .align-middle {
@@ -3871,6 +3874,10 @@ video {
   background-color: rgb(30 41 59 / var(--tw-bg-opacity, 1));
 }
 
+.dark\:bg-card:is(.dark *) {
+  background-color: var(--bg-card);
+}
+
 .dark\:bg-opacity-30:is(.dark *) {
   --tw-bg-opacity: 0.3;
 }
@@ -4200,11 +4207,6 @@ video {
     padding-right: 1.5rem;
   }
 
-  .tablet\:px-8 {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
   .tablet\:py-0 {
     padding-top: 0px;
     padding-bottom: 0px;
@@ -4326,6 +4328,10 @@ video {
     flex-direction: column;
   }
 
+  .mobile\:flex-wrap {
+    flex-wrap: wrap;
+  }
+
   .mobile\:items-start {
     align-items: flex-start;
   }
@@ -4391,6 +4397,23 @@ video {
 
   .mobile\:text-icon-xs {
     font-size: 16px;
+  }
+
+  .mobile\:text-h5 {
+    font-size: 20px;
+    line-height: 160%;
+    font-weight: 400;
+  }
+
+  .mobile\:text-body-m {
+    font-size: 16px;
+    line-height: 160%;
+    font-weight: 400;
+  }
+
+  .mobile\:text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
   }
 
   .mobile\:font-bold {

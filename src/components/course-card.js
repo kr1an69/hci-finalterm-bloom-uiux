@@ -97,7 +97,7 @@ export function courseCard(data) {
          <!-- Thumbnail -->
         <div class="relative h-40 bg-base-200 rounded-xl overflow-hidden mb-3">
           ${data.thumbnail
-      ? `<img src="${data.thumbnail}" class="w-full h-full object-cover" alt="${data.title}" />`
+      ? `<a href="course-detail.html"><img src="${data.thumbnail}" class="w-full h-full object-cover" alt="${data.title}" /></a>`
       : `<div class="w-full h-full bg-base-300"></div>`
     } 
           <div class="absolute bottom-2 right-2 bg-black/60 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-lg flex items-center justify-center gap-1">

@@ -1,6 +1,6 @@
 export function createFooter() {
    const isAtLoginPage = window.location.pathname.includes("login.html");
-   const isAtLanding = window.location.pathname.includes("index.html");
+   const isAtLanding = window.location.pathname === "/" || window.location.pathname.includes("index.html");
    const stringForMx = (isAtLoginPage || isAtLanding) ? "-mx-0" : "-mx-8 tablet:-mx-6 mobile:-mx-4";
 
    const footerHTML = `
