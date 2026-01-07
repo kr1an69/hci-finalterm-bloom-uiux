@@ -1234,6 +1234,10 @@ video {
   height: 100vh;
 }
 
+.h-0\.5 {
+  height: 0.125rem;
+}
+
 .max-h-\[85vh\] {
   max-height: 85vh;
 }
@@ -3874,8 +3878,9 @@ video {
   background-color: rgb(30 41 59 / var(--tw-bg-opacity, 1));
 }
 
-.dark\:bg-card:is(.dark *) {
-  background-color: var(--bg-card);
+.dark\:bg-white:is(.dark *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
 .dark\:bg-opacity-30:is(.dark *) {
@@ -4222,6 +4227,16 @@ video {
     padding-bottom: 0.75rem;
   }
 
+  .tablet\:py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .tablet\:py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
   .tablet\:pb-24 {
     padding-bottom: 6rem;
   }
@@ -4292,6 +4307,21 @@ video {
     margin-right: 1rem;
   }
 
+  .mobile\:my-6 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .mobile\:my-10 {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .mobile\:my-20 {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+
   .mobile\:mb-6 {
     margin-bottom: 1.5rem;
   }
@@ -4312,8 +4342,24 @@ video {
     height: 2rem;
   }
 
+  .mobile\:h-4 {
+    height: 1rem;
+  }
+
+  .mobile\:h-5 {
+    height: 1.25rem;
+  }
+
   .mobile\:w-full {
     width: 100%;
+  }
+
+  .mobile\:w-4 {
+    width: 1rem;
+  }
+
+  .mobile\:w-5 {
+    width: 1.25rem;
   }
 
   .mobile\:grid-cols-1 {
@@ -4374,6 +4420,16 @@ video {
     padding-bottom: 0.375rem;
   }
 
+  .mobile\:py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .mobile\:py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
   .mobile\:pb-32 {
     padding-bottom: 8rem;
   }
@@ -4399,21 +4455,20 @@ video {
     font-size: 16px;
   }
 
-  .mobile\:text-h5 {
-    font-size: 20px;
-    line-height: 160%;
-    font-weight: 400;
-  }
-
-  .mobile\:text-body-m {
-    font-size: 16px;
-    line-height: 160%;
-    font-weight: 400;
-  }
-
   .mobile\:text-xs {
     font-size: 0.75rem;
     line-height: 1rem;
+  }
+
+  .mobile\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .mobile\:text-h3 {
+    font-size: 32px;
+    line-height: 130%;
+    font-weight: 600;
   }
 
   .mobile\:font-bold {

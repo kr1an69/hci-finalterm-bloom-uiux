@@ -37,7 +37,7 @@
                 <!-- LOGIN UI Main Container (EDGE-TO-EDGE) -->
                 <!-- Desktop: Row (Split), Mobile/Tablet: Col (Stack) -->
                 <div id="page-content-main"
-                    class="bg-gradient-to-br from-[#8B5CF6] to-[#4C1D95] w-full flex-1 flex flex-row tablet:flex-col tablet:justify-center tablet:items-center min-h-full py-10 tablet:py-0">
+                    class="bg-gradient-to-br from-[#8B5CF6] to-[#4C1D95] w-full flex-1 flex flex-row tablet:flex-col tablet:justify-center tablet:items-center min-h-full py-10 tablet:py-8">
 
                     <!-- LEFT SIDE: Hero/Banner -->
                     <!-- Desktop: 50% width, Mobile/Tablet: Hidden -->
@@ -61,10 +61,10 @@
                     <!-- RIGHT SIDE: Login Form -->
                     <!-- Desktop: 50% width, Mobile/Tablet: Centered Card -->
                     <div
-                        class="rounded-l-3xl tablet:rounded-3xl w-1/2 tablet:w-[90%] tablet:max-w-md tablet:h-auto bg-card flex items-center justify-center p-8 tablet:p-6 shadow-2xl">
+                        class="rounded-l-3xl tablet:rounded-3xl w-1/2 tablet:w-[90%] tablet:max-w-md tablet:h-auto bg-card flex items-center justify-center p-8 tablet:p-6 shadow-2xl mobile:py-6 mobile:my-6">
                         <!-- Inner Container focused centrally -->
                         <div class="w-full max-w-md">
-                            <h2 class="font-sans font-bold text-h2 text-content-primary mb-8"
+                            <h2 class="font-sans font-bold text-h2 mobile:text-h3 text-content-primary mb-8"
                                 data-i18n="auth.loginTitle">Log in</h2>
 
                             <form id="login-form" class="flex flex-col gap-5">
@@ -90,15 +90,15 @@
                                 <!-- Remember & Forgot -->
                                 <div class="flex items-center justify-between mt-1">
                                     <label class="flex items-center gap-2 cursor-pointer group">
-                                        <input type="checkbox" class="appearance-none w-6 h-6 rounded-md border-2 bg-card checked:bg-brand 
+                                        <input type="checkbox" class="appearance-none w-6 h-6 mobile:w-5 mobile:h-5 rounded-md border-2 bg-card checked:bg-brand 
                                             checked:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxLjJlbSIgaGVpZ2h0PSIxLjJlbSIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyLjUiIGQ9Ik0yMCA3TDEwIDE3bC01LTUiLz48L3N2Zz4=')]
                                             checked:bg-center checked:bg-contain cursor-pointer" />
                                         <span
-                                            class="font-sans font-medium text-body-m text-content-primary group-hover:text-brand transition-colors"
+                                            class="font-sans font-medium text-body-m text-content-primary group-hover:text-brand transition-colors mobile:text-sm"
                                             data-i18n="auth.rememberMe">Remember me</span>
                                     </label>
                                     <a href="#"
-                                        class="font-sans font-bold text-body-m text-content-primary hover:text-brand transition-colors"
+                                        class="font-sans font-medium text-body-m text-content-primary hover:text-brand transition-colors text-end mobile:text-sm"
                                         data-i18n="auth.forgotPassword">Forgot password</a>
                                 </div>
 
@@ -111,10 +111,10 @@
                             </form>
 
                             <!-- Divider -->
-                            <div class="relative flex items-center justify-center my-8">
-                                <div class="h-px bg-base-200 w-full absolute top-1/2 left-0 -z-10 dark:bg-base-700">
+                            <div class="relative flex items-center justify-center mt-8 mb-4">
+                                <div class="h-0.5 bg-base-200 w-full absolute top-1/2 left-0 dark:bg-base-700">
                                 </div>
-                                <span class="bg-card px-4 text-body-s font-medium text-content-secondary"
+                                <span class="bg-card px-4 text-body-s font-medium text-content-secondary z-10"
                                     data-i18n="auth.continueWith">Or continue with</span>
                             </div>
 
