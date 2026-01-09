@@ -2,7 +2,7 @@ import { translations } from "../langs/lang-db.js";
 
 export function sidebar() {
   const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-  const stringBorderLoggedIn = isLoggedIn ? "border-t border-DEFAULT mt-2 pt-4" : "";
+  const stringBorderLoggedIn = isLoggedIn ? "border-t border-DEFAULT mt-2 pt-2" : "";
   const isAtLanding = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
   const stringHidden = isAtLanding ? "hidden" : "";
 
@@ -91,7 +91,7 @@ export function sidebar() {
       </div>
 
       <!-- MAIN SCROLLABLE AREA -->
-      <nav class="flex-1 flex flex-col gap-2 py-6 overflow-y-auto overflow-x-hidden scrollbar-hide">
+      <nav class="flex-1 flex flex-col gap-2 mobile:gap-0 py-2 tablet:py-0 overflow-y-auto overflow-x-hidden scrollbar-hide">
         
         <!-- MENU ITEMS -->
         ${isLoggedIn ? menuItems.map((item) => {
@@ -312,7 +312,7 @@ export function initSidebarLogic() {
   if (btnSearch && mobileSearchModal) {
     btnSearch.addEventListener("click", () => {
       mobileSearchModal.showModal();
-      closeSidebar();
+      // closeSidebar();
     });
   }
   if (btnTheme) {
@@ -337,7 +337,7 @@ export function initSidebarLogic() {
           langModalCard.classList.add("scale-100");
         }, 10);
 
-        closeSidebar();
+        // closeSidebar();
       }
     });
   }
