@@ -163,9 +163,9 @@ export function initProfileLogic() {
     updateLanguage();
 
     // 4. Cập nhật Mobile Sidebar Label (New)
-    const mobileLangText = document.getElementById("mobile-lang-text");
+    const mobileLangText = document.getElementById("mobile-lang-suffix");
     if (mobileLangText) {
-      mobileLangText.textContent = `Language (${lang.toUpperCase()})`;
+      mobileLangText.textContent = `(${lang.toUpperCase()})`;
     }
 
     closeModal();

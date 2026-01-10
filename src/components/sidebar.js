@@ -133,7 +133,10 @@ export function sidebar() {
              <!-- Mobile Lang -->
              <button id="btn-mobile-lang" class="w-full h-12 flex items-center px-5 text-content-secondary hover:text-brand transition-colors text-left">
                   <iconify-icon icon="solar:global-linear" class="text-icon-md shrink-0"></iconify-icon>
-                  <span id="mobile-lang-text" class="ml-3 font-sans text-body-m" data-i18n="side.language">${t("side.language", "Language")} (${currentLang.toUpperCase()})</span>
+                  <span class="ml-3 font-sans text-body-m flex items-center gap-1">
+                    <span data-i18n="side.language">${t("side.language", "Language")}</span>
+                    <span id="mobile-lang-suffix">(${currentLang.toUpperCase()})</span>
+                  </span>
              </button>
              <!-- Mobile Ask Bloom -->
              <div class="px-5 mt-2">

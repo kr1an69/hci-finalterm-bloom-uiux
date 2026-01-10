@@ -129,61 +129,73 @@
 
             <!-- RIGHT COLUMN (Streak) -->
             <div class="col-span-4 tablet:col-span-12 space-y-6 mobile:space-y-4">
+              <!-- 1. Thêm 'relative overflow-hidden' vào đây -->
               <div
-                class="border-2 border-brand-accent bg-card p-6 rounded-2xl shadow-sm text-center h-full flex flex-col justify-center">
-                <h2 class="font-bold text-h3 mb-4 text-content-primary" data-i18n="home.streak">Streak
-                </h2>
-                <div class="text-6xl mb-4 flex justify-center">🔥</div>
-                <h4 class="text-lg font-bold text-content-primary">
-                  36 <span data-i18n="home.daysOnFire">days on fire!</span>
-                </h4>
-                <p class="text-xs text-content-secondary mb-8" data-i18n="home.streakMsg">
-                  Keep it up to earn "Fire Keeper" badge.
-                </p>
+                class="relative overflow-hidden border border-brand-accent bg-card p-6 rounded-2xl shadow-sm text-center h-full flex flex-col justify-center">
 
-                <div class="flex items-center px-4 flex-wrap justify-center gap-4 mobile:gap-2">
-                  <!-- Mock Calendar -->
-                  <div class="flex flex-col items-center gap-2">
-                    <div class="w-10 h-10 rounded-full bg-brand-accent text-white flex items-center justify-center">
-                      <span class="iconify text-lg" data-icon="solar:check-read-linear"></span>
+                <!-- 2. Thêm Layout Glare Effect (Lớp phủ Gradient) -->
+                <!-- from-brand-accent/10: Màu thương hiệu (cam) với độ mờ 10% -->
+                <!-- pointer-events-none: Đảm bảo vẫn click được vào nội dung bên dưới -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-br from-orange-600/10 dark:from-orange-500/20 via-transparent to-transparent pointer-events-none">
+                </div>
+
+                <!-- Nội dung chính (Thêm relative z-10 để chắc chắn nổi lên trên lớp Glare) -->
+                <div class="relative z-10 flex flex-col items-center w-full">
+                  <h2 class="font-bold text-h3 mb-4 text-content-primary" data-i18n="home.streak">Streak
+                  </h2>
+                  <div class="text-6xl mb-4 flex justify-center">🔥</div>
+                  <h4 class="text-lg font-bold text-content-primary">
+                    36 <span data-i18n="home.daysOnFire">days on fire!</span>
+                  </h4>
+                  <p class="text-xs text-content-secondary mb-8" data-i18n="home.streakMsg">
+                    Keep it up to earn "Fire Keeper" badge.
+                  </p>
+
+                  <div class="flex items-center px-4 flex-wrap justify-center gap-4 mobile:gap-2">
+                    <!-- Mock Calendar -->
+                    <div class="flex flex-col items-center gap-2">
+                      <div class="w-10 h-10 rounded-full bg-brand-accent text-white flex items-center justify-center">
+                        <span class="iconify text-lg" data-icon="solar:check-read-linear"></span>
+                      </div>
+                      <span class="text-xs font-medium text-content-secondary">Mon</span>
                     </div>
-                    <span class="text-xs font-medium text-content-secondary">Mon</span>
-                  </div>
-                  <div class="flex flex-col items-center gap-2">
-                    <div class="w-10 h-10 rounded-full bg-brand-accent text-white flex items-center justify-center">
-                      <span class="iconify text-lg" data-icon="solar:check-read-linear"></span>
+                    <div class="flex flex-col items-center gap-2">
+                      <div class="w-10 h-10 rounded-full bg-brand-accent text-white flex items-center justify-center">
+                        <span class="iconify text-lg" data-icon="solar:check-read-linear"></span>
+                      </div>
+                      <span class="text-xs font-medium text-content-secondary">Tue</span>
                     </div>
-                    <span class="text-xs font-medium text-content-secondary">Tue</span>
-                  </div>
-                  <div class="flex flex-col items-center gap-2">
-                    <div class="w-10 h-10 rounded-full bg-brand-accent text-white flex items-center justify-center">
-                      <span class="iconify text-lg" data-icon="solar:check-read-linear"></span>
+                    <div class="flex flex-col items-center gap-2">
+                      <div class="w-10 h-10 rounded-full bg-brand-accent text-white flex items-center justify-center">
+                        <span class="iconify text-lg" data-icon="solar:check-read-linear"></span>
+                      </div>
+                      <span class="text-xs font-medium text-content-secondary">Wed</span>
                     </div>
-                    <span class="text-xs font-medium text-content-secondary">Wed</span>
-                  </div>
-                  <div class="flex flex-col items-center gap-2">
-                    <div class="w-10 h-10 rounded-full bg-brand-accent text-white flex items-center justify-center">
-                      <span class="iconify text-lg" data-icon="solar:check-read-linear"></span>
+                    <div class="flex flex-col items-center gap-2">
+                      <div class="w-10 h-10 rounded-full bg-brand-accent text-white flex items-center justify-center">
+                        <span class="iconify text-lg" data-icon="solar:check-read-linear"></span>
+                      </div>
+                      <span class="text-xs font-medium text-content-secondary">Thu</span>
                     </div>
-                    <span class="text-xs font-medium text-content-secondary">Thu</span>
-                  </div>
-                  <div class="flex flex-col items-center gap-2">
-                    <div class="w-10 h-10 rounded-full bg-brand-accent text-white flex items-center justify-center">
-                      <span class="iconify text-lg" data-icon="solar:check-read-linear"></span>
+                    <div class="flex flex-col items-center gap-2">
+                      <div class="w-10 h-10 rounded-full bg-brand-accent text-white flex items-center justify-center">
+                        <span class="iconify text-lg" data-icon="solar:check-read-linear"></span>
+                      </div>
+                      <span class="text-xs font-medium text-content-secondary">Fri</span>
                     </div>
-                    <span class="text-xs font-medium text-content-secondary">Fri</span>
-                  </div>
-                  <div class="flex flex-col items-center gap-2">
-                    <div class="w-10 h-10 rounded-full bg-brand-accent text-white flex items-center justify-center">
-                      <span class="iconify text-lg" data-icon="solar:check-read-linear"></span>
+                    <div class="flex flex-col items-center gap-2">
+                      <div class="w-10 h-10 rounded-full bg-brand-accent text-white flex items-center justify-center">
+                        <span class="iconify text-lg" data-icon="solar:check-read-linear"></span>
+                      </div>
+                      <span class="text-xs font-medium text-content-secondary">Sat</span>
                     </div>
-                    <span class="text-xs font-medium text-content-secondary">Sat</span>
-                  </div>
-                  <div class="flex flex-col items-center gap-2">
-                    <div
-                      class="w-10 h-10 rounded-full bg-base-100 text-content-disabled flex items-center justify-center">
+                    <div class="flex flex-col items-center gap-2">
+                      <div
+                        class="w-10 h-10 rounded-full bg-base-200 dark:bg-base-600 text-content-disabled flex items-center justify-center">
+                      </div>
+                      <span class="text-xs font-medium text-content-secondary">Sun</span>
                     </div>
-                    <span class="text-xs font-medium text-content-secondary">Sun</span>
                   </div>
                 </div>
               </div>
