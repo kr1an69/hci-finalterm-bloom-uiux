@@ -1,7 +1,12 @@
 import { translations } from "../langs/lang-db.js";
 
 // 1. ASK BLOOM MODAL HTML
-const askBloomModalHTML = (t) => `
+const askBloomModalHTML = (t) => {
+  // Nếu URL chứa /src/pages/ thì dùng ../../, còn không (ở root) thì dùng ./
+  const imagePath = window.location.pathname.includes('/src/pages/')
+    ? "../../public/images/mascot.png"
+    : "./public/images/mascot.png";
+  return `
   <div id="ask-bloom-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-base-900/60 backdrop-blur-sm transition-opacity opacity-0">
     <div class="bg-card w-full max-w-md mobile:m-4 rounded-3xl shadow-2xl border border-DEFAULT transform scale-95 transition-transform duration-300 relative overflow-hidden">
      
@@ -18,7 +23,7 @@ const askBloomModalHTML = (t) => `
         <!-- Image Illustration -->
         <div class="w-32 h-32 mx-auto mb-6 bg-brand-surface rounded-full flex items-center justify-center shadow-inner">
            <img 
-              src="../../public/images/mascot.png" 
+              src=${imagePath} 
               alt="Bloom Mascot" 
               class="w-full h-full object-contain drop-shadow-sm"/>
            <!-- <iconify-icon icon="solar:stars-minimalistic-bold-duotone" class="text-6xl text-brand-primary"></iconify-icon> -->
@@ -38,6 +43,7 @@ const askBloomModalHTML = (t) => `
     </div>
   </div>
 `;
+}
 
 // 2. RE-BLOOM MODAL HTML (Design lại cho đẹp)
 const reBloomModalHTML = (t) => `

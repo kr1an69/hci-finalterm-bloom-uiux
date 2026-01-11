@@ -252,6 +252,51 @@ export const translations = {
     "onboarding.q3.opt2": "Reading & Documentation",
     "onboarding.q3.opt3": "Interactive quizzes",
     "onboarding.q3.opt4": "Project-based",
+
+    // Landing Page (Index)
+    "index.whatUsersSay": "WHAT USERS SAY ABOUT US",
+    "index.review1": "Bloom has completely transformed the way I learn. The AI roadmap is a game changer!",
+    "index.author1": "Sarah Jenkins",
+    "index.role1": "Computer Science Student",
+    "index.review2": "I never thought learning could be this engaging. The gamification elements keep me hooked.",
+    "index.author2": "Michael Chen",
+    "index.role2": "Self-taught Developer",
+    "index.review3": "The community here is supportive and the courses are top-notch. Highly recommended!",
+    "index.author3": "Jessica Lee",
+    "index.role3": "UX Designer",
+    "index.review4": "Honestly, the best investment I've made for my career this year.",
+    "index.author4": "Alex Wong",
+    "index.role4": "Product Manager",
+
+    // Index - Hero & Features
+    "index.heroTag": "🚀 Next-Gen AI Learning Platform",
+    "index.heroTitle": "Unleash your <br> <span class=\"text-transparent bg-clip-text bg-brand-harmony font-serif italic\">limitless</span> potential.",
+    "index.heroDesc": "Personalized learning system helps you master knowledge 30% faster than traditional methods thanks to intelligent AI assistant.",
+    "index.startFree": "Start for Free",
+    "index.viewDemo": "View Demo",
+    "index.trustedBy": "Trusted by 2,000+ learners",
+
+    "index.heroCard1Title": "Excellent Achievement",
+    "index.heroCard1Desc": "You reached top 1% this week!",
+    "index.heroCard1Progress": "Course Progress",
+    "index.heroCard2Status": "Completed",
+
+    "index.whyChoose": "Why Choose Bloom?",
+    "index.whyChooseDesc": "We don't just provide courses, we provide a learning experience designed specifically for your brain.",
+
+    "index.feature1Title": "Personalized AI Roadmap",
+    "index.feature1Desc": "AI analyzes strengths and weaknesses to build the most optimal learning path just for you.",
+
+    "index.feature2Title": "Vibrant Community",
+    "index.feature2Desc": "Connect with millions of other learners. Learning from friends is better than learning alone.",
+
+    "index.feature3Title": "Prestigious Certificates",
+    "index.feature3Desc": "Receive globally valid certificates after completing courses and projects.",
+
+    "index.ctaTitle": "Ready to breakthrough?",
+    "index.ctaDesc": "Join 20,000+ learners who are changing their careers every day with Bloom.",
+    "index.ctaButton": "Create Free Account",
+    "index.ctaNote": "No credit card required. Cancel anytime.",
   },
   vi: {
     //NavBar
@@ -507,5 +552,50 @@ export const translations = {
     "onboarding.q3.opt2": "Đọc tài liệu",
     "onboarding.q3.opt3": "Câu hỏi tương tác",
     "onboarding.q3.opt4": "Làm dự án thực tế",
+
+    // Landing Page (Index)
+    "index.whatUsersSay": "KHÁCH HÀNG NÓI GÌ VỀ CHÚNG TÔI",
+    "index.review1": "Bloom đã thay đổi hoàn toàn cách tôi học tập. Lộ trình AI thực sự là một bước đột phá!",
+    "index.author1": "Sarah Jenkins",
+    "index.role1": "Sinh viên KHMT",
+    "index.review2": "Tôi chưa bao giờ nghĩ việc học lại thú vị đến thế. Các yếu tố trò chơi hóa giữ chân tôi mỗi ngày.",
+    "index.author2": "Michael Chen",
+    "index.role2": "Lập trình viên tự học",
+    "index.review3": "Cộng đồng ở đây rất hỗ trợ và các khóa học đều có chất lượng hàng đầu. Rất đáng để thử!",
+    "index.author3": "Jessica Lee",
+    "index.role3": "Thiết kế UX",
+    "index.review4": "Thành thật mà nói, đây là khoản đầu tư tốt nhất cho sự nghiệp của tôi trong năm nay.",
+    "index.author4": "Alex Wong",
+    "index.role4": "Quản lý sản phẩm",
+
+    // Index - Hero & Features
+    "index.heroTag": "🚀 Nền tảng học tập AI thế hệ mới",
+    "index.heroTitle": "Khơi dậy tiềm năng <br> <span class=\"text-transparent bg-clip-text bg-brand-harmony font-serif italic\">vô hạn</span> của bạn.",
+    "index.heroDesc": "Hệ thống học tập cá nhân hóa giúp bạn chinh phục kiến thức nhanh hơn 30% so với phương pháp truyền thống nhờ trợ lý ảo AI thông minh.",
+    "index.startFree": "Bắt đầu miễn phí",
+    "index.viewDemo": "Xem Demo",
+    "index.trustedBy": "Đã được tin dùng bởi 2,000+ học viên",
+
+    "index.heroCard1Title": "Thành tích xuất sắc",
+    "index.heroCard1Desc": "Bạn đã lọt top 1% tuần này!",
+    "index.heroCard1Progress": "Tiến độ khóa học",
+    "index.heroCard2Status": "Đã hoàn thành",
+
+    "index.whyChoose": "Tại sao chọn Bloom?",
+    "index.whyChooseDesc": "Chúng tôi không chỉ cung cấp khóa học, chúng tôi cung cấp một trải nghiệm học tập được thiết kế riêng cho não bộ của bạn.",
+
+    "index.feature1Title": "Lộ trình AI cá nhân",
+    "index.feature1Desc": "AI phân tích điểm mạnh yếu để xây dựng lộ trình học tập tối ưu nhất cho riêng bạn.",
+
+    "index.feature2Title": "Cộng đồng sôi nổi",
+    "index.feature2Desc": "Kết nối với hàng triệu học viên khác. Học thầy không tày học bạn.",
+
+    "index.feature3Title": "Chứng chỉ uy tín",
+    "index.feature3Desc": "Nhận chứng chỉ có giá trị toàn cầu sau khi hoàn thành khóa học và dự án.",
+
+    "index.ctaTitle": "Sẵn sàng để bứt phá?",
+    "index.ctaDesc": "Tham gia cùng 20,000+ người học đang thay đổi sự nghiệp của họ mỗi ngày cùng Bloom.",
+    "index.ctaButton": "Tạo tài khoản miễn phí",
+    "index.ctaNote": "Không cần thẻ tín dụng. Hủy bất kỳ lúc nào.",
   },
 };

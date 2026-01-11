@@ -29,7 +29,7 @@
   <main class="pt-20">
 
     <!-- HERO SECTION -->
-    <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden tablet:flex-col">
+    <section class="relative min-h-[90vh] py-10 flex items-center justify-center overflow-hidden tablet:flex-col">
       <!-- Background Elements -->
       <div class="absolute top-0 inset-x-0 h-[500px] bg-brand-harmony opacity-10 blur-[100px] -z-10"></div>
 
@@ -38,15 +38,18 @@
         <!-- Left Content -->
         <div class="flex flex-col justify-center text-left tablet:text-center animate-fade-in-up">
           <span
-            class="flex items-center px-4 py-1.5 rounded-full bg-brand-surface text-brand-primary text-sm font-bold w-fit mb-6 tablet:mx-auto tablet:mt-6 font-sans">
+            class="flex items-center px-4 py-1.5 rounded-full bg-brand-surface text-brand-primary text-sm font-bold w-fit mb-6 tablet:mx-auto tablet:mt-6 font-sans"
+            data-i18n="index.heroTag">
             🚀 Nền tảng học tập AI thế hệ mới
           </span>
-          <h1 class="text-h1 tablet:text-4xl mobile:text-3xl font-bold mb-6 leading-tight font-sans">
+          <h1 class="text-h1 tablet:text-4xl mobile:text-3xl font-bold mb-6 leading-tight font-sans"
+            data-i18n="index.heroTitle">
             Khơi dậy tiềm năng <br />
             <span class="text-transparent bg-clip-text bg-brand-harmony font-serif italic">vô hạn</span> của
             bạn.
           </h1>
-          <p class="text-body-l text-content-secondary mb-8 max-w-lg tablet:mx-auto font-sans">
+          <p class="text-body-l text-content-secondary mb-8 max-w-lg tablet:mx-auto font-sans"
+            data-i18n="index.heroDesc">
             Hệ thống học tập cá nhân hóa giúp bạn chinh phục kiến thức nhanh hơn 30% so với phương pháp
             truyền thống nhờ trợ lý ảo AI thông minh.
           </p>
@@ -54,14 +57,14 @@
           <div class="flex flex-wrap items-center justify-start tablet:justify-center gap-4">
             <a href="./src/pages/login.html"
               class="px-8 py-4 tablet:px-6 tablet:py-3 bg-brand-primary text-white rounded-full font-bold text-lg hover:bg-brand-secondary transition shadow-xl shadow-brand-primary/20 hover:-translate-y-1 transform font-sans">
-              Bắt đầu miễn phí
+              <span data-i18n="index.startFree">Bắt đầu miễn phí</span>
               <iconify-icon icon="solar:arrow-right-linear"
                 class="inline-block ml-2 text-xl align-middle"></iconify-icon>
             </a>
             <a href="#demo"
               class="px-8 py-4 tablet:px-6 tablet:py-3 border border-border-default text-content-primary rounded-full font-bold text-lg hover:bg-base-100 dark:hover:bg-base-800 transition flex items-center gap-2 font-sans">
               <iconify-icon icon="solar:play-circle-bold" class="text-brand-primary text-2xl"></iconify-icon>
-              Xem Demo
+              <span data-i18n="index.viewDemo">Xem Demo</span>
             </a>
           </div>
 
@@ -77,7 +80,7 @@
                 class="w-10 h-10 rounded-full border-2 border-bg-page bg-base-200 flex items-center justify-center text-xs">
                 2k+</div>
             </div>
-            <p>Đã được tin dùng bởi 2,000+ học viên</p>
+            <p data-i18n="index.trustedBy">Đã được tin dùng bởi 2,000+ học viên</p>
           </div>
         </div>
 
@@ -93,8 +96,9 @@
                   <iconify-icon icon="solar:crown-star-bold" class="text-2xl"></iconify-icon>
                 </div>
                 <div>
-                  <h4 class="text-lg font-bold font-sans">Thành tích xuất sắc</h4>
-                  <p class="text-sm text-content-secondary font-sans">Bạn đã lọt top 1% tuần này!</p>
+                  <h4 class="text-lg font-bold font-sans" data-i18n="index.heroCard1Title">Thành tích xuất sắc</h4>
+                  <p class="text-sm text-content-secondary font-sans" data-i18n="index.heroCard1Desc">Bạn đã lọt top 1%
+                    tuần này!</p>
                 </div>
               </div>
               <div class="space-y-4">
@@ -102,7 +106,7 @@
                   <div class="h-full bg-brand-harmony w-[85%] rounded-full"></div>
                 </div>
                 <div class="flex justify-between text-sm font-medium font-sans">
-                  <span>Tiến độ khóa học</span>
+                  <span data-i18n="index.heroCard1Progress">Tiến độ khóa học</span>
                   <span class="text-brand-primary">85%</span>
                 </div>
               </div>
@@ -118,7 +122,7 @@
                   <iconify-icon icon="solar:check-circle-bold" class="text-xl"></iconify-icon>
                 </div>
                 <div>
-                  <div class="text-sm font-bold font-sans">Đã hoàn thành</div>
+                  <div class="text-sm font-bold font-sans" data-i18n="index.heroCard2Status">Đã hoàn thành</div>
                   <div class="text-xs text-content-secondary font-sans">Python Core</div>
                 </div>
               </div>
@@ -137,8 +141,9 @@
     <section id="features" class="py-24 bg-base-50 dark:bg-base-900/50">
       <div class="container mx-auto px-4">
         <div class="text-center max-w-3xl mx-auto mb-16">
-          <h2 class="text-h2 font-bold mb-4 font-sans">Tại sao chọn Bloom?</h2>
-          <p class="text-body-l text-content-secondary font-sans">Chúng tôi không chỉ cung cấp khóa học, chúng tôi cung
+          <h2 class="text-h2 font-bold mb-4 font-sans" data-i18n="index.whyChoose">Tại sao chọn Bloom?</h2>
+          <p class="text-body-l text-content-secondary font-sans" data-i18n="index.whyChooseDesc">Chúng tôi không chỉ
+            cung cấp khóa học, chúng tôi cung
             cấp một trải nghiệm học tập được thiết kế riêng cho não bộ của bạn.</p>
         </div>
 
@@ -150,8 +155,9 @@
               class="w-14 h-14 rounded-2xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition">
               <iconify-icon icon="solar:graph-new-up-bold-duotone"></iconify-icon>
             </div>
-            <h3 class="text-h4 font-bold mb-3 font-sans">Lộ trình AI cá nhân</h3>
-            <p class="text-content-secondary font-sans">AI phân tích điểm mạnh yếu để xây dựng lộ trình học tập tối ưu
+            <h3 class="text-h4 font-bold mb-3 font-sans" data-i18n="index.feature1Title">Lộ trình AI cá nhân</h3>
+            <p class="text-content-secondary font-sans" data-i18n="index.feature1Desc">AI phân tích điểm mạnh yếu để xây
+              dựng lộ trình học tập tối ưu
               nhất cho riêng bạn.</p>
           </div>
 
@@ -162,8 +168,9 @@
               class="w-14 h-14 rounded-2xl bg-purple-50 dark:bg-purple-900/20 text-purple-600 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition">
               <iconify-icon icon="solar:users-group-rounded-bold-duotone"></iconify-icon>
             </div>
-            <h3 class="text-h4 font-bold mb-3 font-sans">Cộng đồng sôi nổi</h3>
-            <p class="text-content-secondary font-sans">Kết nối với hàng triệu học viên khác. Học thầy không tày học
+            <h3 class="text-h4 font-bold mb-3 font-sans" data-i18n="index.feature2Title">Cộng đồng sôi nổi</h3>
+            <p class="text-content-secondary font-sans" data-i18n="index.feature2Desc">Kết nối với hàng triệu học viên
+              khác. Học thầy không tày học
               bạn.</p>
           </div>
 
@@ -174,10 +181,111 @@
               class="w-14 h-14 rounded-2xl bg-orange-50 dark:bg-orange-900/20 text-orange-600 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition">
               <iconify-icon icon="solar:diploma-verified-bold-duotone"></iconify-icon>
             </div>
-            <h3 class="text-h4 font-bold mb-3 font-sans">Chứng chỉ uy tín</h3>
-            <p class="text-content-secondary font-sans">Nhận chứng chỉ có giá trị toàn cầu sau khi hoàn thành khóa học
+            <h3 class="text-h4 font-bold mb-3 font-sans" data-i18n="index.feature3Title">Chứng chỉ uy tín</h3>
+            <p class="text-content-secondary font-sans" data-i18n="index.feature3Desc">Nhận chứng chỉ có giá trị toàn
+              cầu sau khi hoàn thành khóa học
               và dự án.</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT USERS SAY SECTION -->
+    <section class="py-24 bg-base-50 dark:bg-base-900/30 overflow-hidden">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-4xl mx-auto mb-16">
+          <h2 class="text-h2 font-bold mb-4 font-sans tracking-wide uppercase" data-i18n="index.whatUsersSay">
+            WHAT USERS SAY ABOUT US
+          </h2>
+          <div class="w-24 h-1.5 bg-brand-primary mx-auto rounded-full"></div>
+        </div>
+
+
+        <!-- Grid Container -->
+        <div class="grid grid-cols-4 tablet:grid-cols-2 mobile:grid-cols-1 gap-6">
+
+          <!-- Review 1 -->
+          <div
+            class="bg-card border border-border-default rounded-3xl p-6 flex flex-col justify-between shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full">
+            <div class="flex flex-col">
+              <iconify-icon icon="bxs:quote-alt-left" class="text-3xl text-brand-primary/20 mb-4"></iconify-icon>
+              <p class="text-body-m font-sans text-content-secondary leading-relaxed italic" data-i18n="index.review1">
+                "Bloom has completely transformed the way I learn. The AI roadmap is a game changer!"
+              </p>
+            </div>
+            <div class="flex items-center gap-3 mt-6 pt-6 border-t border-border-default/50">
+              <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="User"
+                class="w-10 h-10 rounded-full object-cover border-2 border-brand-surface shadow-sm">
+              <div>
+                <h4 class="font-bold font-sans text-content-primary text-body-s" data-i18n="index.author1">Sarah Jenkins
+                </h4>
+                <p class="text-caption text-content-secondary font-sans" data-i18n="index.role1">Computer Science
+                  Student</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div
+            class="bg-card border border-border-default rounded-3xl p-6 flex flex-col justify-between shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full">
+            <div class="flex flex-col">
+              <iconify-icon icon="bxs:quote-alt-left" class="text-3xl text-brand-primary/20 mb-4"></iconify-icon>
+              <p class="text-body-m font-sans text-content-secondary leading-relaxed italic" data-i18n="index.review2">
+                "I never thought learning could be this engaging. The gamification elements keep me hooked."
+              </p>
+            </div>
+            <div class="flex items-center gap-3 mt-6 pt-6 border-t border-border-default/50">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User"
+                class="w-10 h-10 rounded-full object-cover border-2 border-brand-surface shadow-sm">
+              <div>
+                <h4 class="font-bold font-sans text-content-primary text-body-s" data-i18n="index.author2">Michael Chen
+                </h4>
+                <p class="text-caption text-content-secondary font-sans" data-i18n="index.role2">Self-taught Developer
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div
+            class="bg-card border border-border-default rounded-3xl p-6 flex flex-col justify-between shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full">
+            <div class="flex flex-col">
+              <iconify-icon icon="bxs:quote-alt-left" class="text-3xl text-brand-primary/20 mb-4"></iconify-icon>
+              <p class="text-body-m font-sans text-content-secondary leading-relaxed italic" data-i18n="index.review3">
+                "The community here is supportive and the courses are top-notch. Highly recommended!"
+              </p>
+            </div>
+            <div class="flex items-center gap-3 mt-6 pt-6 border-t border-border-default/50">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User"
+                class="w-10 h-10 rounded-full object-cover border-2 border-brand-surface shadow-sm">
+              <div>
+                <h4 class="font-bold font-sans text-content-primary text-body-s" data-i18n="index.author3">Jessica Lee
+                </h4>
+                <p class="text-caption text-content-secondary font-sans" data-i18n="index.role3">UX Designer</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 4 -->
+          <div
+            class="bg-card border border-border-default rounded-3xl p-6 flex flex-col justify-between shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full">
+            <div class="flex flex-col">
+              <iconify-icon icon="bxs:quote-alt-left" class="text-3xl text-brand-primary/20 mb-4"></iconify-icon>
+              <p class="text-body-m font-sans text-content-secondary leading-relaxed italic" data-i18n="index.review4">
+                "Honestly, the best investment I've made for my career this year."
+              </p>
+            </div>
+            <div class="flex items-center gap-3 mt-6 pt-6 border-t border-border-default/50">
+              <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="User"
+                class="w-10 h-10 rounded-full object-cover border-2 border-brand-surface shadow-sm">
+              <div>
+                <h4 class="font-bold font-sans text-content-primary text-body-s" data-i18n="index.author4">Alex Wong
+                </h4>
+                <p class="text-caption text-content-secondary font-sans" data-i18n="index.role4">Product Manager</p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -189,15 +297,17 @@
       </div>
 
       <div class="container mx-auto px-4 text-center text-white">
-        <h2 class="text-h2 font-bold mb-6 font-sans">Sẵn sàng để bứt phá?</h2>
-        <p class="text-xl text-blue-100 max-w-2xl mx-auto mb-10 font-sans">Tham gia cùng 20,000+ người học đang thay đổi
+        <h2 class="text-h2 font-bold mb-6 font-sans" data-i18n="index.ctaTitle">Sẵn sàng để bứt phá?</h2>
+        <p class="text-xl text-blue-100 max-w-2xl mx-auto mb-10 font-sans" data-i18n="index.ctaDesc">Tham gia cùng
+          20,000+ người học đang thay đổi
           sự nghiệp của họ mỗi ngày cùng Bloom.</p>
         <a href="./src/pages/login.html"
           class="inline-flex items-center gap-3 px-10 py-5 bg-white text-brand-primary rounded-full font-bold text-lg hover:bg-blue-50 transition shadow-2xl font-sans">
-          Tạo tài khoản miễn phí
+          <span data-i18n="index.ctaButton">Tạo tài khoản miễn phí</span>
           <iconify-icon icon="solar:user-plus-bold" class="text-xl"></iconify-icon>
         </a>
-        <p class="mt-6 text-sm text-blue-200 opacity-80 font-sans">Không cần thẻ tín dụng. Hủy bất kỳ lúc nào.</p>
+        <p class="mt-6 text-sm text-blue-200 opacity-80 font-sans" data-i18n="index.ctaNote">Không cần thẻ tín dụng. Hủy
+          bất kỳ lúc nào.</p>
       </div>
     </section>
 
@@ -206,31 +316,7 @@
   </main>
 
   <script type="module" src="./src/utils/main.js"></script>
-  <script>
-    // Simple Dark Mode Toggle Logic
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    const htmlElement = document.documentElement;
 
-    // Check local storage or system preference
-    const savedTheme = localStorage.getItem('theme');
-    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    if (savedTheme === 'dark' || (!savedTheme && systemTheme)) {
-      htmlElement.classList.add('dark');
-    } else {
-      htmlElement.classList.remove('dark');
-    }
-
-    themeToggleBtn.addEventListener('click', () => {
-      if (htmlElement.classList.contains('dark')) {
-        htmlElement.classList.remove('dark');
-        localStorage.setItem('theme', 'light');
-      } else {
-        htmlElement.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
-      }
-    });
-  </script>
 
 </body>
 
