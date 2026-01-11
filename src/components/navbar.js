@@ -68,23 +68,23 @@ export function navbar() {
           <div class="flex items-center gap-3 tablet:gap-2 text-content-secondary">
              
              <!-- Desktop Tools: Streak, Cart, Bell, Theme (Hidden on Mobile) -->
-             <div class="flex items-center gap-2 tablet:hidden">
+             <div class="flex items-center gap-2">
                 <!-- Streak -->
-                <div class="flex items-center h-12 gap-1.5 px-2 rounded-lg hover:bg-base-100 dark:hover:bg-base-700 transition-colors cursor-pointer">
+                <div class="mobile:hidden flex items-center h-12 gap-1.5 px-2 rounded-lg hover:bg-base-100 dark:hover:bg-base-700 transition-colors cursor-pointer">
                   <span class="text-icon-sm">🔥</span>
                   <span class="font-sans font-bold text-body-l text-content-primary">36</span>
                 </div>
                 <!-- Cart Button -->
-                <button class="w-12 h-12 rounded-lg flex items-center justify-center hover:bg-base-100 dark:hover:bg-base-700 transition-colors relative">
+                <button class="mobile:hidden w-12 h-12 rounded-lg flex items-center justify-center hover:bg-base-100 dark:hover:bg-base-700 transition-colors relative">
                   <iconify-icon icon="solar:cart-large-2-linear" class="text-icon-md text-content-primary"></iconify-icon>
                   <span class="absolute top-1 right-1 w-4 h-4 bg-error text-white text-[10px] font-bold rounded-full flex items-center justify-center border border-white">2</span>
                 </button>
                 <!-- Bell Button -->
-                <button class="w-12 h-12 rounded-lg flex items-center justify-center hover:bg-base-100 dark:hover:bg-base-700 transition-colors">
+                <button class="mobile:hidden w-12 h-12 rounded-lg flex items-center justify-center hover:bg-base-100 dark:hover:bg-base-700 transition-colors">
                   <iconify-icon icon="solar:bell-linear" class="text-icon-md text-content-primary"></iconify-icon>
                 </button>
                 <!-- Theme Toggle -->
-                <button id="theme-toggle-btn" class="w-12 h-12 rounded-lg flex items-center justify-center hover:bg-base-100 dark:hover:bg-base-700 transition-colors">
+                <button id="theme-toggle-btn" class="tablet:hidden w-12 h-12 rounded-lg flex items-center justify-center hover:bg-base-100 dark:hover:bg-base-700 transition-colors">
                    <iconify-icon icon="solar:moon-bold" class="text-icon-md text-content-primary dark:hidden transition-transform hover:rotate-12"></iconify-icon>
                    <iconify-icon icon="solar:sun-2-bold" class="text-icon-md text-warning hidden dark:block transition-transform hover:rotate-90"></iconify-icon>
                 </button>
@@ -133,6 +133,22 @@ export function navbar() {
                     <iconify-icon icon="solar:user-circle-linear" class="text-icon-md group-hover:scale-110 transition-transform"></iconify-icon>
                     <span data-i18n="dropdown.myAccount" class="font-sans text-body-m">
                         ${t("dropdown.myAccount", "My Account")}
+                    </span>
+                  </a>
+
+                  <!-- My Notifications (Mobile Only) -->
+                  <a href="#" class="hidden mobile:flex items-center gap-3 px-4 py-3 text-content-secondary hover:bg-base-50 dark:hover:bg-base-700 hover:text-brand-primary transition-colors group">
+                    <iconify-icon icon="solar:bell-linear" class="text-icon-md group-hover:scale-110 transition-transform"></iconify-icon>
+                    <span data-i18n="dropdown.myNotification" class="font-sans text-body-m">
+                        ${t("dropdown.myNotification", "My Notifications")}
+                    </span>
+                  </a>
+
+                  <!-- My Cart (Mobile Only) -->
+                  <a href="#" class="hidden mobile:flex items-center gap-3 px-4 py-3 text-content-secondary hover:bg-base-50 dark:hover:bg-base-700 hover:text-brand-primary transition-colors group">
+                    <iconify-icon icon="solar:cart-large-2-linear" class="text-icon-md group-hover:scale-110 transition-transform"></iconify-icon>
+                    <span data-i18n="dropdown.myCart" class="font-sans text-body-m">
+                        ${t("dropdown.myCart", "My Cart")}
                     </span>
                   </a>
                   

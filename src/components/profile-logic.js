@@ -28,8 +28,7 @@ function injectLanguageModal() {
                         <img src="https://flagcdn.com/w40/gb.png" class="w-6 h-6 rounded-full object-cover shadow-sm">
                         <span class="font-medium text-content-primary">English</span>
                     </div>
-                    <iconify-icon icon="solar:check-circle-bold" class="check-icon text-content-primary text-xl ${currentLang === "en" ? "" : "hidden"
-      }"></iconify-icon>
+                    <iconify-icon icon="solar:check-circle-bold" class="check-icon text-content-primary text-xl ${currentLang === "en" ? "" : "hidden"}"></iconify-icon>
                 </button>
 
                 <button id="opt-lang-vi" class="lang-option w-full flex items-center justify-between p-3 rounded-xl border border-transparent hover:bg-base-50 dark:hover:bg-base-700 transition-all group">
@@ -37,8 +36,7 @@ function injectLanguageModal() {
                         <img src="https://flagcdn.com/w40/vn.png" class="w-6 h-6 rounded-full object-cover shadow-sm">
                         <span class="font-medium text-content-primary">Tiếng Việt</span>
                     </div>
-                    <iconify-icon icon="solar:check-circle-bold" class="check-icon text-content-primary text-xl ${currentLang === "vi" ? "" : "hidden"
-      }"></iconify-icon>
+                    <iconify-icon icon="solar:check-circle-bold" class="check-icon text-content-primary text-xl ${currentLang === "vi" ? "" : "hidden"}"></iconify-icon>
                 </button>
             </div>
         </div>

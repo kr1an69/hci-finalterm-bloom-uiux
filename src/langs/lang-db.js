@@ -13,6 +13,8 @@ export const translations = {
     "dropdown.settings": "Settings",
     "dropdown.helpSupport": "Help & Support",
     "dropdown.logout": "Log out",
+    "dropdown.myNotification": "My Notifications",
+    "dropdown.myCart": "My Cart",
 
     // Auth (Login / Signup)
     "auth.login": "Log In",
@@ -312,6 +314,8 @@ export const translations = {
     "dropdown.settings": "Cài Đặt",
     "dropdown.helpSupport": "Trợ Giúp & Hỗ Trợ",
     "dropdown.logout": "Đăng Xuất",
+    "dropdown.myNotification": "Thông báo của tôi",
+    "dropdown.myCart": "Giỏ hàng của tôi",
 
     // Auth (Login / Signup)
     "auth.login": "Đăng Nhập",
