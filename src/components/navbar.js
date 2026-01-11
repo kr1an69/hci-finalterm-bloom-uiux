@@ -166,6 +166,13 @@ export function navbar() {
                   </button>
 
                   <a href="#" class="flex items-center gap-3 px-4 py-3 text-content-secondary hover:bg-base-50 dark:hover:bg-base-700 hover:text-brand-primary transition-colors group">
+                      <iconify-icon icon="solar:question-circle-linear" class="text-icon-md group-hover:scale-110 transition-transform"></iconify-icon>
+                      <span data-i18n="dropdown.helpSupport" class="font-sans text-body-m">
+                        ${t("dropdown.helpSupport", "Help & Support")}
+                      </span>
+                  </a>
+
+                  <a href="#" class="flex items-center gap-3 px-4 py-3 text-content-secondary hover:bg-base-50 dark:hover:bg-base-700 hover:text-brand-primary transition-colors group">
                       <iconify-icon icon="solar:settings-linear" class="text-icon-md group-hover:rotate-45 transition-transform"></iconify-icon>
                       <span data-i18n="dropdown.settings" class="font-sans text-body-m">
                         ${t("dropdown.settings", "Settings")}

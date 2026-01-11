@@ -56,8 +56,8 @@ export function createFooter() {
           <ul class="space-y-4 text-sm text-content-secondary">
              <li class="hover:text-brand-primary transition-colors cursor-pointer w-fit" data-i18n="footer.newCourses">Khóa học Mới</li>
              <li class="hover:text-brand-primary transition-colors cursor-pointer w-fit" data-i18n="footer.roadmap">Lộ trình học</li>
-             <li class="hover:text-brand-primary transition-colors cursor-pointer w-fit" data-i18n="footer.mentors">Mentors xịn</li>
-             <li class="hover:text-brand-primary transition-colors cursor-pointer w-fit" data-i18n="footer.blog">Blog chia sẻ</li>
+             <li class="hover:text-brand-primary transition-colors cursor-pointer w-fit" data-i18n="footer.mentors">Mentors hàng đầu</li>
+             <li class="hover:text-brand-primary transition-colors cursor-pointer w-fit" data-i18n="footer.blog">Blog</li>
           </ul>
         </div>
 
@@ -67,7 +67,7 @@ export function createFooter() {
              <li class="hover:text-brand-primary transition-colors cursor-pointer w-fit" data-i18n="footer.freeDocs">Tài liệu miễn phí</li>
              <li class="hover:text-brand-primary transition-colors cursor-pointer w-fit" data-i18n="footer.community">Community</li>
              <li class="hover:text-brand-primary transition-colors cursor-pointer w-fit" data-i18n="footer.events">Events & Workshop</li>
-             <li class="hover:text-brand-primary transition-colors cursor-pointer w-fit" data-i18n="footer.tools">Study Tools</li>
+             <li class="hover:text-brand-primary transition-colors cursor-pointer w-fit" data-i18n="footer.helpSupport">Help & Support</li>
           </ul>
         </div>
 
