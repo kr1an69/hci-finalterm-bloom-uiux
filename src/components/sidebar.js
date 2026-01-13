@@ -76,7 +76,7 @@ export function sidebar() {
       <!-- TOGGLE BTN (Desktop Only) -->
       ${isLoggedIn ? `
       <button id="sidebar-toggle" class="absolute -right-3 top-8 bg-card border border-DEFAULT text-content-primary p-1 rounded-full shadow-sm hover:text-brand-primary transition-colors z-20 tablet:hidden flex items-center justify-center w-6 h-6">
-        <iconify-icon icon="${toggleIcon}" class="text-h6 font-bold transition-transform duration-300 ${rotateIconClass}"></iconify-icon>
+        <iconify-icon icon="${toggleIcon}" class="text-base font-bold transition-transform duration-300 ${rotateIconClass}"></iconify-icon>
       </button>
       ` : ''}
 
@@ -142,7 +142,7 @@ export function sidebar() {
              <div class="px-5 mt-2">
                 <button id="btn-ask-bloom-mobile" class="${stringHidden} w-full flex justify-center items-center gap-2 bg-brand-harmony text-white font-sans font-semibold text-body-m py-2 rounded-full hover:opacity-90 transition-opacity shadow-sm whitespace-nowrap shrink-0">
                       <iconify-icon icon="solar:stars-minimalistic-bold" class="text-icon-md"></iconify-icon>
-                      <span class="text-h6" data-i18n="nav.askBloom">${t("nav.askBloom", "Ask Bloom")}</span>
+                      <span class="text-base" data-i18n="nav.askBloom">${t("nav.askBloom", "Ask Bloom")}</span>
                 </button>
              </div>
         </div>

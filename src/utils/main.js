@@ -1,6 +1,6 @@
 // src/utils/main.js
 
-// 1. Import các thành phần từ folder components
+//import các thành phần từ folder components
 import { initSidebarLogic, sidebar } from "../components/sidebar.js";
 import { initNavbarLogic, navbar } from "../components/navbar.js";
 import { translations } from "../langs/lang-db.js";
@@ -9,7 +9,7 @@ import { breadcrumbs } from "../components/breadcrumbs.js";
 import { initModals } from "../components/modals.js";
 import { createFooter } from "../components/footer.js";
 
-// 2. Hàm RENDER
+// Hàm render
 function renderApp() {
   // Tìm các vị trí đã đánh dấu trong HTML
   const sidebarContainer = document.getElementById("sidebar-container");
@@ -33,7 +33,7 @@ function renderApp() {
   initProfileLogic();
   initModals();
 }
-// 4. CÁC LOGIC KHÁC (Darkmode, Lang...)
+// logic khác
 // Khởi tạo theme khi vào web
 if (localStorage.getItem("theme") === "dark") {
   document.documentElement.classList.add("dark");

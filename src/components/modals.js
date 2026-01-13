@@ -96,7 +96,7 @@ const reBloomModalHTML = (t) => `
          
          <!-- Quote -->
          <div class="col-span-2 p-4 rounded-xl bg-brand-surface/50 border-2 border-brand-surface text-center">
-            <p class="font-serif italic text-brand-primary text-h5">"Resting is also part of the journey."</p>
+            <p class="font-serif italic text-brand-primary text-quote-xs">"Resting is also part of the journey."</p>
          </div>
       </div>
 

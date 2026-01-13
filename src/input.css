@@ -4,12 +4,10 @@
 
 @layer base {
   :root {
-    /* --- GIỮ NGUYÊN CÁC BIẾN CŨ CỦA BRO (Page, Card...) --- */
     --bg-page: #f8fafc;
     --bg-card: #ffffff;
 
     /* --- 1. THÊM BỘ BIẾN BRAND (Light Mode) --- */
-    /* Đây là màu gốc bro muốn dùng */
     --brand-primary: #2563eb;
     /* Primary-600 */
     --brand-secondary: #9333ea;

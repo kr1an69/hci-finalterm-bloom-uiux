@@ -55,7 +55,7 @@ export function navbar() {
 
         <button id="btn-ask-bloom" class="flex justify-center items-center gap-2 bg-brand-harmony text-white font-sans font-semibold text-body-m px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity shadow-sm whitespace-nowrap shrink-0">
           <iconify-icon icon="solar:stars-minimalistic-bold" class="text-icon-md"></iconify-icon>
-          <span class="text-h6" data-i18n="nav.askBloom">${t("nav.askBloom", "Ask Bloom")}</span>
+          <span class="text-base" data-i18n="nav.askBloom">${t("nav.askBloom", "Ask Bloom")}</span>
         </button>
       </div>  
 

@@ -1,16 +1,16 @@
 
 export function certificateCard(data) {
-    // data expected:
-    // {
-    //   id: string,
-    //   title: "Software Engineering",
-    //   issuer: "Bloom Academy",
-    //   date: "Oct 2025",
-    //   thumbnail: "../public/images/certificate_ai_gene.png",
-    //   downloadLink: "#"
-    // }
+  // data expected:
+  // {
+  //   id: string,
+  //   title: "Software Engineering",
+  //   issuer: "Bloom Academy",
+  //   date: "Oct 2025",
+  //   thumbnail: "../public/images/certificate_ai_gene.png",
+  //   downloadLink: "#"
+  // }
 
-    return `
+  return `
     <div class="group relative bg-card border border-neutral-200 dark:border-neutral-800 rounded-2xl p-4 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 h-full flex flex-col dark:bg-base-800">
       
       <!-- Certificate Image Wrapper -->
@@ -35,7 +35,7 @@ export function certificateCard(data) {
 
       <!-- Info -->
       <div class="flex-1 flex flex-col">
-        <h3 class="text-h6 font-bold text-content-primary mb-1 line-clamp-2" title="${data.title}">
+        <h3 class="text-base font-bold text-content-primary mb-1 line-clamp-2" title="${data.title}">
             ${data.title}
         </h3>
         

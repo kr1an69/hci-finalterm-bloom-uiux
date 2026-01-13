@@ -555,11 +555,9 @@ video {
 }
 
 :root {
-  /* --- GIỮ NGUYÊN CÁC BIẾN CŨ CỦA BRO (Page, Card...) --- */
   --bg-page: #f8fafc;
   --bg-card: #ffffff;
   /* --- 1. THÊM BỘ BIẾN BRAND (Light Mode) --- */
-  /* Đây là màu gốc bro muốn dùng */
   --brand-primary: #2563eb;
   /* Primary-600 */
   --brand-secondary: #9333ea;
@@ -2598,18 +2596,21 @@ video {
 }
 
 .text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 32px;
+  line-height: 130%;
+  font-weight: 600;
 }
 
 .text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+  font-size: 40px;
+  line-height: 125%;
+  font-weight: 700;
 }
 
 .text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+  font-size: 48px;
+  line-height: 120%;
+  font-weight: 700;
 }
 
 .text-5xl {
@@ -2623,8 +2624,9 @@ video {
 }
 
 .text-8xl {
-  font-size: 6rem;
+  font-size: 96px;
   line-height: 1;
+  font-weight: 900;
 }
 
 .text-9xl {
@@ -2641,8 +2643,9 @@ video {
 }
 
 .text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: 16px;
+  line-height: 160%;
+  font-weight: 400;
 }
 
 .text-body-l {
@@ -2699,12 +2702,6 @@ video {
   font-weight: 400;
 }
 
-.text-h6 {
-  font-size: 16px;
-  line-height: 160%;
-  font-weight: 400;
-}
-
 .text-icon-lg {
   font-size: 32px;
 }
@@ -2718,23 +2715,33 @@ video {
 }
 
 .text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  font-size: 20px;
+  line-height: 160%;
+  font-weight: 400;
 }
 
 .text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+  font-size: 14px;
+  line-height: 160%;
+  font-weight: 400;
 }
 
 .text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+  font-size: 24px;
+  line-height: 140%;
+  font-weight: 600;
 }
 
 .text-xs {
-  font-size: 0.75rem;
-  line-height: 1rem;
+  font-size: 12px;
+  line-height: 160%;
+  font-weight: 400;
+}
+
+.text-quote-xs {
+  font-size: 20px;
+  line-height: 150%;
+  font-weight: 400;
 }
 
 .font-bold {
@@ -3970,11 +3977,6 @@ video {
   color: rgb(148 163 184 / var(--tw-text-opacity, 1));
 }
 
-.dark\:text-white:is(.dark *) {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-
 .dark\:shadow-none:is(.dark *) {
   --tw-shadow: 0 0 #0000;
   --tw-shadow-colored: 0 0 #0000;
@@ -4278,23 +4280,27 @@ video {
   }
 
   .tablet\:text-2xl {
-    font-size: 1.5rem;
-    line-height: 2rem;
+    font-size: 32px;
+    line-height: 130%;
+    font-weight: 600;
   }
 
   .tablet\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
+    font-size: 40px;
+    line-height: 125%;
+    font-weight: 700;
   }
 
   .tablet\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
+    font-size: 48px;
+    line-height: 120%;
+    font-weight: 700;
   }
 
   .tablet\:text-sm {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
+    font-size: 14px;
+    line-height: 160%;
+    font-weight: 400;
   }
 
   .tablet\:text-brand-primary {
@@ -4460,8 +4466,9 @@ video {
   }
 
   .mobile\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
+    font-size: 40px;
+    line-height: 125%;
+    font-weight: 700;
   }
 
   .mobile\:text-body-s {
@@ -4487,13 +4494,15 @@ video {
   }
 
   .mobile\:text-sm {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
+    font-size: 14px;
+    line-height: 160%;
+    font-weight: 400;
   }
 
   .mobile\:text-xs {
-    font-size: 0.75rem;
-    line-height: 1rem;
+    font-size: 12px;
+    line-height: 160%;
+    font-weight: 400;
   }
 
   .mobile\:font-bold {

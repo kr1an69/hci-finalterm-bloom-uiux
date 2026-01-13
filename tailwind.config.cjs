@@ -30,15 +30,30 @@ module.exports = {
         sans: ["Lexend", "sans-serif"], // Primary Font
         serif: ["Playfair Display", "serif"], // Accent Font
       },
-      // Setup Typography chuẩn theo ảnh (Size / Line-height)
+      // Setup Typography chuẩn theo file Figma Design System (Size / Line-height)
       fontSize: {
+        // Mapping
+        // --- MAPPING (Core System) ---
+        // định nghĩa lại các size này để khớp 100% với Figma
+
+        'xs': ['12px', { lineHeight: '160%', fontWeight: '400' }], // Caption
+        'sm': ['14px', { lineHeight: '160%', fontWeight: '400' }], // Body Small
+        'base': ['16px', { lineHeight: '160%', fontWeight: '400' }], // Body Medium - tiêu chuẩn
+        'lg': ['20px', { lineHeight: '160%', fontWeight: '400' }], // H5
+        'xl': ['24px', { lineHeight: '140%', fontWeight: '600' }], // H4
+        '2xl': ['32px', { lineHeight: '130%', fontWeight: '600' }], // H3
+        '3xl': ['40px', { lineHeight: '125%', fontWeight: '700' }], // H2
+        '4xl': ['48px', { lineHeight: '120%', fontWeight: '700' }], // H1
+        // --- CÁC NGOẠI LỆ (Exceptions) ---
+        // Giữ lại hoặc thêm mới các size quá khổ như 8xl, 9xl dùng cho Hero Banner đặc biệt
+        '8xl': ['96px', { lineHeight: '1', fontWeight: '900' }],
+
         // Headings (Lexend)
         h1: ["48px", { lineHeight: "120%", fontWeight: "700" }],
         h2: ["40px", { lineHeight: "125%", fontWeight: "700" }],
         h3: ["32px", { lineHeight: "130%", fontWeight: "600" }],
         h4: ["24px", { lineHeight: "140%", fontWeight: "600" }],
         h5: ["20px", { lineHeight: "160%", fontWeight: "400" }],
-        h6: ["16px", { lineHeight: "160%", fontWeight: "400" }],
 
         // Body (Lexend)
         "body-l": ["18px", { lineHeight: "160%", fontWeight: "400" }],
@@ -50,6 +65,7 @@ module.exports = {
         "quote-l": ["48px", { lineHeight: "120%", fontWeight: "400" }],
         "quote-m": ["40px", { lineHeight: "125%", fontWeight: "400" }],
         "quote-s": ["36px", { lineHeight: "130%", fontWeight: "400" }],
+        "quote-xs": ["20px", { lineHeight: "150%", fontWeight: "400" }],
 
         // icon size for iconify-icon - dùng Solar Icons
         "icon-xs": "16px",
@@ -104,11 +120,11 @@ module.exports = {
 
         // === CẤU HÌNH BRAND ===
         brand: {
-          DEFAULT: "var(--brand-primary)", // Mặc định là màu xanh chính
-          primary: "var(--brand-primary)", // #2563EB
-          secondary: "var(--brand-secondary)", // #9333EA
-          accent: "var(--brand-accent)", // #EA580C
-          surface: "var(--brand-surface)", // #BFDBFE (Màu nền nhẹ)
+          DEFAULT: "var(--brand-primary)",
+          primary: "var(--brand-primary)",
+          secondary: "var(--brand-secondary)",
+          accent: "var(--brand-accent)",
+          surface: "var(--brand-surface)",
         },
       },
 
