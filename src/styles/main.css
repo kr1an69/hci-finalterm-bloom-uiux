@@ -761,6 +761,10 @@ video {
   left: 2.5rem;
 }
 
+.left-24 {
+  left: 6rem;
+}
+
 .left-4 {
   left: 1rem;
 }
@@ -839,22 +843,6 @@ video {
 
 .top-full {
   top: 100%;
-}
-
-.left-2 {
-  left: 0.5rem;
-}
-
-.left-20 {
-  left: 5rem;
-}
-
-.left-24 {
-  left: 6rem;
-}
-
-.left-28 {
-  left: 7rem;
 }
 
 .-z-10 {
@@ -1198,6 +1186,10 @@ video {
   height: 1.25rem;
 }
 
+.h-56 {
+  height: 14rem;
+}
+
 .h-6 {
   height: 1.5rem;
 }
@@ -1448,6 +1440,10 @@ video {
   max-width: 80%;
 }
 
+.max-w-\[90\%\] {
+  max-width: 90%;
+}
+
 .max-w-lg {
   max-width: 32rem;
 }
@@ -1693,10 +1689,6 @@ video {
 
 .gap-8 {
   gap: 2rem;
-}
-
-.gap-y-8 {
-  row-gap: 2rem;
 }
 
 .-space-x-3 > :not([hidden]) ~ :not([hidden]) {
@@ -2257,8 +2249,24 @@ video {
   background-color: rgb(234 179 8 / 0.1);
 }
 
+.bg-opacity-10 {
+  --tw-bg-opacity: 0.1;
+}
+
 .bg-opacity-20 {
   --tw-bg-opacity: 0.2;
+}
+
+.bg-opacity-50 {
+  --tw-bg-opacity: 0.5;
+}
+
+.bg-opacity-100 {
+  --tw-bg-opacity: 1;
+}
+
+.bg-opacity-30 {
+  --tw-bg-opacity: 0.3;
 }
 
 .bg-\[url\(\'https\:\/\/grainy-gradients\.vercel\.app\/noise\.svg\'\)\] {
@@ -2734,15 +2742,13 @@ video {
   font-size: 20px;
 }
 
+.text-icon-xs {
+  font-size: 16px;
+}
+
 .text-lg {
   font-size: 20px;
   line-height: 160%;
-  font-weight: 400;
-}
-
-.text-quote-xs {
-  font-size: 20px;
-  line-height: 150%;
   font-weight: 400;
 }
 
@@ -2762,10 +2768,6 @@ video {
   font-size: 12px;
   line-height: 160%;
   font-weight: 400;
-}
-
-.text-icon-xs {
-  font-size: 16px;
 }
 
 .font-bold {
@@ -3077,6 +3079,10 @@ video {
   opacity: 0.2;
 }
 
+.opacity-50 {
+  opacity: 0.5;
+}
+
 .opacity-60 {
   opacity: 0.6;
 }
@@ -3091,6 +3097,10 @@ video {
 
 .opacity-90 {
   opacity: 0.9;
+}
+
+.mix-blend-overlay {
+  mix-blend-mode: overlay;
 }
 
 .shadow-2xl {
@@ -3165,11 +3175,6 @@ video {
 
 .shadow-primary-500\/20 {
   --tw-shadow-color: rgb(59 130 246 / 0.2);
-  --tw-shadow: var(--tw-shadow-colored);
-}
-
-.shadow-brand-primary {
-  --tw-shadow-color: var(--brand-primary);
   --tw-shadow: var(--tw-shadow-colored);
 }
 
@@ -3295,6 +3300,10 @@ video {
 
 .duration-700 {
   transition-duration: 700ms;
+}
+
+.duration-\[3s\] {
+  transition-duration: 3s;
 }
 
 .ease-in-out {
@@ -3544,10 +3553,6 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.hover\:justify-between:hover {
-  justify-content: space-between;
-}
-
 .hover\:border-brand-primary:hover {
   border-color: var(--brand-primary);
 }
@@ -3603,10 +3608,6 @@ video {
 .hover\:bg-secondary-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(168 85 247 / var(--tw-bg-opacity, 1));
-}
-
-.hover\:bg-white\/40:hover {
-  background-color: rgb(255 255 255 / 0.4);
 }
 
 .hover\:text-brand:hover {
@@ -3708,34 +3709,12 @@ video {
   visibility: visible;
 }
 
-.group:hover .group-hover\:right-4 {
-  right: 1rem;
-}
-
 .group:hover .group-hover\:left-\[calc\(100\%-2rem\)\] {
   left: calc(100% - 2rem);
 }
 
-.group:hover .group-hover\:ml-auto {
-  margin-left: auto;
-}
-
-.group:hover .group-hover\:mr-auto {
-  margin-right: auto;
-}
-
 .group:hover .group-hover\:translate-y-0 {
   --tw-translate-y: 0px;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.group:hover .group-hover\:translate-x-\[calc\(100\%-2rem\)\] {
-  --tw-translate-x: calc(100% - 2rem);
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.group:hover .group-hover\:translate-x-\[calc\(100\%-2px\)\] {
-  --tw-translate-x: calc(100% - 2px);
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -3912,12 +3891,12 @@ video {
   background-color: rgb(15 23 43 / 0.5);
 }
 
-.dark\:bg-blue-900\/20:is(.dark *) {
-  background-color: rgb(30 58 138 / 0.2);
+.dark\:bg-black\/20:is(.dark *) {
+  background-color: rgb(0 0 0 / 0.2);
 }
 
-.dark\:bg-blue-900\/30:is(.dark *) {
-  background-color: rgb(30 58 138 / 0.3);
+.dark\:bg-blue-900\/20:is(.dark *) {
+  background-color: rgb(30 58 138 / 0.2);
 }
 
 .dark\:bg-green-900:is(.dark *) {
@@ -3971,8 +3950,17 @@ video {
   background-color: rgb(30 41 59 / var(--tw-bg-opacity, 1));
 }
 
+.dark\:bg-black:is(.dark *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
+}
+
 .dark\:bg-opacity-30:is(.dark *) {
   --tw-bg-opacity: 0.3;
+}
+
+.dark\:bg-opacity-20:is(.dark *) {
+  --tw-bg-opacity: 0.2;
 }
 
 .dark\:bg-deepspace:is(.dark *) {
@@ -3993,11 +3981,6 @@ video {
 .dark\:text-black:is(.dark *) {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity, 1));
-}
-
-.dark\:text-blue-400:is(.dark *) {
-  --tw-text-opacity: 1;
-  color: rgb(96 165 250 / var(--tw-text-opacity, 1));
 }
 
 .dark\:text-green-400:is(.dark *) {
@@ -4433,6 +4416,10 @@ video {
     display: none;
   }
 
+  .mobile\:h-10 {
+    height: 2.5rem;
+  }
+
   .mobile\:h-14 {
     height: 3.5rem;
   }
@@ -4443,6 +4430,10 @@ video {
 
   .mobile\:h-8 {
     height: 2rem;
+  }
+
+  .mobile\:w-10 {
+    width: 2.5rem;
   }
 
   .mobile\:w-14 {
@@ -4528,10 +4519,22 @@ video {
     padding-bottom: 8rem;
   }
 
+  .mobile\:text-2xl {
+    font-size: 32px;
+    line-height: 130%;
+    font-weight: 600;
+  }
+
   .mobile\:text-3xl {
     font-size: 40px;
     line-height: 125%;
     font-weight: 700;
+  }
+
+  .mobile\:text-base {
+    font-size: 16px;
+    line-height: 160%;
+    font-weight: 400;
   }
 
   .mobile\:text-body-s {
@@ -4554,6 +4557,18 @@ video {
 
   .mobile\:text-icon-xs {
     font-size: 16px;
+  }
+
+  .mobile\:text-lg {
+    font-size: 20px;
+    line-height: 160%;
+    font-weight: 400;
+  }
+
+  .mobile\:text-quote-xs {
+    font-size: 20px;
+    line-height: 150%;
+    font-weight: 500;
   }
 
   .mobile\:text-sm {

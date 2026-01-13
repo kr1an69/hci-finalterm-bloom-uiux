@@ -30,7 +30,7 @@ export const translations = {
     "auth.forgotPassword": "Forgot password",
     "auth.loginBtn": "Log in",
     "auth.continueWith": "Or continue with",
-    "auth.noAccount": "Don’t have an account?",
+    "auth.noAccount": "Don't have an account?",
     "auth.signUpLink": "Sign up now",
 
     "modalLanguage.chooseLanguage": "Choose a language",
@@ -51,6 +51,12 @@ export const translations = {
     "modalAskBloom.subtitle":
       "Let Bloom build a personalized roadmap just for you. Tell me about your goals and interests, and I'll create a learning path to help you grow.",
     "modalAskBloom.startButton": "Let's Start",
+
+    //Re-Bloom Modal
+    "modalReBloom.title": "Re-Bloom",
+    "modalReBloom.subtitle": "Take a moment to breathe and reset your energy.",
+    "modalReBloom.quote": "\"Resting is also part of the journey.\"",
+    "modalReBloom.lofi": "How about some lofi music?",
 
 
     //Home Site
@@ -352,6 +358,12 @@ export const translations = {
     "modalAskBloom.subtitle":
       "Hãy để Bloom tạo một lộ trình học tập cá nhân hóa dành riêng cho bạn nhé. Hãy cho mình biết về mục tiêu và sở thích của bạn, mình sẽ xây dựng một con đường học tập giúp bạn phát triển.",
     "modalAskBloom.startButton": "Bắt Đầu Nào",
+
+    //Re-Bloom Modal
+    "modalReBloom.title": "Re-Bloom",
+    "modalReBloom.subtitle": "Dành chút thời gian để hít thở và nạp lại năng lượng nhé.",
+    "modalReBloom.quote": "\"Nghỉ ngơi cũng là một phần của hành trình.\"",
+    "modalReBloom.lofi": "Cùng nghe chút nhạc Lofi nhé?",
 
     //Home Site
     "home.welcome": "Chào mừng trở lại,",

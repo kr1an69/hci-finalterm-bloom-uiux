@@ -30,14 +30,17 @@ const askBloomModalHTML = (t) => {
         </div>
 
 
-        <h3 class="text-h3 font-bold text-content-primary mb-3">Hello, I'm Bloom!</h3>
-        <p class="text-body-m text-content-secondary mb-8">
-          I'm your personal AI learning assistant. I can help you find courses, create roadmaps, and answer your questions.
+        <h3 class="text-h3 font-bold text-content-primary mb-3" data-i18n="modalAskBloom.title">${t("modalAskBloom.title", "Hello, I'm Bloom!")}</h3>
+        <p class="text-body-m text-content-secondary mb-8" data-i18n="modalAskBloom.subtitle">
+          ${t(
+    "modalAskBloom.subtitle",
+    "I'm your personal AI learning assistant. I can help you find courses, create roadmaps, and answer your questions."
+  )}
         </p>
 
 
-        <button onclick="window.location.href='onboarding.html'" class="w-full py-3 px-6 rounded-xl bg-brand-harmony text-white font-bold text-body-l shadow-lg shadow-brand-primary/25 hover:scale-[1.02] active:scale-95 transition-all">
-          Let's Start
+        <button onclick="window.location.href='onboarding.html'" class="w-full py-3 px-6 rounded-xl bg-brand-harmony text-white font-bold text-body-l shadow-lg shadow-brand-primary/25 hover:scale-[1.02] active:scale-95 transition-all" data-i18n="modalAskBloom.startButton">
+          ${t("modalAskBloom.startButton", "Let's Start")}
         </button>
       </div>
     </div>
@@ -46,63 +49,92 @@ const askBloomModalHTML = (t) => {
 }
 
 // 2. RE-BLOOM MODAL HTML (Design lại cho đẹp)
-const reBloomModalHTML = (t) => `
+const reBloomModalHTML = (t) => {
+  const bgPath = window.location.pathname.includes('/src/pages/')
+    ? "../../public/images/rebloom-bg.png"
+    : "./public/images/rebloom-bg.png";
+
+  return `
+  <style>
+    @keyframes fall {
+      0% { transform: translateY(-20%) rotate(0deg); opacity: 0; }
+      10% { opacity: 0.8; }
+      100% { transform: translateY(120%) rotate(360deg); opacity: 0; }
+    }
+    .petal {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 100% 0 100% 0;
+        animation: fall linear infinite;
+    }
+  </style>
+
   <div id="re-bloom-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-base-900/60 backdrop-blur-sm transition-opacity opacity-0">
     <!-- Modal Container -->
     <div class="bg-page w-full max-w-lg tablet:m-4 rounded-3xl shadow-2xl border border-DEFAULT transform scale-95 transition-transform duration-300 relative overflow-hidden flex flex-col">
       
-      <!-- Header với ảnh nền hoặc Gradient -->
-      <div class="h-48 w-full bg-secondary-400 dark:bg-primary-700 relative flex flex-col justify-end p-8 overflow-hidden">
-         <!-- Hạt lấp lánh decor -->
+      <div class="w-full bg-secondary-400 dark:bg-primary-700 relative flex flex-col justify-end p-8 overflow-hidden">
          <div class="absolute top-[-20px] right-[-20px] w-40 h-40 bg-brand-primary/20 rounded-full blur-3xl"></div>
          
-         <button onclick="closeModal('re-bloom-modal')" class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-white/20 hover:bg-white/40 text-white rounded-full backdrop-blur-md transition-all">
-            <iconify-icon icon="solar:close-circle-bold" class="text-xl"></iconify-icon>
+         <button onclick="closeModal('re-bloom-modal')" class="absolute top-4 right-4 flex items-center justify-center text-content-secondary hover:text-error transition-colors z-20">
+            <iconify-icon icon="solar:close-circle-bold" class="text-icon-lg"></iconify-icon>
          </button>
 
          <div class="relative z-10">
-            <div class="flex items-center gap-2 text-brand-primary font-bold bg-white/90 px-3 py-1 rounded-full w-fit mb-2 text-xs shadow-sm">
-                <iconify-icon icon="solar:leaf-bold"></iconify-icon> Healing Mode
-            </div>
-            <h3 class="text-2xl font-bold text-content-primary drop-shadow-sm">Re-Bloom Your Mind</h3>
-            <p class="text-content-primary text-sm mt-1 max-w-[80%]">Take a moment to breathe and reset your energy.</p>
+            <h3 class="text-2xl font-bold text-content-primary drop-shadow-sm" data-i18n="modalReBloom.title">${t("modalReBloom.title", "Re-Bloom Your Mind")}</h3>
+            <p class="text-content-primary text-sm mt-1 max-w-[80%]" data-i18n="modalReBloom.subtitle">${t("modalReBloom.subtitle", "Take a moment to breathe and reset your energy.")}</p>
          </div>
       </div>
 
       <!-- Content Actions -->
-      <div class="p-6 grid grid-cols-2 gap-4 bg-card">
+      <div class="p-6 flex flex-col gap-4 bg-card">
          
-         <!-- Action 1 -->
-         <button class="flex flex-col items-center justify-center p-6 rounded-2xl bg-base-50 dark:bg-base-800 border border-transparent hover:border-brand-primary hover:bg-brand-surface/50 dark:hover:bg-brand-primary/10 transition-all group gap-3 text-center">
-            <div class="w-14 h-14 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center group-hover:scale-110 transition-transform shadow-sm">
-               <iconify-icon icon="solar:wind-bold" class="text-3xl"></iconify-icon>
-            </div>
-            <div>
-                <span class="block font-bold text-content-primary">Breathe</span>
-                <span class="text-xs text-content-secondary">2 min exercise</span>
-            </div>
-         </button>
+         <!-- Motivation Quote -->
+         <div class="relative w-full h-56 rounded-2xl overflow-hidden shadow-md group">
+            <!-- Background Image -->
+            <img src="${bgPath}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[3s] ease-in-out group-hover:scale-110" alt="Re-bloom Background" />
+            
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-brand-primary/20 mix-blend-overlay"></div>
 
-         <!-- Action 2 -->
-         <button class="flex flex-col items-center justify-center p-6 rounded-2xl bg-base-50 dark:bg-base-800 border border-transparent hover:border-brand-primary hover:bg-brand-surface/50 dark:hover:bg-brand-primary/10 transition-all group gap-3 text-center">
-            <div class="w-14 h-14 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 flex items-center justify-center group-hover:scale-110 transition-transform shadow-sm">
-               <iconify-icon icon="solar:music-note-bold" class="text-3xl"></iconify-icon>
+            <!-- Floating Petals Animation -->
+            <div class="absolute inset-0 pointer-events-none overflow-hidden">
+                <div class="petal" style="left: 10%; animation-duration: 6s; animation-delay: 0s;"></div>
+                <div class="petal" style="left: 30%; animation-duration: 9s; animation-delay: 2s; width: 10px; height: 10px;"></div>
+                <div class="petal" style="left: 60%; animation-duration: 7s; animation-delay: 1s;"></div>
+                <div class="petal" style="left: 80%; animation-duration: 8s; animation-delay: 4s; width: 14px; height: 14px;"></div>
+                <div class="petal" style="left: 50%; animation-duration: 10s; animation-delay: 3s;"></div>
             </div>
-            <div>
-                <span class="block font-bold text-content-primary">Lo-Fi Radio</span>
-                <span class="text-xs text-content-secondary">Focus music</span>
+
+            <!-- Text Container -->
+            <div class="absolute inset-0 flex items-center justify-center p-6">
+                <div class="bg-white dark:bg-black bg-opacity-30 dark:bg-opacity-20 p-6 rounded-xl border border-white/30 shadow-sm max-w-[90%] text-center">
+                     <p class="font-serif italic text-content-primary text-xl mobile:text-quote-xs drop-shadow-md leading-relaxed" data-i18n="modalReBloom.quote">${t("modalReBloom.quote", `"Resting is also part of the journey."`)}</p>
+                </div>
             </div>
+         </div>
+
+         <!-- Lofi Radio (Question Style) -->
+         <button class="w-full flex items-center justify-between p-4 rounded-2xl bg-base-50 dark:bg-base-800 border border-transparent hover:border-brand-primary hover:bg-brand-surface/50 dark:hover:bg-brand-primary/10 transition-all group">
+            <div class="flex items-center gap-4">
+               <div class="w-12 h-12 mobile:w-10 mobile:h-10 shrink-0 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 flex items-center justify-center group-hover:scale-110 transition-transform shadow-sm">
+                  <iconify-icon icon="solar:music-note-bold" class="text-xl mobile:text-lg"></iconify-icon>
+               </div>
+               <div class="text-left">
+                   <span class="block font-bold text-content-primary text-lg mobile:text-base" data-i18n="modalReBloom.lofi">${t("modalReBloom.lofi", "Wanna hear some lofi music?")}</span>
+               </div>
+            </div>
+            <iconify-icon icon="solar:play-circle-bold" class="text-3xl mobile:text-2xl text-brand-primary opacity-50 group-hover:opacity-100 transition-opacity"></iconify-icon>
          </button>
          
-         <!-- Quote -->
-         <div class="col-span-2 p-4 rounded-xl bg-brand-surface/50 border-2 border-brand-surface text-center">
-            <p class="font-serif italic text-brand-primary text-quote-xs">"Resting is also part of the journey."</p>
-         </div>
       </div>
 
     </div>
   </div>
 `;
+}
 
 // 3. Logic Inject & Toggle
 export function initModals() {
