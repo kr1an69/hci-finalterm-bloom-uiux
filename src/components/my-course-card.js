@@ -5,7 +5,7 @@ export const myCourseCard = (data) => {
   const t = (key, defaultText) => translations[currentLang]?.[key] || defaultText;
 
   return `
-    <div class="bg-card p-4 rounded-2xl border border-DEFAULT shadow-sm flex flex-col gap-6 hover:shadow-md transition-shadow group">
+    <a href="learning.html" class="bg-card p-4 rounded-2xl border border-DEFAULT shadow-sm flex flex-col gap-6 hover:shadow-md transition-shadow group block">
       <!-- Thumbnail -->
       <div class="relative w-full h-48 shrink-0 overflow-hidden rounded-xl">
         <img src="${data.thumbnail}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="${data.title}" />
@@ -42,18 +42,18 @@ export const myCourseCard = (data) => {
         </div>
 
         <!-- Footer -->
-        <div class="flex items-center justify-between mt-auto">
-             <p class="text-xs text-content-disabled flex items-center gap-1">
-                <iconify-icon icon="solar:clock-circle-linear"></iconify-icon>
+        <div class="flex items-start justify-center flex-col mt-auto gap-2">
+             <p class="text-xs text-content-disabled flex items-center justify-center gap-1">
+                <iconify-icon icon="solar:clock-circle-linear" class="text-icon-xs"></iconify-icon>
                 <span data-i18n="myCourses.lastAccessed">${t("myCourses.lastAccessed", "Last accessed")}</span>: ${data.lastAccessed}
              </p>
 
-            <button onclick="window.location.href='learning.html'" class="bg-brand-primary hover:bg-brand-secondary text-white px-5 py-2 rounded-lg text-sm font-bold transition-all shadow-lg shadow-brand-primary/20 hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2">
+            <div class="group relative w-full bg-brand-primary group-hover:bg-brand-secondary text-white px-5 py-2 rounded-lg text-md font-bold transition-all shadow-lg shadow-brand-primary/20 hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2">
                  <span data-i18n="myCourses.continue">${t("myCourses.continue", "Continue")}</span>
-                 <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
-            </button>
+                 <iconify-icon icon="solar:arrow-right-linear"  class="text-icon-md absolute left-24 top-1/2 -translate-y-1/2 transition-all duration-500 ease-out group-hover:left-[calc(100%-2rem)]"></iconify-icon>
+            </div>
         </div>
       </div>
-    </div>
+    </a>
   `;
 };
