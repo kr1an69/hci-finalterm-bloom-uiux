@@ -75,10 +75,10 @@ const reBloomModalHTML = (t) => {
     <!-- Modal Container -->
     <div class="bg-page w-full max-w-lg tablet:m-4 rounded-3xl shadow-2xl border border-DEFAULT transform scale-95 transition-transform duration-300 relative overflow-hidden flex flex-col">
       
-      <div class="w-full bg-secondary-400 dark:bg-primary-700 relative flex flex-col justify-end p-8 overflow-hidden">
+      <div class="w-full bg-secondary-300 dark:bg-primary-700 relative flex flex-col justify-end p-8 overflow-hidden">
          <div class="absolute top-[-20px] right-[-20px] w-40 h-40 bg-brand-primary/20 rounded-full blur-3xl"></div>
          
-         <button onclick="closeModal('re-bloom-modal')" class="absolute top-4 right-4 flex items-center justify-center text-content-secondary hover:text-error transition-colors z-20">
+         <button onclick="closeModal('re-bloom-modal')" class="absolute top-4 right-4 flex items-center justify-center text-base-600 dark:text-content-secondary hover:text-error transition-colors z-20">
             <iconify-icon icon="solar:close-circle-bold" class="text-icon-lg"></iconify-icon>
          </button>
 
