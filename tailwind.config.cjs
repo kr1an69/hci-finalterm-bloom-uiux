@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js}", "./*.html"], // Quét code trong folder src
-  darkMode: "class", // Bật chế độ Dark Mode bằng class
+  content: ["./src/**/*.{html,js}", "./*.html"], // scan code trong folder src
+  darkMode: "class", // bỏ qua setting của device system
   theme: {
     screens: {
       //mobile - tablet - desktop
@@ -11,17 +11,16 @@ module.exports = {
       'tablet': { 'max': '1023px' },
       'mobile': { 'max': '480px' },
     },
-    // Cấu hình Container để có Margin 32px (mỗi bên)
     container: {
       center: true,
       padding: {
-        DEFAULT: "32px", // Margin 32px theo yêu cầu
+        DEFAULT: "32px", // Margin 32px theo Figma
         sm: "32px",
         lg: "32px",
         xl: "32px",
       },
       screens: {
-        xl: "1280px", // Giới hạn chiều rộng web cho đẹp, không bị bè quá
+        xl: "1280px",
       },
     },
     extend: {
@@ -33,7 +32,6 @@ module.exports = {
       // Setup Typography chuẩn theo file Figma Design System (Size / Line-height)
       fontSize: {
         // Mapping
-        // --- MAPPING (Core System) ---
         // định nghĩa lại các size này để khớp 100% với Figma
 
         // Heading - Body - Caption - lexend
@@ -66,8 +64,6 @@ module.exports = {
         "body-s": ["14px", { lineHeight: "160%", fontWeight: "400" }],
         caption: ["12px", { lineHeight: "160%", fontWeight: "400" }],
 
-
-
         // icon size for iconify-icon - dùng Solar Icons
         "icon-xs": "16px",
         "icon-sm": "20px",
@@ -75,8 +71,7 @@ module.exports = {
         "icon-lg": "32px",
         "icon-xl": "48px",
       },
-      // 1. BASE PALETTES (Dải màu gốc từ Color Tokens)
-      // -----------------------------------------------------------------------
+      // 1. BASE PALETTES (Dải màu gốc từ Color Tokens Figma)
       colors: {
         primary: {
           50: "#EFF6FF",
@@ -129,8 +124,7 @@ module.exports = {
         },
       },
 
-      // 2. SEMANTIC ALIASES (Kết nối với CSS Variables)
-      // Tự động đổi màu khi bật Dark Mode
+      // 2. SEMANTIC ALIASES (Kết nối với CSS Variables input.css)
       backgroundColor: {
         page: "var(--bg-page)",
         card: "var(--bg-card)",
